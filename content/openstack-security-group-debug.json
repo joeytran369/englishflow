@@ -1,0 +1,245 @@
+{
+  "id": "openstack-security-group-debug",
+  "generatedAt": "2026-05-12T08:57:40.625Z",
+  "mode": "GEMINI",
+  "plan": {
+    "topic": "Debugging OpenStack Network Connectivity with Security Groups",
+    "setting": "A web service on port 8080 is unreachable from outside an OpenStack project. Engineers need to diagnose and troubleshoot issues related to security groups, network ACLs, and firewall rules.",
+    "level": "B1",
+    "keyConcepts": [
+      "Security Groups",
+      "Network ACLs",
+      "Firewall Rules",
+      "Network Ports (e.g., Port 8080)",
+      "Web Service Connectivity",
+      "Network Troubleshooting",
+      "OpenStack Project Environment"
+    ]
+  },
+  "dialogue": {
+    "title": "OpenStack Network Debug: The Case of the Missing Security Group Rule",
+    "sceneBrief": "A tense but quickly resolved debugging session, with a junior engineer getting calm guidance and a bit of playful sarcasm from a veteran.",
+    "characters": [
+      {
+        "name": "Alex",
+        "role": "Senior Engineer",
+        "voiceProfile": "tired-veteran"
+      },
+      {
+        "name": "Ben",
+        "role": "Junior Engineer",
+        "voiceProfile": "junior-anxious"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Ben",
+        "text": "Alex, hey, uh... the web service on 8080? Still totally unreachable from outside the OpenStack project. I can't even ping it.",
+        "vn": "Alex này, ừm... cái web service cổng 8080 ấy hả? Vẫn hoàn toàn không thể truy cập được từ bên ngoài cái OpenStack project. Em còn không ping được nó nữa.",
+        "emotion": "frustrated",
+        "tags": [
+          "hesitates",
+          "urgent"
+        ]
+      },
+      {
+        "speaker": "Alex",
+        "text": "[sighs] Classic. You sure it's running? No, wait, you said 'unreachable from outside'— so it's probably running *inside*, right?",
+        "vn": "[thở dài] Kinh điển rồi. Chắc là nó đang chạy chứ? À không, đợi đã, em bảo 'không truy cập được từ bên ngoài' — vậy là khả năng cao nó chạy *bên trong*, đúng không?",
+        "emotion": "deadpan",
+        "tags": [
+          "sighs",
+          "sarcastic"
+        ]
+      },
+      {
+        "speaker": "Ben",
+        "text": "Yeah, I mean, locally it's fine! Logs are clean. But from my dev machine, nothing. I checked the instance's firewall rules, they look okay...",
+        "vn": "Vâng, ý em là, chạy local thì ổn! Logs cũng sạch sẽ. Nhưng từ máy dev của em thì tịt. Em đã kiểm tra các firewall rules của instance rồi, trông có vẻ ổn...",
+        "emotion": "focused",
+        "tags": [
+          "quick",
+          "anxious"
+        ]
+      },
+      {
+        "speaker": "Alex",
+        "text": "Instance firewall... that's good, but we're in OpenStack, Ben. What about the *Security Groups* assigned to that instance? Have you checked those?",
+        "vn": "Firewall của instance... được thôi, nhưng chúng ta đang ở OpenStack mà Ben. Còn *Security Groups* được gán cho instance đó thì sao? Em đã kiểm tra chưa?",
+        "emotion": "instructive",
+        "tags": [
+          "calm",
+          "focused"
+        ]
+      },
+      {
+        "speaker": "Ben",
+        "text": "Oh, right. Security Groups... I just glanced at the default one. Should I check the specific—",
+        "vn": "Ồ, đúng rồi. Security Groups... Em chỉ mới nhìn qua cái mặc định thôi. Em nên kiểm tra cái cụ thể—",
+        "emotion": "hesitant",
+        "tags": [
+          "hesitates",
+          "quick"
+        ]
+      },
+      {
+        "speaker": "Alex",
+        "text": "Specific one, yeah! Port 8080, ingress rule, from the right source IP range. We've had this a million times where someone forgets to add the port to the group, or the CIDR is wrong.",
+        "vn": "Cái cụ thể, đúng rồi! Cổng 8080, rule ingress, từ đúng dải IP nguồn. Chuyện này xảy ra hàng triệu lần rồi, ai đó quên thêm cổng vào group, hoặc CIDR bị sai.",
+        "emotion": "explanatory",
+        "tags": [
+          "quick",
+          "sarcastic"
+        ]
+      },
+      {
+        "speaker": "Ben",
+        "text": "[typing sounds] ...Wait. You're right! It's missing an ingress rule for 8080. It's only got 22 and 80. How did I miss that?!",
+        "vn": "[âm thanh gõ phím] ...Khoan đã. Anh nói đúng rồi! Nó đang thiếu một cái ingress rule cho 8080. Nó chỉ có 22 và 80 thôi. Sao em lại bỏ sót cái đó nhỉ?!",
+        "emotion": "surprised",
+        "tags": [
+          "quick",
+          "frustrated"
+        ]
+      },
+      {
+        "speaker": "Alex",
+        "text": "[chuckles] Happens. Network ACLs are usually more project-wide, but Security Groups are per-instance, man. Always the first suspect for 'can't reach my service.'",
+        "vn": "[cười khẽ] Chuyện thường. Network ACLs thường là cấp độ toàn dự án, nhưng Security Groups thì là của từng instance, em ạ. Luôn là nghi phạm số một cho vụ 'không thể truy cập dịch vụ của mình.'",
+        "emotion": "smug",
+        "tags": [
+          "chuckles",
+          "sarcastic"
+        ]
+      },
+      {
+        "speaker": "Ben",
+        "text": "[relieved sigh] Adding it now... Okay, trying again... YES! It works! Thanks, Alex, you saved me hours of pain.",
+        "vn": "[thở phào nhẹ nhõm] Đang thêm đây... Được rồi, thử lại... YES! Nó chạy rồi! Cảm ơn anh, Alex, anh đã cứu em khỏi hàng giờ đau khổ.",
+        "emotion": "excited",
+        "tags": [
+          "relieved",
+          "excited"
+        ]
+      },
+      {
+        "speaker": "Alex",
+        "text": "[smirks] Just another Tuesday. Glad we didn't have to dig into Neutron ACLs for *that*. Buy me coffee later, junior.",
+        "vn": "[cười mỉm] Lại một ngày thứ Ba nữa thôi mà. Mừng là chúng ta không phải đào sâu vào Neutron ACLs vì *cái đó*. Mua cà phê cho anh sau nhé, nhóc.",
+        "emotion": "playful",
+        "tags": [
+          "smirks",
+          "playful"
+        ]
+      }
+    ]
+  },
+  "editorReview": {
+    "levelChecked": "B1",
+    "notes": [
+      "**Fidelity to B1:** The dialogue generally adheres to B1 grammatical structures and common vocabulary. The sentence complexity is appropriate for the level, utilizing simple, compound, and some straightforward complex sentences (e.g., relative clauses like 'where someone forgets'). Key B1 grammatical features like present/past/future simple, present continuous, modals (should, can't, might), and present perfect are present.",
+      "The primary challenge for a B1 learner would be the specialized technical vocabulary related to OpenStack networking ('OpenStack project', 'instance', 'firewall rules', 'Security Groups', 'ingress rule', 'source IP range', 'CIDR', 'Network ACLs', 'project-wide', 'per-instance', 'Neutron ACLs'). While these terms are technical, they are context-specific and would likely be acquired quickly by someone working in this domain. Their meaning is often clarified by the context or by Alex's explanations (e.g., 'Security Groups are per-instance'). For a B1 learner in a general English context, this technical jargon might be too dense, but for a 'B1 for IT professionals' context, it is suitable.",
+      "Common idioms and colloquialisms like 'classic', 'glanced at', 'a million times', 'dig into', 'just another Tuesday', and 'hours of pain' are used. While some might be at the higher end of B1 or lower B2, their meaning is generally inferable from context and they contribute to naturalness.",
+      "**Naturalness:** The dialogue is highly natural. The interactions between the senior and junior engineer, including Ben's initial frustration, Alex's calm but slightly sarcastic guidance, and Ben's eventual relief, are very realistic. The use of interjections ('uh', 'yeah', 'oh, right'), fragmented sentences (Ben's interrupted line), and conversational markers ('man', 'junior') enhances the natural flow. The playful banter and the resolution feel authentic to a debugging session."
+    ],
+    "approved": true
+  },
+  "vocab": [
+    {
+      "term": "Security Group",
+      "ipa": "/sɪˈkjʊrəti ɡruːp/",
+      "vn": "Nhóm bảo mật",
+      "example": "What about the *Security Groups* assigned to that instance?"
+    },
+    {
+      "term": "ingress rule",
+      "ipa": "/ˈɪnɡrɛs ruːl/",
+      "vn": "Quy tắc vào/Quy tắc chiều vào",
+      "example": "It's missing an ingress rule for 8080."
+    },
+    {
+      "term": "CIDR",
+      "ipa": "/ˈsaɪdər/",
+      "vn": "Dải IP (Classless Inter-Domain Routing)",
+      "example": "or the CIDR is wrong."
+    },
+    {
+      "term": "Network ACLs",
+      "ipa": "/ˈnɛtˌwɜːrk eɪ siː ɛls/",
+      "vn": "Danh sách kiểm soát truy cập mạng (Network Access Control Lists)",
+      "example": "Network ACLs are usually more project-wide..."
+    },
+    {
+      "term": "Neutron ACLs",
+      "ipa": "/ˈnjuːtrɒn eɪ siː ɛls/",
+      "vn": "Danh sách kiểm soát truy cập Neutron",
+      "example": "Glad we didn't have to dig into Neutron ACLs for *that*."
+    },
+    {
+      "term": "Classic.",
+      "ipa": "/ˈklæsɪk/",
+      "vn": "Kinh điển/Kiểu thường thấy",
+      "example": "[sighs] Classic."
+    },
+    {
+      "term": "Just another Tuesday.",
+      "ipa": "/dʒʌst əˈnʌðər ˈtuːzdeɪ/",
+      "vn": "Lại một ngày thứ Ba nữa thôi (ý nói chuyện thường ngày, không có gì đặc biệt)",
+      "example": "[smirks] Just another Tuesday."
+    },
+    {
+      "term": "unreachable",
+      "ipa": "/ʌnˈriːtʃəbəl/",
+      "vn": "Không thể truy cập được",
+      "example": "Still totally unreachable from outside the OpenStack project."
+    }
+  ],
+  "audio": {
+    "mode": "GEMINI",
+    "voiceMap": {
+      "Alex": "Alnilam",
+      "Ben": "Leda"
+    },
+    "file": "openstack-security-group-debug.mp3",
+    "sizeKb": 3749,
+    "durationSec": 80,
+    "model": "gemini-2.5-flash-preview-tts",
+    "promptPreview": "You are voicing a SCENE from a tech podcast, not reading a script. Make every line sound like a real human in a real moment — NOT a narrator, NOT a news anchor, NOT calm/measured.\n\nCRITICAL DIRECTIVES…",
+    "mix": {
+      "mixed": true,
+      "file": "openstack-security-group-debug.mp3",
+      "sizeKb": 1055,
+      "sceneMood": "review",
+      "moodTags": [
+        "calm",
+        "podcast",
+        "corporate"
+      ],
+      "intro": {
+        "track": "faderproducer-intro-podcast-530691.mp3",
+        "tags": [
+          "intro",
+          "podcast"
+        ],
+        "score": 7,
+        "fallback": false,
+        "offsetSec": 33.4,
+        "durationSec": 5
+      },
+      "outro": {
+        "track": "53976329-podcast-outro-clean-closing-sting-459117.mp3",
+        "tags": [
+          "outro",
+          "bumper",
+          "podcast"
+        ],
+        "score": 7,
+        "fallback": false,
+        "offsetSec": 82.2,
+        "durationSec": 5
+      },
+      "layout": "5s intro sting · voice (clean) · 5s outro sting"
+    }
+  },
+  "publishedAt": "2026-05-11"
+}

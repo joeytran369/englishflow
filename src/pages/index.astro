@@ -1,0 +1,306 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const BASE = import.meta.env.BASE_URL;
+
+// === PLACEHOLDER — anh tự điền ===
+const profile = {
+  name: "Joey Tran",
+  title: "[Job title]",
+  tagline:
+    "[1-2 câu mô tả mình làm gì, chuyên về cái gì, hướng đi ra sao.]",
+  location: "[City], [Country]",
+  email: "[email công khai]",
+  linkedin: "#",
+  github: "#",
+};
+
+const experience = [
+  {
+    company: "[Công ty hiện tại]",
+    period: "Mon YYYY — Present",
+    role: "[Vai trò]",
+    project: "[Mô tả project/scope của công ty]",
+    bullets: [
+      "[Achievement 1 — dùng action verb + số liệu nếu có]",
+      "[Achievement 2]",
+      "[Achievement 3]",
+    ],
+  },
+  {
+    company: "[Công ty trước]",
+    period: "Mon YYYY — Mon YYYY",
+    role: "[Vai trò]",
+    project: "[Mô tả project]",
+    bullets: ["[Achievement 1]", "[Achievement 2]"],
+  },
+];
+
+const skills = {
+  Core: ["[Skill 1]", "[Skill 2]", "[Skill 3]"],
+  Cloud: ["[Cloud 1]", "[Cloud 2]"],
+  Languages: ["[Lang 1]", "[Lang 2]"],
+  Tools: ["[Tool 1]", "[Tool 2]"],
+};
+
+const education = {
+  school: "[Tên trường]",
+  period: "Sep YYYY — Jun YYYY",
+  degree: "[Bằng cấp, chuyên ngành]",
+  notes: ["[Highlight 1]", "[Highlight 2]"],
+};
+
+const certs = [
+  { issuer: "[Tổ chức]", name: "[Tên chứng chỉ]", verify: "#" },
+];
+const certPlanned = ["[Cert đang học 1]", "[Cert đang học 2]"];
+---
+
+<BaseLayout
+  title={`${profile.name} — ${profile.title}`}
+  description={profile.tagline}
+>
+  <!-- TOP NAV -->
+  <header
+    class="sticky top-0 z-40 border-b border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-950/80 backdrop-blur"
+  >
+    <nav class="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
+      <a
+        href={BASE}
+        class="font-mono font-bold text-zinc-900 dark:text-zinc-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+      >
+        joeytran.dev
+      </a>
+      <div class="flex items-center gap-1">
+        <a
+          href="#experience"
+          class="px-3 py-1.5 text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+          >Experience</a
+        >
+        <a
+          href="#skills"
+          class="px-3 py-1.5 text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+          >Skills</a
+        >
+        <a
+          href={`${BASE}english/`}
+          class="px-3 py-1.5 text-sm text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 font-medium"
+          >EnglishFlow ↗</a
+        >
+        <a
+          href={profile.github}
+          class="px-3 py-1.5 text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+          >GitHub</a
+        >
+        <button
+          id="theme-toggle"
+          aria-label="Toggle theme"
+          class="ml-2 px-2 py-1 text-xs font-mono text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 cursor-pointer"
+        >
+          [theme]
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="flex-1">
+    <div class="max-w-[720px] mx-auto px-6">
+      <!-- HERO -->
+      <section class="pt-14 pb-10">
+        <h1
+          class="text-[34px] sm:text-[38px] font-semibold tracking-tight text-zinc-900 dark:text-zinc-50"
+        >
+          {profile.name}
+        </h1>
+        <p class="text-[17px] text-zinc-600 dark:text-zinc-400 mt-1.5">
+          {profile.title}
+        </p>
+        <p
+          class="text-[15px] text-zinc-600 dark:text-zinc-400 leading-[1.75] mt-5 max-w-[640px]"
+        >
+          {profile.tagline}
+        </p>
+        <div
+          class="flex flex-wrap items-center gap-x-2 gap-y-1 mt-6 text-[14px]"
+        >
+          <span class="text-zinc-700 dark:text-zinc-300">{profile.location}</span>
+          <span class="text-zinc-300 dark:text-zinc-700">•</span>
+          <a
+            href={`mailto:${profile.email}`}
+            class="text-zinc-700 dark:text-zinc-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+            >{profile.email}</a
+          >
+          <span class="text-zinc-300 dark:text-zinc-700">•</span>
+          <a
+            href={profile.linkedin}
+            class="text-zinc-700 dark:text-zinc-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+            >LinkedIn</a
+          >
+          <span class="text-zinc-300 dark:text-zinc-700">•</span>
+          <a
+            href={profile.github}
+            class="text-zinc-700 dark:text-zinc-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+            >GitHub</a
+          >
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="py-10 border-t border-zinc-200 dark:border-zinc-800">
+        <h2
+          class="text-[12px] font-medium tracking-[0.18em] uppercase text-zinc-500 dark:text-zinc-500 mb-6"
+        >
+          Experience
+        </h2>
+        <div class="space-y-8">
+          {experience.map((e) => (
+            <article class="pl-4 border-l-2 border-zinc-200 dark:border-zinc-800 hover:border-emerald-500 dark:hover:border-emerald-400 transition-colors">
+              <header class="mb-1">
+                <div class="flex items-baseline justify-between gap-4 flex-wrap">
+                  <h3 class="text-[17px] font-semibold text-zinc-900 dark:text-zinc-50">
+                    {e.company}
+                  </h3>
+                  <span class="text-[14px] tabular-nums text-zinc-500 dark:text-zinc-500 shrink-0">
+                    {e.period}
+                  </span>
+                </div>
+                <p class="text-[15px] text-zinc-600 dark:text-zinc-400">{e.role}</p>
+                <p class="text-[14px] italic-serif text-zinc-500 dark:text-zinc-500 mt-0.5">
+                  {e.project}
+                </p>
+              </header>
+              <ul class="list-disc pl-5 mt-2 space-y-1 marker:text-zinc-400 dark:marker:text-zinc-600">
+                {e.bullets.map((b) => (
+                  <li class="pl-1 text-[14px] text-zinc-600 dark:text-zinc-400 leading-[1.6]">
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="py-10 border-t border-zinc-200 dark:border-zinc-800">
+        <h2
+          class="text-[12px] font-medium tracking-[0.18em] uppercase text-zinc-500 dark:text-zinc-500 mb-6"
+        >
+          Skills
+        </h2>
+        <div class="space-y-4">
+          {Object.entries(skills).map(([group, items]) => (
+            <div>
+              <div class="text-[13px] font-mono text-zinc-500 dark:text-zinc-500 mb-2">
+                {group}
+              </div>
+              <div class="flex flex-wrap gap-1.5">
+                {items.map((s) => (
+                  <span class="inline-block px-2.5 py-0.5 rounded-md text-[12.5px] font-medium bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800">
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section class="py-10 border-t border-zinc-200 dark:border-zinc-800">
+        <h2
+          class="text-[12px] font-medium tracking-[0.18em] uppercase text-zinc-500 dark:text-zinc-500 mb-6"
+        >
+          Education
+        </h2>
+        <article>
+          <header class="mb-1">
+            <div class="flex items-baseline justify-between gap-4 flex-wrap">
+              <h3 class="text-[17px] font-semibold text-zinc-900 dark:text-zinc-50">
+                {education.school}
+              </h3>
+              <span class="text-[14px] tabular-nums text-zinc-500 dark:text-zinc-500 shrink-0">
+                {education.period}
+              </span>
+            </div>
+            <p class="text-[15px] text-zinc-600 dark:text-zinc-400">{education.degree}</p>
+          </header>
+          <ul class="list-disc pl-5 mt-2 space-y-1 marker:text-zinc-400 dark:marker:text-zinc-600">
+            {education.notes.map((n) => (
+              <li class="pl-1 text-[14px] text-zinc-600 dark:text-zinc-400 leading-[1.6]">
+                {n}
+              </li>
+            ))}
+          </ul>
+        </article>
+      </section>
+
+      <!-- CERTIFICATIONS -->
+      <section class="py-10 border-t border-zinc-200 dark:border-zinc-800">
+        <h2
+          class="text-[12px] font-medium tracking-[0.18em] uppercase text-zinc-500 dark:text-zinc-500 mb-6"
+        >
+          Certifications
+        </h2>
+        <div class="space-y-3">
+          {certs.map((c) => (
+            <div class="flex items-center gap-3 flex-wrap">
+              <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-900 text-emerald-700 dark:text-emerald-400 text-[12.5px] font-medium">
+                {c.issuer}
+              </span>
+              <span class="font-medium text-zinc-800 dark:text-zinc-100 text-[15px]">
+                {c.name}
+              </span>
+              <a
+                href={c.verify}
+                class="text-[13px] text-emerald-600 dark:text-emerald-400 hover:underline"
+                >verify ↗</a
+              >
+            </div>
+          ))}
+          {certPlanned.length > 0 && (
+            <div class="pt-3">
+              <div class="text-[13px] font-mono text-zinc-500 dark:text-zinc-500 mb-2">
+                Planned
+              </div>
+              <div class="flex flex-wrap gap-1.5">
+                {certPlanned.map((c) => (
+                  <span class="inline-block px-2.5 py-0.5 rounded-md text-[12.5px] font-medium bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800">
+                    {c}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-zinc-200 dark:border-zinc-800 mt-24">
+    <div
+      class="max-w-[720px] mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+    >
+      <div class="flex gap-4 text-[13px] text-zinc-500 dark:text-zinc-500">
+        <a
+          href={profile.github}
+          class="hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors"
+          >GitHub</a
+        >
+        <a
+          href={profile.linkedin}
+          class="hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors"
+          >LinkedIn</a
+        >
+        <a
+          href={`mailto:${profile.email}`}
+          class="hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors"
+          >Email</a
+        >
+      </div>
+      <p class="text-center text-xs text-zinc-400 dark:text-zinc-500">
+        © {new Date().getFullYear()} {profile.name}. All rights reserved.
+      </p>
+    </div>
+  </footer>
+</BaseLayout>

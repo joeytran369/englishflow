@@ -1,0 +1,260 @@
+{
+  "id": "incident-api-latency-spike",
+  "generatedAt": "2026-05-12T08:15:47.919Z",
+  "mode": "GEMINI",
+  "plan": {
+    "topic": "Incident Post-Mortem Discussion",
+    "setting": "A team meeting to discuss a recent production outage, identify the root causes, and define preventive actions. The team comprises Vietnamese and international engineers, an SRE lead, and a product manager. The discussion involves reviewing technical details, timelines, and impact.",
+    "level": "B2",
+    "keyConcepts": [
+      "Describing a sequence of events (timeline)",
+      "Identifying contributing factors and dependencies",
+      "Proposing and evaluating solutions/preventive measures",
+      "Assigning and clarifying action items",
+      "Expressing cause and effect relationships",
+      "Using phrases for agreement, disagreement, and clarification",
+      "Blameless Post-Mortem principles",
+      "Root Cause Analysis (RCA)",
+      "System Observability (monitoring, logging, alerting)",
+      "Mitigation and remediation strategies"
+    ]
+  },
+  "dialogue": {
+    "title": "Post-Mortem Debrief: The Pod Panic",
+    "sceneBrief": "A slightly exhausted but focused post-mortem review, with moments of dry humor amidst technical analysis.",
+    "characters": [
+      {
+        "name": "Linh",
+        "role": "SRE Engineer",
+        "voiceProfile": "senior-calm"
+      },
+      {
+        "name": "Khai",
+        "role": "Software Engineer",
+        "voiceProfile": "junior-excited"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Linh",
+        "text": "Okay, so looking at the timeline again, the initial CPU spike hit *right* after your deployment, Khai. Coincidence? Probably not, haha.",
+        "vn": "Rồi, nhìn lại timeline thì cái spike CPU ban đầu xuất hiện *ngay* sau cái deploy của cậu, Khai. Trùng hợp hả? Chắc là không rồi, haha.",
+        "emotion": "playful",
+        "tags": [
+          "smirks",
+          "sarcastic"
+        ]
+      },
+      {
+        "speaker": "Khai",
+        "text": "Hey, it passed all tests! But yeah, the new caching layer—I mean, it *shouldn't* have hammered the database that hard, but we saw the connection pool exhaust almost instantly.",
+        "vn": "Ê, nó đã pass hết test rồi mà! Nhưng ừm, cái lớp caching mới—ý tôi là, nó *đáng lẽ không nên* làm database quá tải như vậy, nhưng tụi mình thấy pool connection cạn kiệt gần như ngay lập tức.",
+        "emotion": "hesitant",
+        "tags": [
+          "hesitates",
+          "quick"
+        ]
+      },
+      {
+        "speaker": "Linh",
+        "text": "Right. And our observability was pretty weak on *that specific* service's database metrics. That's a huge blind spot we need to fix. RCA points squarely at the unexpected load on that old `user-config` service.",
+        "vn": "Đúng vậy. Và khả năng quan sát (observability) của mình yếu ở *mảng metrics database của dịch vụ cụ thể đó*. Đó là một điểm mù lớn cần phải khắc phục. RCA chỉ thẳng vào tải ngoài dự kiến trên cái dịch vụ `user-config` cũ kia.",
+        "emotion": "focused",
+        "tags": [
+          "focused",
+          "firm"
+        ]
+      },
+      {
+        "speaker": "Khai",
+        "text": "So, first action item: better metrics for `user-config` and maybe a circuit breaker, right? And I'll review the caching strategy again, maybe with a smaller TTL initially.",
+        "vn": "Vậy, hành động đầu tiên: metrics tốt hơn cho `user-config` và có thể là một cái circuit breaker, đúng không? Và tôi sẽ xem lại chiến lược caching một lần nữa, có lẽ là với TTL nhỏ hơn ban đầu.",
+        "emotion": "eager",
+        "tags": [
+          "quick",
+          "focused"
+        ]
+      },
+      {
+        "speaker": "Linh",
+        "text": "Exactly. You own the caching review and the circuit breaker PoC, Khai. I'll get the SRE team on improving `user-config` observability—we need proper dashboards and alerts for its dependencies.",
+        "vn": "Chính xác. Cậu chịu trách nhiệm xem xét caching và PoC circuit breaker, Khai. Tôi sẽ cho đội SRE cải thiện observability của `user-config`—chúng ta cần dashboard và alert phù hợp cho các dependency của nó.",
+        "emotion": "firm",
+        "tags": [
+          "firm",
+          "quick"
+        ]
+      },
+      {
+        "speaker": "Khai",
+        "text": "Sounds good. Man, that hour felt like an eternity when the pods were crashing, huh? Blameless, yeah, but still gives you that mini heart attack.",
+        "vn": "Nghe được đó. Trời ơi, cái giờ đó cứ như vô tận lúc mấy cái pod sập, nhỉ? Blameless thì blameless, nhưng vẫn khiến mình tim đập thình thịch.",
+        "emotion": "relieved",
+        "tags": [
+          "exhales",
+          "chuckles"
+        ]
+      },
+      {
+        "speaker": "Linh",
+        "text": "Totally. But hey, now we know. The fix was solid, and the remediation plan for next time is clearer. Good job on the quick rollback, though.",
+        "vn": "Chắc chắn rồi. Nhưng mà này, giờ thì mình biết rồi. Bản sửa lỗi rất chắc chắn, và kế hoạch khắc phục cho lần sau cũng rõ ràng hơn. Dù sao thì, rollback nhanh cũng tốt đó.",
+        "emotion": "calm",
+        "tags": [
+          "calm",
+          "supportive"
+        ]
+      },
+      {
+        "speaker": "Khai",
+        "text": "Thanks. Guess I'll be staring at `kubectl logs` in my sleep tonight. At least we dodged a bigger bullet this time.",
+        "vn": "Cảm ơn. Chắc đêm nay tôi sẽ nằm mơ thấy `kubectl logs` mất. Ít nhất là lần này mình đã tránh được một viên đạn lớn hơn.",
+        "emotion": "playful",
+        "tags": [
+          "playful",
+          "sighs"
+        ]
+      },
+      {
+        "speaker": "Linh",
+        "text": "Haha, classic. Alright, let's get these action items into Jira. Next week's sprint planning will be fun. More coffee?",
+        "vn": "Haha, kinh điển. Được rồi, đưa mấy cái action item này vào Jira thôi. Sprint planning tuần tới sẽ vui đây. Thêm cà phê không?",
+        "emotion": "lighthearted",
+        "tags": [
+          "laughs",
+          "quick"
+        ]
+      },
+      {
+        "speaker": "Khai",
+        "text": "Please. A double.",
+        "vn": "Làm ơn. Một ly lớn.",
+        "emotion": "exhausted",
+        "tags": [
+          "quick",
+          "sighs"
+        ]
+      }
+    ]
+  },
+  "editorReview": {
+    "levelChecked": "B2",
+    "notes": [
+      "**English Original:**",
+      "The English dialogue demonstrates excellent B2 fidelity and naturalness. The vocabulary is rich, balancing technical jargon (e.g., 'CPU spike', 'deployment', 'caching layer', 'connection pool exhaust', 'observability', 'metrics', 'RCA', 'circuit breaker', 'PoC', 'Jira', 'sprint planning', 'pods') with everyday professional language and natural idioms ('hammered the database', 'blind spot', 'points squarely at', 'mini heart attack', 'dodged a bigger bullet', 'staring at logs in my sleep', 'classic'). Sentence structures are varied and complex enough for B2. The conversational flow is highly natural, incorporating hesitations ('I mean'), interjections ('Hey', 'Man', 'Totally'), and expressions of emotion and relief. The dry humor and slight exhaustion are perfectly conveyed, fulfilling the scene brief.",
+      "**Vietnamese Translation (vn):**",
+      "The Vietnamese translation is also of a very high standard, maintaining both B2 fidelity and naturalness. It expertly navigates the challenge of integrating technical English terms into Vietnamese ('spike CPU', 'deploy', 'pass hết test', 'caching layer', 'pool connection', 'observability', 'metrics', 'RCA', 'circuit breaker', 'PoC', 'dashboard', 'alert', 'dependency', 'pod', 'rollback', 'Jira', 'sprint planning'). The translation of idioms and nuances is particularly strong (e.g., 'làm database quá tải' for 'hammered the database', 'điểm mù lớn' for 'blind spot', 'tim đập thình thịch' for 'mini heart attack', 'tránh được một viên đạn lớn hơn' for 'dodged a bigger bullet', 'nằm mơ thấy `kubectl logs`' for 'staring at `kubectl logs` in my sleep'). Conversational markers like 'Rồi', 'Ê', 'ừm', 'Đúng vậy', 'Trời ơi', 'Nhưng mà này', 'Dù sao thì', 'Kinh điển' contribute significantly to its authentic feel. The tone, humor, and character dynamics are preserved effectively."
+    ],
+    "approved": true
+  },
+  "vocab": [
+    {
+      "term": "CPU spike",
+      "ipa": "/ˌsiː.piːˈjuː spaɪk/",
+      "vn": "tăng đột biến CPU",
+      "example": "the initial CPU spike hit *right* after your deployment, Khai."
+    },
+    {
+      "term": "hammered the database",
+      "ipa": "/ˈhæm.ərd ðə ˈdeɪ.tə.beɪs/",
+      "vn": "làm quá tải database",
+      "example": "it *shouldn't* have hammered the database that hard, but we saw the connection pool exhaust almost instantly."
+    },
+    {
+      "term": "observability",
+      "ipa": "/əbˌzɜː.vəˈbɪl.ə.ti/",
+      "vn": "khả năng quan sát",
+      "example": "And our observability was pretty weak on *that specific* service's database metrics."
+    },
+    {
+      "term": "blind spot",
+      "ipa": "/blaɪnd spɒt/",
+      "vn": "điểm mù",
+      "example": "That's a huge blind spot we need to fix."
+    },
+    {
+      "term": "RCA",
+      "ipa": "/ɑːr siː eɪ/",
+      "vn": "phân tích nguyên nhân gốc rễ (Root Cause Analysis)",
+      "example": "RCA points squarely at the unexpected load on that old `user-config` service."
+    },
+    {
+      "term": "circuit breaker",
+      "ipa": "/ˈsɜː.kɪt ˌbreɪ.kər/",
+      "vn": "mẫu thiết kế circuit breaker (cầu dao ngắt mạch)",
+      "example": "first action item: better metrics for `user-config` and maybe a circuit breaker, right?"
+    },
+    {
+      "term": "TTL",
+      "ipa": "/ˌtiː.tiːˈel/",
+      "vn": "thời gian sống (Time To Live)",
+      "example": "I'll review the caching strategy again, maybe with a smaller TTL initially."
+    },
+    {
+      "term": "PoC",
+      "ipa": "/ˌpiː.əʊˈsiː/",
+      "vn": "chứng minh khái niệm (Proof of Concept)",
+      "example": "You own the caching review and the circuit breaker PoC, Khai."
+    },
+    {
+      "term": "pods were crashing",
+      "ipa": "/pɒdz wɜːr ˈkræʃ.ɪŋ/",
+      "vn": "các pod bị sập/lỗi",
+      "example": "Man, that hour felt like an eternity when the pods were crashing, huh?"
+    },
+    {
+      "term": "dodged a bigger bullet",
+      "ipa": "/dɒdʒd ə ˈbɪɡ.ər ˈbʊl.ɪt/",
+      "vn": "tránh được một tai họa lớn hơn",
+      "example": "At least we dodged a bigger bullet this time."
+    }
+  ],
+  "audio": {
+    "mode": "GEMINI",
+    "voiceMap": {
+      "Linh": "Charon",
+      "Khai": "Fenrir"
+    },
+    "file": "incident-api-latency-spike.mp3",
+    "sizeKb": 3743,
+    "durationSec": 79.9,
+    "model": "gemini-2.5-flash-preview-tts",
+    "promptPreview": "You are voicing a SCENE from a tech podcast, not reading a script. Make every line sound like a real human in a real moment — NOT a narrator, NOT a news anchor, NOT calm/measured.\n\nCRITICAL DIRECTIVES…",
+    "mix": {
+      "mixed": true,
+      "file": "incident-api-latency-spike.mp3",
+      "sizeKb": 1054,
+      "sceneMood": "on-call",
+      "moodTags": [
+        "tense",
+        "podcast",
+        "cinematic"
+      ],
+      "intro": {
+        "track": "9jackjack8-mysterious-intro-371652.mp3",
+        "tags": [
+          "intro",
+          "tense"
+        ],
+        "score": 8,
+        "fallback": false,
+        "offsetSec": 18,
+        "durationSec": 5
+      },
+      "outro": {
+        "track": "53976329-podcast-outro-clean-closing-sting-459117.mp3",
+        "tags": [
+          "outro",
+          "bumper",
+          "podcast"
+        ],
+        "score": 7,
+        "fallback": false,
+        "offsetSec": 23.9,
+        "durationSec": 5
+      },
+      "layout": "5s intro sting · voice (clean) · 5s outro sting"
+    }
+  },
+  "publishedAt": "2026-05-12"
+}

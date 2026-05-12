@@ -1,0 +1,564 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { readFileSync, existsSync } from "node:fs";
+import { join } from "node:path";
+const BASE = import.meta.env.BASE_URL;
+
+const episodeFiles = import.meta.glob("../../../content/*.json", {
+  eager: true,
+  import: "default",
+});
+
+const episodes = Object.values(episodeFiles).sort((a: any, b: any) => {
+  const da = (a.publishedAt || a.generatedAt || "");
+  const db = (b.publishedAt || b.generatedAt || "");
+  return db.localeCompare(da);
+});
+
+function pubDate(ep: any): string {
+  return (ep.publishedAt || ep.generatedAt || "").slice(0, 10);
+}
+
+export async function getStaticPaths() {
+  const files = import.meta.glob("../../../content/*.json", { eager: true, import: "default" });
+  return Object.values(files).map((ep: any) => ({ params: { id: ep.id } }));
+}
+
+const { id } = Astro.params;
+const latest = (episodes.find((e: any) => e.id === id) || episodes[0]) as any;
+
+// Derive category from setting keywords (word-boundary, OpenStack-first)
+function categoryOf(setting: string, plan?: any): { name: string; gradient: string } {
+  if (plan?.category) {
+    return { name: String(plan.category), gradient: "from-sky-600 via-blue-600 to-violet-600" };
+  }
+  const s = setting.toLowerCase();
+  const has = (...words: string[]) =>
+    words.some((w) => new RegExp(`\\b${w.replace(/[-\s]/g, "[- ]?")}\\b`, "i").test(s));
+
+  if (has("openstack", "kubernetes", "k8s", "aws", "gcp", "azure", "cloud", "vpc", "vm", "volume", "snapshot", "ssh", "floating ip", "security group", "network acl", "glance", "cinder", "nova", "neutron"))
+    return { name: "OpenStack", gradient: "from-sky-600 via-blue-600 to-violet-600" };
+  if (has("code review", "pull request", "pr review", "merge conflict", "diff"))
+    return { name: "Code Review", gradient: "from-violet-500 via-purple-500 to-fuchsia-500" };
+  if (has("sprint", "standup", "planning", "scrum", "retro", "kanban"))
+    return { name: "Sprint", gradient: "from-sky-500 via-blue-500 to-indigo-500" };
+  if (has("design", "architecture", "rfc", "adr"))
+    return { name: "Architecture", gradient: "from-emerald-500 via-teal-500 to-cyan-500" };
+  if (has("interview"))
+    return { name: "Interview", gradient: "from-amber-500 via-yellow-500 to-lime-500" };
+  if (has("incident", "outage", "on-call", "p1", "p2", "post-mortem", "war room", "alert"))
+    return { name: "Incident", gradient: "from-rose-500 via-orange-500 to-amber-500" };
+  return { name: "Daily Work", gradient: "from-zinc-500 via-slate-500 to-zinc-600" };
+}
+
+const levelColor: Record<string, string> = {
+  A2: "bg-sky-50 dark:bg-sky-950/40 text-sky-700 dark:text-sky-400 border-sky-200 dark:border-sky-900",
+  B1: "bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border-emerald-200 dark:border-emerald-900",
+  B2: "bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400 border-amber-200 dark:border-amber-900",
+  C1: "bg-rose-50 dark:bg-rose-950/40 text-rose-700 dark:text-rose-400 border-rose-200 dark:border-rose-900",
+};
+
+// Speaker chip color cycle
+const speakerColors = [
+  "bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 ring-emerald-500/30",
+  "bg-violet-500/15 text-violet-700 dark:text-violet-400 ring-violet-500/30",
+  "bg-amber-500/15 text-amber-700 dark:text-amber-400 ring-amber-500/30",
+];
+
+const cat = categoryOf(latest.plan.setting);
+// Total play duration: real voice duration (from TTS) + intro + outro stings if mixed.
+// Falls back to word-count estimate when audio metadata missing.
+function durationSec(ep: any): number {
+  const a = ep.audio || {};
+  if (a.durationSec) {
+    const intro = a.mix?.intro?.durationSec ?? 0;
+    const outro = a.mix?.outro?.durationSec ?? 0;
+    return Math.round(a.durationSec + intro + outro);
+  }
+  const words = ep.dialogue.lines.reduce((n: number, l: any) => n + l.text.split(/\s+/).length, 0);
+  return Math.ceil(words / 130 * 60);
+}
+function fmtDur(s: number): string {
+  const m = Math.floor(s / 60);
+  const sec = s % 60;
+  return `${m}:${sec.toString().padStart(2, "0")}`;
+}
+const totalDuration = durationSec(latest);
+const speakerColorMap: Record<string, string> = {};
+latest.dialogue.characters.forEach((c: any, i: number) => {
+  speakerColorMap[c.name] = speakerColors[i % speakerColors.length];
+});
+
+// Parse light markdown (*em*, **strong**) + style audio tags like [chuckles], [sighs]
+function htmlEscape(s: string): string {
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+function renderText(s: string): string {
+  if (!s) return "";
+  return htmlEscape(s)
+    .replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold text-zinc-900 dark:text-zinc-50">$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em class="italic font-medium text-zinc-900 dark:text-zinc-50">$1</em>')
+    .replace(/\[([^\]]+?)\]/g, '<span class="inline-block text-[10px] font-mono uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mr-0.5">[$1]</span>');
+}
+
+const hasRealAudio = latest.audio?.file;
+// Embed audio as base64 data URL inline → bypasses ALL download managers (IDM etc.)
+// because no separate HTTP request is made for the audio file.
+let audioSrc: string | null = null;
+if (hasRealAudio) {
+  const filePath = join(process.cwd(), "public", "audio", latest.audio.file);
+  if (existsSync(filePath)) {
+    const buf = readFileSync(filePath);
+    const mime = latest.audio.file.endsWith(".mp3") ? "audio/mpeg" : "audio/wav";
+    audioSrc = `data:${mime};base64,${buf.toString("base64")}`;
+  }
+}
+---
+
+<BaseLayout
+  title="EnglishFlow — Daily English for Cloud Engineers"
+  description="AI-generated daily dialogues for cloud / SRE / DevOps engineers."
+>
+  <header class="sticky top-0 z-40 border-b border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-950/80 backdrop-blur">
+    <nav class="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
+      <a href={`${BASE}english/`} class="font-mono font-bold text-zinc-900 dark:text-zinc-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+        ← <span class="text-zinc-400 dark:text-zinc-600">english /</span> {latest.id}
+      </a>
+      <div class="flex items-center gap-1">
+        <a href={`${BASE}english/`} class="px-3 py-1.5 text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100">All episodes</a>
+        <button id="toggle-vn" class="px-3 py-1.5 text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 cursor-pointer">
+          <span class="inline-block w-2 h-2 rounded-full bg-zinc-300 dark:bg-zinc-700 mr-1.5 align-middle" id="vn-dot"></span>VN hints
+        </button>
+        <a href={BASE} class="px-3 py-1.5 text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100">Portfolio</a>
+        <button id="theme-toggle" aria-label="Toggle theme" class="ml-2 px-2 py-1 text-xs font-mono text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 cursor-pointer">[theme]</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="flex-1 pb-28">
+    <div class="max-w-[720px] mx-auto px-6">
+
+      <!-- BRAND HERO -->
+      <section class="pt-12 pb-4">
+        <h1 class="text-[34px] sm:text-[40px] font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
+          English<span class="italic-serif text-emerald-600 dark:text-emerald-400">Flow</span>
+        </h1>
+        <p class="text-[14px] text-zinc-500 dark:text-zinc-500 mt-1">
+          Daily English for the Cloud team.
+        </p>
+      </section>
+
+      <!-- EPISODE POSTER -->
+      <section class="py-6">
+        <div class="text-[11px] font-mono uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-500 mb-3">
+          Episode · {pubDate(latest)}
+        </div>
+
+        <article class="rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950">
+          <!-- Poster gradient -->
+          <div class={`relative aspect-[5/2] bg-gradient-to-br ${cat.gradient} flex flex-col justify-between p-5`}>
+            <div class="flex justify-between items-start">
+              <span class="px-2.5 py-1 rounded-full bg-white/20 backdrop-blur text-white text-[11px] font-medium tracking-wide">{cat.name}</span>
+              <span class={`px-2 py-0.5 rounded-md border text-[11px] font-mono ${levelColor[latest.plan.level] ?? levelColor.B2}`}>{latest.plan.level}</span>
+            </div>
+            <div>
+              <h2 class="text-white text-[26px] sm:text-[30px] font-semibold tracking-tight leading-tight drop-shadow-sm">
+                {latest.dialogue.title}
+              </h2>
+              <p class="text-white/80 text-[13px] mt-1 italic-serif drop-shadow-sm">
+                {latest.plan.setting}
+              </p>
+            </div>
+          </div>
+
+          <!-- Player bar -->
+          <div class="px-5 py-3.5 flex items-center justify-between gap-3 border-t border-zinc-200 dark:border-zinc-800">
+            <button
+              id="play-episode"
+              class="flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900 dark:bg-emerald-500 hover:bg-zinc-700 dark:hover:bg-emerald-400 text-white dark:text-zinc-950 text-[13px] font-semibold transition-colors cursor-pointer"
+            >
+              <svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l11-6L3 2z"/></svg>
+              <span id="play-label">Play episode</span>
+            </button>
+
+            <div class="flex items-center gap-3 text-[12px] text-zinc-500 dark:text-zinc-500 font-mono tabular-nums">
+              <span>{fmtDur(totalDuration)}</span>
+              <span class="text-zinc-300 dark:text-zinc-700">·</span>
+              <span>{latest.dialogue.characters.length} speakers</span>
+              <span class="text-zinc-300 dark:text-zinc-700">·</span>
+              <a
+                href="#vocabulary"
+                class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors underline decoration-dotted underline-offset-2"
+                title="Jump to vocabulary"
+              >{latest.vocab.length} key terms ↓</a>
+            </div>
+          </div>
+
+          {audioSrc && (
+            <audio
+              id="episode-audio"
+              data-src={audioSrc}
+              preload="none"
+              controlslist="nodownload"
+              oncontextmenu="return false;"
+            ></audio>
+          )}
+        </article>
+
+        {!hasRealAudio && (
+          <p class="text-[11px] text-amber-600 dark:text-amber-400 mt-3 font-mono">
+            ⚡ demo audio: browser TTS · Gemini multi-voice activates when GEMINI_API_KEY is set
+          </p>
+        )}
+      </section>
+
+      <!-- DIALOGUE -->
+      <section class="py-10 border-t border-zinc-200 dark:border-zinc-800">
+        <div class="flex items-baseline justify-between mb-6">
+          <h3 class="text-[12px] font-medium tracking-[0.18em] uppercase text-zinc-500 dark:text-zinc-500">Dialogue</h3>
+          <div class="text-[11px] font-mono text-zinc-400 dark:text-zinc-600">
+            {latest.dialogue.characters.map((c: any, i: number) => (
+              <span class="ml-2">
+                <span class={`inline-block w-1.5 h-1.5 rounded-full mr-1 align-middle ${speakerColorMap[c.name].split(' ')[0].replace('/15','')}`}></span>
+                {c.name}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div class="space-y-3" id="dialogue-list">
+          {latest.dialogue.lines.map((l: any, i: number) => (
+            <div
+              class="dialogue-line group flex gap-3 p-3 rounded-lg border border-transparent hover:border-zinc-200 dark:hover:border-zinc-800 hover:bg-zinc-50/50 dark:hover:bg-zinc-900/40 transition-colors cursor-pointer"
+              data-text={l.text}
+              data-speaker={l.speaker}
+              data-index={i}
+            >
+              <div class={`shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-[12px] font-semibold ring-1 ${speakerColorMap[l.speaker]}`}>
+                {l.speaker[0]}
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 mb-0.5">
+                  <div class="text-[11px] font-mono uppercase tracking-wider text-zinc-400 dark:text-zinc-600">
+                    {l.speaker}
+                  </div>
+                  {l.emotion && (
+                    <span class="text-[10px] italic-serif text-zinc-400 dark:text-zinc-600">
+                      · {l.emotion}
+                    </span>
+                  )}
+                </div>
+                <p class="text-[15px] text-zinc-800 dark:text-zinc-200 leading-[1.65] line-text" set:html={renderText(l.text)}></p>
+                {l.vn && (
+                  <p class="vn-line text-[13px] text-zinc-500 dark:text-zinc-500 italic-serif leading-[1.55] mt-1.5 pl-3 border-l-2 border-emerald-400/40 dark:border-emerald-500/30 hidden" set:html={renderText(l.vn)}></p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- VOCAB -->
+      <section id="vocabulary" class="py-10 border-t border-zinc-200 dark:border-zinc-800 scroll-mt-20">
+        <div class="flex items-baseline justify-between mb-6">
+          <h3 class="text-[12px] font-medium tracking-[0.18em] uppercase text-zinc-500 dark:text-zinc-500">
+            Vocabulary <span class="text-zinc-400 dark:text-zinc-600 font-mono normal-case tracking-normal">({latest.vocab.length})</span>
+          </h3>
+          <span class="text-[11px] font-mono text-zinc-400 dark:text-zinc-600">click to highlight ↓</span>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-2.5">
+          {latest.vocab.map((v: any) => (
+            <button
+              class="vocab-card text-left p-3.5 rounded-lg border border-zinc-200 dark:border-zinc-800 hover:border-emerald-500 dark:hover:border-emerald-400 hover:shadow-sm dark:hover:bg-zinc-900/40 transition-all cursor-pointer"
+              data-term={v.term}
+            >
+              <div class="flex items-baseline gap-2 mb-1 flex-wrap">
+                <span class="font-semibold text-[14.5px] text-zinc-900 dark:text-zinc-50">{v.term}</span>
+                <span class="font-mono text-[10.5px] text-zinc-400 dark:text-zinc-600">{v.ipa}</span>
+              </div>
+              <p class="text-[12.5px] text-zinc-600 dark:text-zinc-400 mb-1.5 leading-snug">{v.vn}</p>
+              <p class="text-[12px] italic-serif text-zinc-500 dark:text-zinc-500 leading-snug">"{v.example}"</p>
+            </button>
+          ))}
+        </div>
+      </section>
+
+      <!-- MORE EPISODES -->
+      {episodes.filter((e: any) => e.id !== latest.id).length > 0 && (
+        <section class="py-10 border-t border-zinc-200 dark:border-zinc-800">
+          <h3 class="text-[12px] font-medium tracking-[0.18em] uppercase text-zinc-500 dark:text-zinc-500 mb-5">
+            More episodes
+          </h3>
+          <div class="grid sm:grid-cols-2 gap-3">
+            {episodes.filter((e: any) => e.id !== latest.id).map((e: any) => {
+              const c = categoryOf(e.plan.setting);
+              return (
+                <a href={`${BASE}english/${e.id}/`} class="block rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 hover:border-emerald-500 dark:hover:border-emerald-400 transition-colors group">
+                  <div class={`aspect-[5/2] bg-gradient-to-br ${c.gradient} p-3 flex flex-col justify-between`}>
+                    <div class="flex items-start justify-between">
+                      <span class="px-2 py-0.5 rounded-full bg-white/20 backdrop-blur text-white text-[10px] font-medium">{c.name}</span>
+                      <span class={`px-1.5 py-0 rounded-md text-[10px] font-mono ${levelColor[e.plan.level] ?? levelColor.B2}`}>{e.plan.level}</span>
+                    </div>
+                    <h4 class="text-white text-[15px] font-semibold leading-tight drop-shadow-sm line-clamp-2">
+                      {e.dialogue.title}
+                    </h4>
+                  </div>
+                  <div class="px-3 py-2 flex items-center justify-between text-[11px] font-mono text-zinc-500 dark:text-zinc-500">
+                    <span class="tabular-nums">{pubDate(e)}</span>
+                    <span class="group-hover:text-emerald-600 dark:group-hover:text-emerald-400">{e.vocab.length} terms →</span>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        </section>
+      )}
+    </div>
+  </main>
+
+  <!-- FLOATING PLAYER (standard media bar) -->
+  <div id="floating-player" class="fixed bottom-0 left-0 right-0 border-t border-zinc-200 dark:border-zinc-800 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md translate-y-full transition-transform duration-300 z-50">
+    <div class="max-w-[720px] mx-auto px-6 py-3 flex items-center gap-3">
+      <button id="fp-toggle" aria-label="Play/Pause" class="w-9 h-9 rounded-full bg-zinc-900 dark:bg-emerald-500 text-white dark:text-zinc-950 flex items-center justify-center cursor-pointer shrink-0 hover:bg-zinc-700 dark:hover:bg-emerald-400 transition-colors">
+        <svg id="fp-icon-play" class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l11-6L3 2z"/></svg>
+        <svg id="fp-icon-pause" class="w-3.5 h-3.5 hidden" viewBox="0 0 16 16" fill="currentColor"><rect x="3" y="2" width="3" height="12"/><rect x="10" y="2" width="3" height="12"/></svg>
+      </button>
+      <div class="flex-1 min-w-0">
+        <div id="fp-title" class="text-[12px] text-zinc-600 dark:text-zinc-400 truncate mb-1">{latest.dialogue.title}</div>
+        <div class="flex items-center gap-2">
+          <span id="fp-current" class="text-[10.5px] font-mono tabular-nums text-zinc-500 dark:text-zinc-500 shrink-0 w-8 text-right">0:00</span>
+          <input
+            id="fp-progress"
+            type="range"
+            min="0"
+            max="1000"
+            value="0"
+            step="1"
+            class="flex-1 h-1 appearance-none bg-zinc-200 dark:bg-zinc-800 rounded-full cursor-pointer accent-emerald-500"
+            aria-label="Seek"
+          />
+          <span id="fp-duration" class="text-[10.5px] font-mono tabular-nums text-zinc-500 dark:text-zinc-500 shrink-0 w-8">0:00</span>
+        </div>
+      </div>
+      <button id="fp-close" aria-label="Close" class="text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300 cursor-pointer text-xl leading-none shrink-0 w-6 h-6 flex items-center justify-center">×</button>
+    </div>
+  </div>
+
+  <footer class="border-t border-zinc-200 dark:border-zinc-800">
+    <div class="max-w-[720px] mx-auto px-6 py-6 text-center text-[12px] text-zinc-400 dark:text-zinc-600 space-y-1">
+      <div>© {new Date().getFullYear()} EnglishFlow. All rights reserved.</div>
+      <div>Made with <span class="text-rose-500">❤</span> by Joey Tran</div>
+    </div>
+  </footer>
+
+  <script is:inline>
+    // === VN hints toggle — reveals Vietnamese translation under each line ===
+    const vnBtn = document.getElementById("toggle-vn");
+    const vnDot = document.getElementById("vn-dot");
+    const vnLines = document.querySelectorAll(".vn-line");
+    // Persist preference
+    let vnOn = localStorage.getItem("vn-hints") === "on";
+    applyVn(vnOn);
+    vnBtn?.addEventListener("click", () => {
+      vnOn = !vnOn;
+      applyVn(vnOn);
+      localStorage.setItem("vn-hints", vnOn ? "on" : "off");
+    });
+    function applyVn(on) {
+      vnLines.forEach((el) => el.classList.toggle("hidden", !on));
+      vnDot.classList.toggle("bg-zinc-300", !on);
+      vnDot.classList.toggle("dark:bg-zinc-700", !on);
+      vnDot.classList.toggle("bg-emerald-500", on);
+    }
+
+    // === Vocab → highlight in dialogue ===
+    let highlightTimer;
+    document.querySelectorAll(".vocab-card").forEach((card) => {
+      card.addEventListener("click", () => {
+        const term = card.dataset.term.toLowerCase();
+        clearTimeout(highlightTimer);
+        document.querySelectorAll(".line-text").forEach((p) => {
+          const html = p.dataset.original ?? p.textContent;
+          if (!p.dataset.original) p.dataset.original = html;
+          const re = new RegExp(`(${term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`, "gi");
+          p.innerHTML = html.replace(re, '<mark class="bg-emerald-200 dark:bg-emerald-900/60 text-zinc-900 dark:text-emerald-100 rounded px-0.5">$1</mark>');
+        });
+        // Scroll first match into view
+        const first = document.querySelector(".line-text mark");
+        first?.scrollIntoView({ behavior: "smooth", block: "center" });
+        highlightTimer = setTimeout(() => {
+          document.querySelectorAll(".line-text").forEach((p) => {
+            if (p.dataset.original) p.innerHTML = p.dataset.original;
+          });
+        }, 6000);
+      });
+    });
+
+    // === Audio playback ===
+    const audioEl = document.getElementById("episode-audio");
+    const fp = document.getElementById("floating-player");
+    const fpToggle = document.getElementById("fp-toggle");
+    const fpClose = document.getElementById("fp-close");
+    const fpIconPlay = document.getElementById("fp-icon-play");
+    const fpIconPause = document.getElementById("fp-icon-pause");
+    const fpCurrent = document.getElementById("fp-current");
+    const fpDuration = document.getElementById("fp-duration");
+    const fpProgress = document.getElementById("fp-progress");
+    const playLabel = document.getElementById("play-label");
+
+    function fmtTime(s) {
+      if (!isFinite(s) || s < 0) return "0:00";
+      const m = Math.floor(s / 60);
+      const sec = Math.floor(s % 60);
+      return m + ":" + (sec < 10 ? "0" : "") + sec;
+    }
+    function setIconPlaying(playing) {
+      fpIconPlay?.classList.toggle("hidden", playing);
+      fpIconPause?.classList.toggle("hidden", !playing);
+    }
+    if (audioEl) {
+      audioEl.addEventListener("loadedmetadata", () => {
+        fpDuration.textContent = fmtTime(audioEl.duration);
+      });
+      audioEl.addEventListener("timeupdate", () => {
+        fpCurrent.textContent = fmtTime(audioEl.currentTime);
+        if (audioEl.duration > 0 && !fpProgress.dataset.scrubbing) {
+          fpProgress.value = String((audioEl.currentTime / audioEl.duration) * 1000);
+        }
+      });
+      audioEl.addEventListener("play", () => setIconPlaying(true));
+      audioEl.addEventListener("pause", () => setIconPlaying(false));
+      audioEl.addEventListener("ended", () => setIconPlaying(false));
+
+      // Seek by scrubbing the progress bar
+      fpProgress.addEventListener("input", () => {
+        fpProgress.dataset.scrubbing = "1";
+        if (audioEl.duration > 0) {
+          audioEl.currentTime = (Number(fpProgress.value) / 1000) * audioEl.duration;
+        }
+      });
+      fpProgress.addEventListener("change", () => {
+        delete fpProgress.dataset.scrubbing;
+      });
+    }
+
+    // Audio is embedded as data: URL inline → no HTTP request → IDM can't intercept.
+    // Set src once on first interaction, let browser handle loading natively.
+    let srcAssigned = false;
+    function ensureAudioSrc() {
+      if (!audioEl || srcAssigned) return;
+      audioEl.src = audioEl.dataset.src;
+      srcAssigned = true;
+    }
+
+    function showPlayer() { fp.classList.remove("translate-y-full"); }
+    function hidePlayer() { fp.classList.add("translate-y-full"); }
+    fpClose?.addEventListener("click", () => {
+      window.speechSynthesis?.cancel();
+      audioEl?.pause();
+      hidePlayer();
+    });
+
+    // Browser TTS fallback (when no audio file)
+    let queue = [];
+    let playing = false;
+    function speakNext() {
+      if (!queue.length) {
+        playing = false;
+        playLabel.textContent = "Play episode";
+        hidePlayer();
+        return;
+      }
+      const { speaker, text } = queue.shift();
+      showPlayer();
+      const u = new SpeechSynthesisUtterance(text);
+      u.rate = 0.95;
+      u.lang = "en-US";
+      // Simple voice assignment: alternate pitch by speaker hash
+      const hash = [...speaker].reduce((s, c) => s + c.charCodeAt(0), 0);
+      u.pitch = (hash % 2) === 0 ? 1.15 : 0.9;
+      u.onend = speakNext;
+      window.speechSynthesis.speak(u);
+    }
+    async function playAll() {
+      if (audioEl) {
+        ensureAudioSrc();
+        playLabel.textContent = "Loading…";
+        showPlayer();
+        try {
+          await audioEl.play();
+          playing = true;
+          playLabel.textContent = "Pause";
+          audioEl.onended = () => {
+            playing = false;
+            playLabel.textContent = "Play episode";
+            hidePlayer();
+          };
+        } catch (e) {
+          console.error("[EnglishFlow] play() rejected:", e);
+          playLabel.textContent = "Play episode";
+          hidePlayer();
+        }
+      } else {
+        // Browser TTS fallback
+        window.speechSynthesis?.cancel();
+        queue = [...document.querySelectorAll(".dialogue-line")].map((l) => ({
+          speaker: l.dataset.speaker,
+          text: l.dataset.text,
+        }));
+        playing = true;
+        playLabel.textContent = "Pause";
+        speakNext();
+      }
+    }
+    function pauseAll() {
+      if (audioEl) audioEl.pause();
+      window.speechSynthesis?.cancel();
+      queue = [];
+      playing = false;
+      playLabel.textContent = "Play episode";
+    }
+    document.getElementById("play-episode")?.addEventListener("click", () => {
+      if (playing) pauseAll();
+      else playAll();
+    });
+    fpToggle?.addEventListener("click", () => {
+      if (audioEl) {
+        ensureAudioSrc();
+        if (audioEl.paused) audioEl.play();
+        else audioEl.pause();
+      } else if (playing) {
+        pauseAll();
+      }
+    });
+
+    // Click any dialogue line → toggle play/pause of the episode audio.
+    // (Per-line seek isn't available until we get per-line TTS timestamps.)
+    document.querySelectorAll(".dialogue-line").forEach((line) => {
+      line.addEventListener("click", () => {
+        const { speaker, text } = line.dataset;
+        if (audioEl) {
+          ensureAudioSrc();
+          if (audioEl.paused) {
+            showPlayer();
+            audioEl.play().catch((e) => console.error("[EnglishFlow] line play failed:", e));
+          } else {
+            audioEl.pause();
+          }
+        } else {
+          // Browser TTS fallback: speak that single line
+          window.speechSynthesis?.cancel();
+          showPlayer();
+          const u = new SpeechSynthesisUtterance(text);
+          u.rate = 0.95;
+          u.lang = "en-US";
+          const hash = [...speaker].reduce((s, c) => s + c.charCodeAt(0), 0);
+          u.pitch = (hash % 2) === 0 ? 1.15 : 0.9;
+          u.onend = hidePlayer;
+          window.speechSynthesis.speak(u);
+        }
+      });
+    });
+  </script>
+</BaseLayout>
