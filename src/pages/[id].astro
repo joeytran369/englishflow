@@ -1,10 +1,10 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 const BASE = import.meta.env.BASE_URL;
 
-const episodeFiles = import.meta.glob("../../../content/*.json", {
+const episodeFiles = import.meta.glob("../../content/*.json", {
   eager: true,
   import: "default",
 });
@@ -20,7 +20,7 @@ function pubDate(ep: any): string {
 }
 
 export async function getStaticPaths() {
-  const files = import.meta.glob("../../../content/*.json", { eager: true, import: "default" });
+  const files = import.meta.glob("../../content/*.json", { eager: true, import: "default" });
   return Object.values(files).map((ep: any) => ({ params: { id: ep.id } }));
 }
 
@@ -121,15 +121,14 @@ if (hasRealAudio) {
 >
   <header class="sticky top-0 z-40 border-b border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-950/80 backdrop-blur">
     <nav class="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
-      <a href={`${BASE}english/`} class="font-mono font-bold text-zinc-900 dark:text-zinc-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
-        ← <span class="text-zinc-400 dark:text-zinc-600">english /</span> {latest.id}
+      <a href={`${BASE}`} class="font-mono font-bold text-zinc-900 dark:text-zinc-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors flex items-center gap-1.5">
+        <span>←</span>
+        <span>English<span class="italic-serif text-emerald-600 dark:text-emerald-400">Flow</span></span>
       </a>
       <div class="flex items-center gap-1">
-        <a href={`${BASE}english/`} class="px-3 py-1.5 text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100">All episodes</a>
         <button id="toggle-vn" class="px-3 py-1.5 text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 cursor-pointer">
           <span class="inline-block w-2 h-2 rounded-full bg-zinc-300 dark:bg-zinc-700 mr-1.5 align-middle" id="vn-dot"></span>VN hints
         </button>
-        <a href={BASE} class="px-3 py-1.5 text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100">Portfolio</a>
         <button id="theme-toggle" aria-label="Toggle theme" class="ml-2 px-2 py-1 text-xs font-mono text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 cursor-pointer">[theme]</button>
       </div>
     </nav>
@@ -138,18 +137,8 @@ if (hasRealAudio) {
   <main class="flex-1 pb-28">
     <div class="max-w-[720px] mx-auto px-6">
 
-      <!-- BRAND HERO -->
-      <section class="pt-12 pb-4">
-        <h1 class="text-[34px] sm:text-[40px] font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
-          English<span class="italic-serif text-emerald-600 dark:text-emerald-400">Flow</span>
-        </h1>
-        <p class="text-[14px] text-zinc-500 dark:text-zinc-500 mt-1">
-          Daily English for the Cloud team.
-        </p>
-      </section>
-
       <!-- EPISODE POSTER -->
-      <section class="py-6">
+      <section class="pt-10 pb-6">
         <div class="text-[11px] font-mono uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-500 mb-3">
           Episode · {pubDate(latest)}
         </div>
@@ -294,7 +283,7 @@ if (hasRealAudio) {
             {episodes.filter((e: any) => e.id !== latest.id).map((e: any) => {
               const c = categoryOf(e.plan.setting);
               return (
-                <a href={`${BASE}english/${e.id}/`} class="block rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 hover:border-emerald-500 dark:hover:border-emerald-400 transition-colors group">
+                <a href={`${BASE}${e.id}/`} class="block rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 hover:border-emerald-500 dark:hover:border-emerald-400 transition-colors group">
                   <div class={`aspect-[5/2] bg-gradient-to-br ${c.gradient} p-3 flex flex-col justify-between`}>
                     <div class="flex items-start justify-between">
                       <span class="px-2 py-0.5 rounded-full bg-white/20 backdrop-blur text-white text-[10px] font-medium">{c.name}</span>
