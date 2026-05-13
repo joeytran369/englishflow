@@ -47,16 +47,15 @@ function buildEnrichedPrompt(episode, voiceMap) {
     .map((c) => `- ${c.name} (voice: ${voiceMap[c.name]}): ${c.role}. Vibe: ${c.voiceProfile || "neutral"}.`)
     .join("\n");
 
-  const directive = `You are voicing a SCENE from a tech podcast, not reading a script. Make every line sound like a real human in a real moment — NOT a narrator, NOT a news anchor, NOT calm/measured.
+  const directive = `Voice this as a REAL conversation between real people — natural, unforced, conversational. NOT theatrical. NOT a narrator. NOT a podcast host performing.
 
-CRITICAL DIRECTIVES:
-- Vary energy and pacing dramatically: fast when stressed, slow when explaining, snappy on interjections.
-- Include natural laughter, sighs, exhales, hesitations, audible thinking ("uh", "hm").
-- Honor INTERRUPTIONS (mid-sentence cut-offs) — speakers can overlap, jump in, finish each other's sentences.
-- Inject personality matching each character's vibe. A "tired-veteran" sounds gruff and dry. A "junior-excited" is fast and bright. A "senior-calm" has dry humor.
-- Treat punctuation as performance cues: dashes = mid-thought breaks, ellipsis = trailing off, question marks = real upward inflection.
-- Read [bracketed tags] as performance instructions, not literal words. E.g. [chuckles] = actually chuckle.
-- Light banter and humor are welcome — engineers are people, not robots.
+CRITICAL — sound natural:
+- Speak the way coworkers actually talk: relaxed pacing, light fillers if written, real pauses where punctuation suggests.
+- Honor punctuation as the primary performance cue: em-dash = mid-thought break, ellipsis = trailing off, ? = genuine upward inflection, ! = mild emphasis (NOT shouting).
+- Bracketed cues like [sighs] or [chuckles] are RARE narrative beats. When you encounter one, make it SUBTLE and EARNED — never melodramatic, never repeated, never performative.
+- Most lines have NO audio tags. Carry emotion through delivery, not sound effects.
+- Distinct vibe per character but stay grounded: a "tired-veteran" is matter-of-fact and dry, NOT constantly sighing. A "junior-anxious" speaks slightly faster, NOT panting.
+- Avoid: forced laughs, fake sighs, exaggerated reactions, "theater voice".
 
 Scene: ${brief}
 

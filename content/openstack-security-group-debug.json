@@ -239,6 +239,74 @@
         "durationSec": 5
       },
       "layout": "5s intro sting · voice (clean) · 5s outro sting"
+    },
+    "align": {
+      "aligned": true,
+      "model": "base.en",
+      "introOffsetSec": 5,
+      "lineTimings": [
+        {
+          "lineIndex": 0,
+          "start": 5,
+          "end": 12.96,
+          "durationSec": 7.96
+        },
+        {
+          "lineIndex": 1,
+          "start": 12.96,
+          "end": 21.6,
+          "durationSec": 8.64
+        },
+        {
+          "lineIndex": 2,
+          "start": 21.6,
+          "end": 29.08,
+          "durationSec": 7.48
+        },
+        {
+          "lineIndex": 3,
+          "start": 29.08,
+          "end": 36.36,
+          "durationSec": 7.28
+        },
+        {
+          "lineIndex": 4,
+          "start": 36.36,
+          "end": 42.12,
+          "durationSec": 5.76
+        },
+        {
+          "lineIndex": 5,
+          "start": 42.12,
+          "end": 52.36,
+          "durationSec": 10.24
+        },
+        {
+          "lineIndex": 6,
+          "start": 52.36,
+          "end": 61.36,
+          "durationSec": 9
+        },
+        {
+          "lineIndex": 7,
+          "start": 61.36,
+          "end": 70.4,
+          "durationSec": 9.04
+        },
+        {
+          "lineIndex": 8,
+          "start": 70.4,
+          "end": 79.08,
+          "durationSec": 8.68
+        },
+        {
+          "lineIndex": 9,
+          "start": 79.08,
+          "end": 85.96,
+          "durationSec": 6.88
+        }
+      ],
+      "segmentCount": 36
     }
   },
   "publishedAt": "2026-05-11"

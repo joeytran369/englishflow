@@ -216,12 +216,16 @@ if (hasRealAudio) {
         </div>
 
         <div class="space-y-3" id="dialogue-list">
-          {latest.dialogue.lines.map((l: any, i: number) => (
+          {latest.dialogue.lines.map((l: any, i: number) => {
+            const t = latest.audio?.align?.lineTimings?.[i];
+            return (
             <div
               class="dialogue-line group flex gap-3 p-3 rounded-lg border border-transparent hover:border-zinc-200 dark:hover:border-zinc-800 hover:bg-zinc-50/50 dark:hover:bg-zinc-900/40 transition-colors cursor-pointer"
               data-text={l.text}
               data-speaker={l.speaker}
               data-index={i}
+              data-start={t?.start ?? ""}
+              data-end={t?.end ?? ""}
             >
               <div class={`shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-[12px] font-semibold ring-1 ${speakerColorMap[l.speaker]}`}>
                 {l.speaker[0]}
@@ -242,8 +246,19 @@ if (hasRealAudio) {
                   <p class="vn-line text-[13px] text-zinc-500 dark:text-zinc-500 italic-serif leading-[1.55] mt-1.5 pl-3 border-l-2 border-emerald-400/40 dark:border-emerald-500/30 hidden" set:html={renderText(l.vn)}></p>
                 )}
               </div>
+              {t && (
+                <button
+                  class="loop-btn shrink-0 self-start opacity-0 group-hover:opacity-100 transition-opacity p-1.5 rounded text-zinc-400 dark:text-zinc-600 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-950/40"
+                  data-index={i}
+                  aria-label="Loop this line"
+                  title="Loop this line"
+                >
+                  <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7a4 4 0 014-4h6m0 0l-2-2m2 2l-2 2"/><path d="M13 9a4 4 0 01-4 4H3m0 0l2 2m-2-2l2-2"/></svg>
+                </button>
+              )}
             </div>
-          ))}
+            )
+          })}
         </div>
       </section>
 
@@ -522,19 +537,47 @@ if (hasRealAudio) {
       }
     });
 
-    // Click any dialogue line → toggle play/pause of the episode audio.
-    // (Per-line seek isn't available until we get per-line TTS timestamps.)
-    document.querySelectorAll(".dialogue-line").forEach((line) => {
-      line.addEventListener("click", () => {
+    // === Per-line interaction (uses Whisper-aligned timestamps) ===
+    const lineEls = [...document.querySelectorAll(".dialogue-line")];
+    let loopLineIdx = null; // when set, audio loops that single line
+
+    function highlightLine(idx) {
+      lineEls.forEach((el, i) => {
+        const on = i === idx;
+        el.classList.toggle("bg-emerald-50/70", on);
+        el.classList.toggle("dark:bg-emerald-950/30", on);
+        el.classList.toggle("border-emerald-200", on);
+        el.classList.toggle("dark:border-emerald-900", on);
+      });
+    }
+    function setLoopButton(idx) {
+      document.querySelectorAll(".loop-btn").forEach((b) => {
+        const on = Number(b.dataset.index) === idx;
+        b.classList.toggle("opacity-100", on);
+        b.classList.toggle("text-emerald-600", on);
+        b.classList.toggle("dark:text-emerald-400", on);
+        b.classList.toggle("bg-emerald-50", on);
+        b.classList.toggle("dark:bg-emerald-950/40", on);
+      });
+    }
+
+    // Click any dialogue line → seek to its start (if timings) + play
+    lineEls.forEach((line) => {
+      line.addEventListener("click", (e) => {
+        if (e.target.closest(".loop-btn")) return; // let the loop button handle itself
         const { speaker, text } = line.dataset;
-        if (audioEl) {
+        const start = parseFloat(line.dataset.start);
+        if (audioEl && !isNaN(start)) {
           ensureAudioSrc();
-          if (audioEl.paused) {
-            showPlayer();
-            audioEl.play().catch((e) => console.error("[EnglishFlow] line play failed:", e));
-          } else {
-            audioEl.pause();
-          }
+          showPlayer();
+          loopLineIdx = null;
+          setLoopButton(null);
+          audioEl.currentTime = start;
+          audioEl.play().catch((err) => console.error("[EnglishFlow] line play failed:", err));
+        } else if (audioEl) {
+          ensureAudioSrc();
+          if (audioEl.paused) { showPlayer(); audioEl.play(); }
+          else audioEl.pause();
         } else {
           // Browser TTS fallback: speak that single line
           window.speechSynthesis?.cancel();
@@ -549,5 +592,59 @@ if (hasRealAudio) {
         }
       });
     });
+
+    // Loop button on each line — toggle single-line loop
+    document.querySelectorAll(".loop-btn").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (!audioEl) return;
+        const idx = Number(btn.dataset.index);
+        const line = lineEls[idx];
+        const start = parseFloat(line.dataset.start);
+        if (isNaN(start)) return;
+        if (loopLineIdx === idx) {
+          // toggle off
+          loopLineIdx = null;
+          setLoopButton(null);
+        } else {
+          loopLineIdx = idx;
+          setLoopButton(idx);
+          ensureAudioSrc();
+          audioEl.currentTime = start;
+          showPlayer();
+          audioEl.play().catch(() => {});
+        }
+      });
+    });
+
+    // During playback: highlight current line + enforce loop
+    if (audioEl) {
+      audioEl.addEventListener("timeupdate", () => {
+        const t = audioEl.currentTime;
+        // Loop enforcement
+        if (loopLineIdx != null) {
+          const line = lineEls[loopLineIdx];
+          const lineEnd = parseFloat(line.dataset.end);
+          const lineStart = parseFloat(line.dataset.start);
+          if (!isNaN(lineEnd) && t >= lineEnd) {
+            audioEl.currentTime = lineStart;
+          }
+        }
+        // Highlight whichever line contains current time
+        let activeIdx = -1;
+        for (let i = 0; i < lineEls.length; i++) {
+          const s = parseFloat(lineEls[i].dataset.start);
+          const e = parseFloat(lineEls[i].dataset.end);
+          if (!isNaN(s) && !isNaN(e) && t >= s && t < e) { activeIdx = i; break; }
+        }
+        highlightLine(activeIdx);
+      });
+      audioEl.addEventListener("pause", () => highlightLine(-1));
+      audioEl.addEventListener("ended", () => {
+        highlightLine(-1);
+        loopLineIdx = null;
+        setLoopButton(null);
+      });
+    }
   </script>
 </BaseLayout>
