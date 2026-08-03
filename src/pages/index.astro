@@ -1,172 +1,132 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  sortByPublished,
+  pubDate,
+  categoryOf,
+  categorySlug,
+  levelColor,
+  durationSec,
+  fmtDur,
+  groupByCategory,
+  type Episode,
+} from "../lib/episodes";
 const BASE = import.meta.env.BASE_URL;
 
 const episodeFiles = import.meta.glob("../../content/*.json", {
   eager: true,
   import: "default",
 });
-
-// Sort newest first by publishedAt / generatedAt (id is now a slug, not a date)
-const episodes = Object.values(episodeFiles).sort((a: any, b: any) => {
-  const da = (a.publishedAt || a.generatedAt || "");
-  const db = (b.publishedAt || b.generatedAt || "");
-  return db.localeCompare(da);
-});
-
-function pubDate(ep: any): string {
-  return (ep.publishedAt || ep.generatedAt || "").slice(0, 10);
-}
-
-function categoryOf(setting: string, plan?: any): { name: string; gradient: string } {
-  // Explicit override from planner if present
-  if (plan?.category) {
-    const c = String(plan.category);
-    return { name: c, gradient: "from-sky-600 via-blue-600 to-violet-600" };
-  }
-  const s = setting.toLowerCase();
-  const has = (...words: string[]) =>
-    words.some((w) => new RegExp(`\\b${w.replace(/[-\s]/g, "[- ]?")}\\b`, "i").test(s));
-
-  // Order: most specific first. Cloud/infra terms take priority for this team.
-  if (has("openstack", "kubernetes", "k8s", "aws", "gcp", "azure", "cloud", "vpc", "vm", "volume", "snapshot", "ssh", "floating ip", "security group", "network acl", "glance", "cinder", "nova", "neutron"))
-    return { name: "OpenStack", gradient: "from-sky-600 via-blue-600 to-violet-600" };
-  if (has("code review", "pull request", "pr review", "merge conflict", "diff"))
-    return { name: "Code Review", gradient: "from-violet-500 via-purple-500 to-fuchsia-500" };
-  if (has("sprint", "standup", "planning", "scrum", "retro", "kanban"))
-    return { name: "Sprint", gradient: "from-sky-500 via-blue-500 to-indigo-500" };
-  if (has("design", "architecture", "rfc", "adr"))
-    return { name: "Architecture", gradient: "from-emerald-500 via-teal-500 to-cyan-500" };
-  if (has("interview"))
-    return { name: "Interview", gradient: "from-amber-500 via-yellow-500 to-lime-500" };
-  if (has("incident", "outage", "on-call", "p1", "p2", "post-mortem", "war room", "alert"))
-    return { name: "Incident", gradient: "from-rose-500 via-orange-500 to-amber-500" };
-  return { name: "Daily Work", gradient: "from-zinc-500 via-slate-500 to-zinc-600" };
-}
-
-const levelColor: Record<string, string> = {
-  A2: "bg-sky-50 dark:bg-sky-950/40 text-sky-700 dark:text-sky-400 border-sky-200 dark:border-sky-900",
-  B1: "bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border-emerald-200 dark:border-emerald-900",
-  B2: "bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400 border-amber-200 dark:border-amber-900",
-  C1: "bg-rose-50 dark:bg-rose-950/40 text-rose-700 dark:text-rose-400 border-rose-200 dark:border-rose-900",
-};
-
-function durationSec(ep: any): number {
-  const a = ep.audio || {};
-  if (a.durationSec) {
-    const intro = a.mix?.intro?.durationSec ?? 0;
-    const outro = a.mix?.outro?.durationSec ?? 0;
-    return Math.round(a.durationSec + intro + outro);
-  }
-  const words = ep.dialogue.lines.reduce((n: number, l: any) => n + l.text.split(/\s+/).length, 0);
-  return Math.ceil(words / 130 * 60);
-}
-function fmtDur(s: number): string {
-  const m = Math.floor(s / 60);
-  const sec = s % 60;
-  return `${m}:${sec.toString().padStart(2, "0")}`;
-}
-
-const latest = episodes[0] as any;
-const latestCat = latest ? categoryOf(latest.plan.setting) : null;
+const episodes = sortByPublished(Object.values(episodeFiles) as Episode[]);
+const latest = episodes[0];
+const latestCat = latest ? categoryOf(latest.plan.setting, latest.plan) : null;
+const groups = groupByCategory(episodes);
+const BUILD = Date.now().toString(36);
+const PREVIEW_PER_CAT = 4; // cards shown per category section before "See all"
 ---
 
 <BaseLayout
-  title="EnglishFlow — Daily English for Cloud Engineers"
-  description="AI-generated daily dialogues for cloud / SRE / DevOps engineers — listen, read, learn the jargon."
+  title="EnglishFlow — Daily English for Cloud Tech Lovers"
+  description="AI-generated daily dialogues for everyone who loves Cloud tech. Listen, read, learn the jargon."
+  ogImage={latest?.poster?.file ? `posters/${latest.poster.file}` : undefined}
 >
-  <header class="sticky top-0 z-40 border-b border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-950/80 backdrop-blur">
-    <nav class="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
-      <a href={`${BASE}`} class="font-mono font-bold text-zinc-900 dark:text-zinc-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+  <main class="px-6 lg:px-12 py-10 lg:py-14 max-w-3xl mx-auto">
+
+    <section class="pb-8">
+      <h1 class="text-[36px] sm:text-[44px] font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
         English<span class="italic-serif text-emerald-600 dark:text-emerald-400">Flow</span>
-      </a>
-      <button id="theme-toggle" aria-label="Toggle theme" class="px-2 py-1 text-xs font-mono text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 cursor-pointer">[theme]</button>
-    </nav>
-  </header>
+      </h1>
+      <p class="text-[15px] text-zinc-600 dark:text-zinc-400 leading-[1.7] mt-3 max-w-[520px]">
+        Daily English for everyone who loves Cloud tech — short dialogues from real work moments.
+      </p>
+    </section>
 
-  <main class="flex-1">
-    <div class="max-w-[720px] mx-auto px-6">
-
-      <!-- BRAND HERO -->
-      <section class="pt-14 pb-6">
-        <h1 class="text-[40px] sm:text-[48px] font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
-          English<span class="italic-serif text-emerald-600 dark:text-emerald-400">Flow</span>
-        </h1>
-        <p class="text-[15px] text-zinc-600 dark:text-zinc-400 leading-[1.7] mt-3 max-w-[520px]">
-          Daily English for the Cloud team — short dialogues from real work moments.
-        </p>
-      </section>
-
-      {/* TODAY'S FEATURED — big card linking to detail */}
-      {latest && (
-        <section class="pb-6">
-          <div class="text-[11px] font-mono uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-500 mb-3">
-            Latest · {pubDate(latest)}
-          </div>
-          <a
-            href={`${BASE}${latest.id}/`}
-            class="block rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 hover:border-emerald-500 dark:hover:border-emerald-400 transition-colors group"
-          >
-            <div class={`relative aspect-[5/2] bg-gradient-to-br ${latestCat!.gradient} flex flex-col justify-between p-5`}>
+    {latest && (
+      <section class="pb-10">
+        <div class="text-[11px] font-mono uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400 mb-3">
+          Latest · {pubDate(latest)}
+        </div>
+        <a
+          href={`${BASE}${latest.id}/?v=${BUILD}`}
+          class="block rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 hover:border-emerald-500 dark:hover:border-emerald-400 transition-colors group"
+        >
+          <div class="relative aspect-[5/2] overflow-hidden">
+            {latest.poster?.file ? (
+              <img src={`${BASE}posters/${latest.poster.file}`} alt={latest.dialogue.title} class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+            ) : (
+              <div class={`absolute inset-0 bg-gradient-to-br ${latestCat!.gradient}`}></div>
+            )}
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <div class="relative h-full flex flex-col justify-between p-5">
               <div class="flex justify-between items-start">
-                <span class="px-2.5 py-1 rounded-full bg-white/20 backdrop-blur text-white text-[11px] font-medium tracking-wide">{latestCat!.name}</span>
-                <span class={`px-2 py-0.5 rounded-md border text-[11px] font-mono ${levelColor[latest.plan.level] ?? levelColor.B2}`}>{latest.plan.level}</span>
+                <span class="px-2.5 py-1 rounded-full bg-zinc-900/85 backdrop-blur-sm text-white text-[11px] font-semibold tracking-wide ring-1 ring-white/15">{latestCat!.name}</span>
+                <span class={`px-2 py-0.5 rounded-md border text-[11px] font-mono shadow-sm ${levelColor[latest.plan.level] ?? levelColor.B2}`}>{latest.plan.level}</span>
               </div>
-              <div>
-                <h2 class="text-white text-[26px] sm:text-[30px] font-semibold tracking-tight leading-tight drop-shadow-sm">
+              <div class="text-poster">
+                <h2 class="text-white text-[26px] sm:text-[30px] font-semibold tracking-tight leading-tight">
                   {latest.dialogue.title}
                 </h2>
-                <p class="text-white/80 text-[13px] mt-1 italic-serif drop-shadow-sm line-clamp-2">
+                <p class="text-white/95 text-[13px] mt-1 italic-serif line-clamp-2">
                   {latest.plan.setting}
                 </p>
               </div>
             </div>
-            <div class="px-5 py-3 flex items-center justify-between text-[12px] text-zinc-500 dark:text-zinc-500">
-              <div class="flex items-center gap-3 font-mono tabular-nums">
-                <span>{fmtDur(durationSec(latest))}</span>
-                <span class="text-zinc-300 dark:text-zinc-700">·</span>
-                <span>{latest.dialogue.characters.length} speakers</span>
-                <span class="text-zinc-300 dark:text-zinc-700">·</span>
-                <span>{latest.vocab.length} terms</span>
-              </div>
-              <span class="font-medium text-emerald-600 dark:text-emerald-400 group-hover:translate-x-0.5 transition-transform">Open →</span>
+          </div>
+          <div class="px-5 py-3 flex items-center justify-between text-[12px] text-zinc-500 dark:text-zinc-400">
+            <div class="flex items-center gap-3 font-mono tabular-nums">
+              <span>{fmtDur(durationSec(latest))}</span>
+              <span class="text-zinc-300 dark:text-zinc-700">·</span>
+              <span>{latest.vocab.length} terms</span>
             </div>
-          </a>
-        </section>
-      )}
+            <span class="font-medium text-emerald-600 dark:text-emerald-400 group-hover:translate-x-0.5 transition-transform">Open →</span>
+          </div>
+        </a>
+      </section>
+    )}
 
-      {/* LIBRARY GRID — all episodes, clickable */}
-      <section class="py-10 border-t border-zinc-200 dark:border-zinc-800">
-        <div class="flex items-baseline justify-between mb-5">
-          <h3 class="text-[12px] font-medium tracking-[0.18em] uppercase text-zinc-500 dark:text-zinc-500">
-            Library <span class="text-zinc-400 dark:text-zinc-600 font-mono normal-case tracking-normal">({episodes.length})</span>
-          </h3>
-          <span class="text-[11px] font-mono text-zinc-400 dark:text-zinc-600">click a card to open ↓</span>
-        </div>
-
-        {episodes.length === 0 ? (
-          <p class="text-[14px] text-zinc-500 dark:text-zinc-500 italic-serif">
-            No episodes yet. Run the pipeline to generate one.
-          </p>
-        ) : (
+    {groups.map((g) => {
+      const preview = g.episodes.slice(0, PREVIEW_PER_CAT);
+      const hasMore = g.episodes.length > PREVIEW_PER_CAT;
+      return (
+        <section class="py-8 border-t border-zinc-200 dark:border-zinc-800">
+          <div class="flex items-end justify-between mb-4">
+            <a href={`${BASE}category/${g.slug}/?v=${BUILD}`} class="flex items-center gap-2.5 group">
+              <span class={`inline-block w-1.5 h-1.5 rounded-full ${g.style.dot}`}></span>
+              <h3 class="text-[15px] font-semibold tracking-tight text-zinc-900 dark:text-zinc-50 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                {g.name}
+              </h3>
+              <span class="text-[11px] font-mono text-zinc-400 dark:text-zinc-500 tabular-nums">({g.episodes.length})</span>
+            </a>
+            <a href={`${BASE}category/${g.slug}/?v=${BUILD}`} class="text-[12px] font-medium text-emerald-600 dark:text-emerald-400 hover:translate-x-0.5 inline-block transition-transform">
+              {hasMore ? `See all ${g.episodes.length} →` : "View →"}
+            </a>
+          </div>
           <div class="grid sm:grid-cols-2 gap-3">
-            {episodes.map((e: any) => {
-              const c = categoryOf(e.plan.setting);
+            {preview.map((e) => {
+              const c = categoryOf(e.plan.setting, e.plan);
               return (
                 <a
-                  href={`${BASE}${e.id}/`}
+                  href={`${BASE}${e.id}/?v=${BUILD}`}
                   class="block rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 hover:border-emerald-500 dark:hover:border-emerald-400 hover:shadow-sm transition-all group"
                 >
-                  <div class={`aspect-[5/2] bg-gradient-to-br ${c.gradient} p-3 flex flex-col justify-between`}>
-                    <div class="flex items-start justify-between">
-                      <span class="px-2 py-0.5 rounded-full bg-white/20 backdrop-blur text-white text-[10px] font-medium">{c.name}</span>
-                      <span class={`px-1.5 py-0 rounded-md text-[10px] font-mono ${levelColor[e.plan.level] ?? levelColor.B2}`}>{e.plan.level}</span>
+                  <div class="relative aspect-[5/2] overflow-hidden">
+                    {e.poster?.file ? (
+                      <img src={`${BASE}posters/${e.poster.file}`} alt={e.dialogue.title} class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                    ) : (
+                      <div class={`absolute inset-0 bg-gradient-to-br ${c.gradient}`}></div>
+                    )}
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/15 to-transparent"></div>
+                    <div class="relative h-full flex flex-col justify-between p-3">
+                      <div class="flex items-start justify-between">
+                        <span class="px-2 py-0.5 rounded-full bg-zinc-900/85 backdrop-blur-sm text-white text-[10px] font-semibold ring-1 ring-white/15">{c.name}</span>
+                        <span class={`px-1.5 py-0 rounded-md text-[10px] font-mono shadow-sm ${levelColor[e.plan.level] ?? levelColor.B2}`}>{e.plan.level}</span>
+                      </div>
+                      <h4 class="text-poster text-white text-[15px] font-semibold leading-tight line-clamp-2">
+                        {e.dialogue.title}
+                      </h4>
                     </div>
-                    <h4 class="text-white text-[15px] font-semibold leading-tight drop-shadow-sm line-clamp-2">
-                      {e.dialogue.title}
-                    </h4>
                   </div>
-                  <div class="px-3 py-2 flex items-center justify-between text-[11px] font-mono text-zinc-500 dark:text-zinc-500">
+                  <div class="px-3 py-2 flex items-center justify-between text-[11px] font-mono text-zinc-500 dark:text-zinc-400">
                     <span class="tabular-nums">{pubDate(e)}</span>
                     <span class="group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">{fmtDur(durationSec(e))} · {e.vocab.length} terms →</span>
                   </div>
@@ -174,15 +134,9 @@ const latestCat = latest ? categoryOf(latest.plan.setting) : null;
               );
             })}
           </div>
-        )}
-      </section>
-    </div>
-  </main>
+        </section>
+      );
+    })}
 
-  <footer class="border-t border-zinc-200 dark:border-zinc-800 mt-16">
-    <div class="max-w-[720px] mx-auto px-6 py-6 text-center text-[12px] text-zinc-400 dark:text-zinc-600 space-y-1">
-      <div>© {new Date().getFullYear()} EnglishFlow. All rights reserved.</div>
-      <div>Made with <span class="text-rose-500">❤</span> by Joey Tran</div>
-    </div>
-  </footer>
+  </main>
 </BaseLayout>

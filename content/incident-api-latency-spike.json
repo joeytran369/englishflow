@@ -263,66 +263,80 @@
         {
           "lineIndex": 0,
           "start": 5,
-          "end": 13.98,
-          "durationSec": 8.98
+          "end": 14.48,
+          "durationSec": 9.48
         },
         {
           "lineIndex": 1,
-          "start": 13.98,
-          "end": 25.02,
-          "durationSec": 11.04
+          "start": 15.06,
+          "end": 24.42,
+          "durationSec": 9.36
         },
         {
           "lineIndex": 2,
-          "start": 25.02,
-          "end": 36.62,
-          "durationSec": 11.6
+          "start": 24.94,
+          "end": 36.2,
+          "durationSec": 11.26
         },
         {
           "lineIndex": 3,
-          "start": 36.62,
-          "end": 44.94,
-          "durationSec": 8.32
+          "start": 36.46,
+          "end": 44.32,
+          "durationSec": 7.86
         },
         {
           "lineIndex": 4,
-          "start": 44.94,
-          "end": 54.5,
-          "durationSec": 9.56
+          "start": 44.32,
+          "end": 55.02,
+          "interpolated": true,
+          "durationSec": 10.7
         },
         {
           "lineIndex": 5,
-          "start": 54.5,
-          "end": 62.94,
-          "durationSec": 8.44
+          "start": 55.02,
+          "end": 62.38,
+          "durationSec": 7.36
         },
         {
           "lineIndex": 6,
-          "start": 62.94,
-          "end": 70.14,
-          "durationSec": 7.2
+          "start": 62.72,
+          "end": 69.66,
+          "durationSec": 6.94
         },
         {
           "lineIndex": 7,
-          "start": 70.14,
-          "end": 77.26,
-          "durationSec": 7.12
+          "start": 69.66,
+          "end": 74.57,
+          "interpolated": true,
+          "durationSec": 4.91
         },
         {
           "lineIndex": 8,
-          "start": 77.26,
-          "end": 82.74,
-          "durationSec": 5.48
+          "start": 74.57,
+          "end": 79.49,
+          "interpolated": true,
+          "durationSec": 4.91
         },
         {
           "lineIndex": 9,
-          "start": 82.74,
-          "end": 83.74,
-          "durationSec": 1
+          "start": 79.49,
+          "end": 84.4,
+          "interpolated": true,
+          "durationSec": 4.91
         }
       ],
-      "segmentCount": 29
+      "segmentCount": 30,
+      "wordCount": 248
     }
   },
-  "publishedAt": "2026-05-12"
+  "publishedAt": "2026-05-12",
+  "poster": {
+    "generated": true,
+    "provider": "gemini",
+    "file": "incident-api-latency-spike.png",
+    "width": 1280,
+    "height": 512,
+    "prompt": "Cute minimal icon-style illustration for a language-learning podcast banner.\nConcept: A slightly exhausted but focused post-mortem review, with moments of dry humor amidst technical analysis..\nSubject: ONE single chubby rounded ICONIC OBJECT representing the topic (e.g. a coffee cup, a plane, a laptop, a server rack, a suitcase, a clock, etc). The object is centered.\nStyle: BRIGHT pastel sky blue + soft lavender + mint accent, airy light background (NOT dark). Soft pastel candy palette, mascot-style rounded shapes, gentle flat shading, subtle floating dots/sparkles in background, premium mobile-app aesthetic.\nBackground: soft single-tone pastel gradient, very airy, lots of negative space.\nABSOLUTE STRICT RULES (will fail review if violated):\n  • NO humans of any kind. NO people. NO faces. NO eyes. NO hands. NO body parts. NO silhouettes.\n  • NO animals with faces. NO mascot creatures.\n  • NO text, NO letters, NO numbers, NO logos, NO writing, NO signatures, NO watermarks.\n  • Just one inanimate object/icon, like a sticker.",
+    "generatedAt": "2026-05-14T04:22:33.304Z"
+  }
 }

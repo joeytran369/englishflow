@@ -1,0 +1,292 @@
+{
+  "id": "addressing-burnout-taking-a-well-deserved-break",
+  "publishedAt": "2026-05-14T06:49:50.537Z",
+  "generatedAt": "2026-05-14T06:49:50.538Z",
+  "mode": "GEMINI",
+  "plan": {
+    "category": "Career",
+    "topic": "Addressing Burnout: Taking a Well-Deserved Break",
+    "setting": "Two colleagues, Linh and Trung, have a casual chat on a Sunday afternoon, openly discussing their feelings of burnout, with Trung planning to request a week off to reset.",
+    "level": "B1",
+    "keyConcepts": [
+      "To feel burnt out",
+      "To feel drained / run down",
+      "To recharge your batteries / To reset",
+      "Requesting time off / Taking a break",
+      "Work-life balance"
+    ]
+  },
+  "dialogue": {
+    "title": "Addressing Burnout: Taking a Well-Deserved Break",
+    "sceneBrief": "Two colleagues, Chris and Sam, have a casual chat on a Sunday afternoon, discussing feelings of burnout, with Chris planning to request a week off to reset. The mood is supportive and a little weary but hopeful.",
+    "characters": [
+      {
+        "name": "Chris",
+        "role": "Colleague",
+        "gender": "male",
+        "voiceProfile": "junior-anxious"
+      },
+      {
+        "name": "Sam",
+        "role": "Colleague",
+        "gender": "female",
+        "voiceProfile": "bright-friendly"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Sam",
+        "text": "Hey Chris, you look a bit... run down? You okay?",
+        "vn": "Chào Chris, trông cậu có vẻ hơi... kiệt sức? Cậu ổn không?",
+        "emotion": "concerned",
+        "tags": []
+      },
+      {
+        "speaker": "Chris",
+        "text": "Uh, yeah, no. I'm actually completely burnt out, Sam. Just feel totally drained.",
+        "vn": "À, ừm, không. Tớ thực sự đang cảm thấy kiệt sức hoàn toàn rồi, Sam. Chỉ cảm thấy cạn kiệt năng lượng thôi.",
+        "emotion": "exhausted",
+        "tags": [
+          "sighs"
+        ]
+      },
+      {
+        "speaker": "Sam",
+        "text": "Oh man, I totally see it. You've been pushing really hard, huh?",
+        "vn": "Ôi trời, tớ hiểu mà. Cậu đã làm việc cật lực lắm đúng không?",
+        "emotion": "empathetic",
+        "tags": []
+      },
+      {
+        "speaker": "Chris",
+        "text": "Too hard. I mean, my work-life balance is just— It's non-existent. So, I decided... I'm gonna request a week off. Seriously need to recharge.",
+        "vn": "Quá sức rồi. Ý tớ là, cân bằng công việc-cuộc sống của tớ thì— Nó không tồn tại. Nên, tớ quyết định... tớ sẽ xin nghỉ một tuần. Thực sự cần nạp lại năng lượng.",
+        "emotion": "decisive",
+        "tags": []
+      },
+      {
+        "speaker": "Sam",
+        "text": "Wait, a *week*? That's brilliant! Seriously, good for you!",
+        "vn": "Khoan đã, một *tuần* ư? Tuyệt vời quá! Thật đấy, tốt cho cậu đấy!",
+        "emotion": "excited",
+        "tags": []
+      },
+      {
+        "speaker": "Chris",
+        "text": "Right? If I don't reset now, I think I'll just collapse.",
+        "vn": "Đúng không? Nếu tớ không nghỉ ngơi bây giờ, tớ nghĩ tớ sẽ gục mất.",
+        "emotion": "resigned",
+        "tags": []
+      },
+      {
+        "speaker": "Sam",
+        "text": "No, totally. Taking a break is so essential. You absolutely deserve it, dude.",
+        "vn": "Đúng rồi. Nghỉ ngơi là cực kỳ cần thiết. Cậu hoàn toàn xứng đáng đấy, bạn à.",
+        "emotion": "encouraging",
+        "tags": [
+          "chuckles"
+        ]
+      },
+      {
+        "speaker": "Chris",
+        "text": "Thanks. Just hoping my manager actually approves it.",
+        "vn": "Cảm ơn. Chỉ hy vọng sếp tớ thực sự duyệt thôi.",
+        "emotion": "hopeful",
+        "tags": []
+      },
+      {
+        "speaker": "Sam",
+        "text": "They will. Everyone understands needing time to step back. Go get that rest!",
+        "vn": "Họ sẽ duyệt thôi. Ai cũng hiểu là cần thời gian để tạm gác lại mà. Đi nghỉ ngơi đi!",
+        "emotion": "confident",
+        "tags": []
+      }
+    ]
+  },
+  "editorReview": {
+    "levelChecked": true,
+    "notes": [
+      "The vocabulary used is largely appropriate for a B1 level. Words like 'run down', 'burnt out', 'drained', 'work-life balance', 'recharge', 'essential', and 'deserve' are common and well-placed within this proficiency band.",
+      "Grammatical structures, including simple conditionals ('If I don't reset now, I think I'll just collapse') and common modal verbs, align well with B1 expectations.",
+      "The dialogue demonstrates excellent naturalness. The use of informal expressions ('Oh man', 'No, totally', 'dude'), fillers ('Uh, yeah, no', 'Right?'), and conversational phrasing makes it sound very authentic to a casual discussion between colleagues.",
+      "The emotional arc and supportive tone are effectively conveyed, contributing to the dialogue's realism and making it a good model for B1 learners to understand natural conversation flow."
+    ],
+    "approved": true
+  },
+  "vocab": [
+    {
+      "term": "run down",
+      "ipa": "/rʌn daʊn/",
+      "vn": "Kiệt sức, xuống sức",
+      "example": "After working extra shifts, I felt completely run down."
+    },
+    {
+      "term": "burnt out",
+      "ipa": "/ˈbɜːrnt aʊt/",
+      "vn": "Kiệt sức (do làm việc quá độ/căng thẳng)",
+      "example": "Many employees feel burnt out after months of intense projects."
+    },
+    {
+      "term": "totally drained",
+      "ipa": "/ˈtoʊtəli dreɪnd/",
+      "vn": "Cạn kiệt năng lượng hoàn toàn",
+      "example": "After a week of non-stop meetings, I was totally drained."
+    },
+    {
+      "term": "pushing really hard",
+      "ipa": "/ˈpʊʃɪŋ ˈrɪli hɑːrd/",
+      "vn": "Làm việc cật lực, cố gắng hết sức",
+      "example": "She's been pushing really hard to finish her master's thesis on time."
+    },
+    {
+      "term": "work-life balance",
+      "ipa": "/ˈwɜːrk laɪf ˈbæləns/",
+      "vn": "Cân bằng công việc-cuộc sống",
+      "example": "Achieving a good work-life balance is crucial for long-term career satisfaction."
+    },
+    {
+      "term": "request a week off",
+      "ipa": "/rɪˈkwest ə wiːk ɒf/",
+      "vn": "Xin nghỉ một tuần",
+      "example": "I plan to request a week off in August to go on a trip."
+    },
+    {
+      "term": "recharge",
+      "ipa": "/ˌriːˈtʃɑːrdʒ/",
+      "vn": "Nạp lại năng lượng",
+      "example": "A weekend getaway is perfect for me to recharge my batteries."
+    },
+    {
+      "term": "take a break",
+      "ipa": "/teɪk ə breɪk/",
+      "vn": "Nghỉ ngơi",
+      "example": "It's important to take a break every few hours to avoid eye strain."
+    },
+    {
+      "term": "step back",
+      "ipa": "/step bæk/",
+      "vn": "Tạm gác lại, lùi lại (để suy nghĩ/nghỉ ngơi)",
+      "example": "Sometimes you need to step back from a stressful situation to gain perspective."
+    }
+  ],
+  "poster": {
+    "generated": true,
+    "provider": "gemini",
+    "file": "addressing-burnout-taking-a-well-deserved-break.png",
+    "width": 1280,
+    "height": 512,
+    "prompt": "Cute minimal icon-style illustration for a language-learning podcast banner.\nConcept: Two colleagues, Chris and Sam, have a casual chat on a Sunday afternoon, discussing feelings of burnout, with Chris planning to request a week off to reset. The mood is supportive and a little weary but hopeful..\nSubject: ONE single chubby rounded ICONIC OBJECT representing the topic (e.g. a coffee cup, a plane, a laptop, a server rack, a suitcase, a clock, etc). The object is centered.\nStyle: BRIGHT mint + soft seafoam + cream pastel, optimistic light background. Soft pastel candy palette, mascot-style rounded shapes, gentle flat shading, subtle floating dots/sparkles in background, premium mobile-app aesthetic.\nBackground: soft single-tone pastel gradient, very airy, lots of negative space.\nABSOLUTE STRICT RULES (will fail review if violated):\n  • NO humans of any kind. NO people. NO faces. NO eyes. NO hands. NO body parts. NO silhouettes.\n  • NO animals with faces. NO mascot creatures.\n  • NO text, NO letters, NO numbers, NO logos, NO writing, NO signatures, NO watermarks.\n  • Just one inanimate object/icon, like a sticker.",
+    "generatedAt": "2026-05-14T06:49:58.204Z"
+  },
+  "audio": {
+    "mode": "GEMINI",
+    "voiceMap": {
+      "Chris": "Puck",
+      "Sam": "Sulafat"
+    },
+    "file": "addressing-burnout-taking-a-well-deserved-break.mp3",
+    "sizeKb": 1964,
+    "durationSec": 41.9,
+    "model": "gemini-2.5-flash-preview-tts",
+    "promptPreview": "Voice this as a REAL conversation between real people — natural, unforced, conversational. NOT theatrical. NOT a narrator. NOT a podcast host performing.\n\nCRITICAL — sound natural:\n- Speak the way cow…",
+    "mix": {
+      "mixed": true,
+      "file": "addressing-burnout-taking-a-well-deserved-break.mp3",
+      "sizeKb": 609,
+      "sceneMood": "sprint",
+      "moodTags": [
+        "energetic",
+        "corporate",
+        "podcast"
+      ],
+      "intro": {
+        "track": "faderproducer-podcast-intro-530686.mp3",
+        "tags": [
+          "intro",
+          "podcast"
+        ],
+        "score": 6,
+        "fallback": false,
+        "offsetSec": 0,
+        "durationSec": 5
+      },
+      "outro": {
+        "track": "audiorezout-brighter-days-sting-reduced-fashion-summer-happy-travel-vlog-music-201566.mp3",
+        "tags": [
+          "outro",
+          "bumper",
+          "energetic",
+          "corporate"
+        ],
+        "score": 10,
+        "fallback": false,
+        "offsetSec": 4.7,
+        "durationSec": 5
+      },
+      "layout": "5s intro sting · voice (clean) · 5s outro sting"
+    },
+    "align": {
+      "aligned": true,
+      "model": "base.en",
+      "introOffsetSec": 5,
+      "lineTimings": [
+        {
+          "lineIndex": 0,
+          "start": 5,
+          "end": 8.44,
+          "durationSec": 3.44
+        },
+        {
+          "lineIndex": 1,
+          "start": 8.94,
+          "end": 13.68,
+          "durationSec": 4.74
+        },
+        {
+          "lineIndex": 2,
+          "start": 14.2,
+          "end": 17.7,
+          "durationSec": 3.5
+        },
+        {
+          "lineIndex": 3,
+          "start": 18.08,
+          "end": 25.68,
+          "durationSec": 7.6
+        },
+        {
+          "lineIndex": 4,
+          "start": 26.32,
+          "end": 30.3,
+          "durationSec": 3.98
+        },
+        {
+          "lineIndex": 5,
+          "start": 30.8,
+          "end": 33.5,
+          "durationSec": 2.7
+        },
+        {
+          "lineIndex": 6,
+          "start": 34.16,
+          "end": 39.14,
+          "durationSec": 4.98
+        },
+        {
+          "lineIndex": 7,
+          "start": 39.46,
+          "end": 42.22,
+          "durationSec": 2.76
+        },
+        {
+          "lineIndex": 8,
+          "start": 42.48,
+          "end": 46.32,
+          "durationSec": 3.84
+        }
+      ],
+      "segmentCount": 10,
+      "wordCount": 122
+    }
+  }
+}

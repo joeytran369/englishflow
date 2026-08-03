@@ -1,0 +1,307 @@
+{
+  "id": "app-ointing-success",
+  "publishedAt": "2026-05-14T06:47:54.173Z",
+  "generatedAt": "2026-05-14T06:47:54.173Z",
+  "mode": "GEMINI",
+  "plan": {
+    "category": "Life Admin",
+    "topic": "Booking a Doctor's Appointment via App",
+    "setting": "A patient at a clinic reception desk is trying to book an appointment using their phone, and the receptionist guides them step-by-step through the app.",
+    "level": "A2",
+    "keyConcepts": [
+      "book an appointment",
+      "use the app",
+      "tap here",
+      "choose a time",
+      "confirm your booking"
+    ]
+  },
+  "dialogue": {
+    "title": "App-ointing Success",
+    "sceneBrief": "A slightly flustered patient gets calm, step-by-step guidance from a patient receptionist on how to book an appointment using a clinic app, leading to a sigh of relief.",
+    "characters": [
+      {
+        "name": "Mia",
+        "role": "Patient",
+        "gender": "female",
+        "voiceProfile": "junior-anxious"
+      },
+      {
+        "name": "Sam",
+        "role": "Receptionist",
+        "gender": "male",
+        "voiceProfile": "senior-calm"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Mia",
+        "text": "Hi there. I need to book an appointment with Dr. Lee, but uh, the phone line's been busy.",
+        "vn": "Chào bạn. Tôi cần đặt lịch hẹn với Bác sĩ Lee, nhưng mà, đường dây điện thoại bận quá.",
+        "emotion": "hesitant",
+        "tags": []
+      },
+      {
+        "speaker": "Sam",
+        "text": "No worries, Mia! It's usually quicker if you just use the app. Do you have it installed?",
+        "vn": "Không sao đâu, Mia! Dùng app thường nhanh hơn nhiều. Cô có cài nó chưa?",
+        "emotion": "bright-friendly",
+        "tags": []
+      },
+      {
+        "speaker": "Mia",
+        "text": "Oh, the app? Yeah, I think so... I opened it, but it's always so confusing, like a maze. [groans]",
+        "vn": "À, cái app á? Ừa, tôi nghĩ là có... Tôi đã mở nó rồi, nhưng nó cứ lộn xộn sao ấy, như mê cung vậy [rên rỉ].",
+        "emotion": "frustrated",
+        "tags": [
+          "groans"
+        ]
+      },
+      {
+        "speaker": "Sam",
+        "text": "Haha, I hear you. Okay, see that big button at the bottom that says 'Book Appointment'? Just, uh, tap here on that one.",
+        "vn": "Haha, tôi hiểu mà. Được rồi, cô thấy cái nút lớn ở dưới cùng ghi 'Đặt lịch hẹn' không? Cứ, à, nhấn vào đây chỗ đó.",
+        "emotion": "playful",
+        "tags": []
+      },
+      {
+        "speaker": "Mia",
+        "text": "Okay... 'Book Appointment'... Got it. Ooh, dates! Wait, why are all the mornings blocked out? That's just great.",
+        "vn": "Được rồi... 'Đặt lịch hẹn'... À, thấy rồi. Ooh, các ngày! Khoan đã, sao tất cả các buổi sáng đều bị khóa vậy? Đúng là tệ thật.",
+        "emotion": "focused",
+        "tags": []
+      },
+      {
+        "speaker": "Sam",
+        "text": "Yeah, Dr. Lee is popular. Try scrolling down a bit, past next week. You need to choose a time that's green, see?",
+        "vn": "Đúng rồi, Bác sĩ Lee đông khách mà. Thử cuộn xuống một chút, qua tuần sau xem. Cô cần chọn một thời gian có màu xanh lá cây ấy, thấy không?",
+        "emotion": "patient",
+        "tags": []
+      },
+      {
+        "speaker": "Mia",
+        "text": "Aha! Tuesday, 2 PM! Perfect. Okay, so I chose it. Now what? Just... *poof*, it's booked?",
+        "vn": "Aha! Thứ Ba, 2 giờ chiều! Hoàn hảo. Ok, tôi đã chọn rồi. Giờ thì sao? Cứ thế là... *ùm*, đặt xong à?",
+        "emotion": "excited",
+        "tags": []
+      },
+      {
+        "speaker": "Sam",
+        "text": "Almost! You'll see a summary page now. Just hit the big 'Confirm Booking' button at the very bottom, and then you're all set.",
+        "vn": "Gần xong rồi! Cô sẽ thấy một trang tóm tắt. Cứ nhấn nút 'Xác nhận đặt lịch' lớn ở dưới cùng, là xong xuôi hết.",
+        "emotion": "calm",
+        "tags": []
+      },
+      {
+        "speaker": "Mia",
+        "text": "Confirm booking... Done! Oh, wow, that was actually... easier than fighting the phone queue. Thanks, Sam! [exhales]",
+        "vn": "Xác nhận đặt lịch... Xong! Ồ, wow, cái này thực ra... dễ hơn là phải vật lộn với hàng chờ điện thoại. Cảm ơn Sam! [thở phào]",
+        "emotion": "relieved",
+        "tags": [
+          "exhales"
+        ]
+      },
+      {
+        "speaker": "Sam",
+        "text": "See? No problem at all. You got this.",
+        "vn": "Thấy chưa? Dễ ợt mà. Cô làm được rồi đấy.",
+        "emotion": "smug",
+        "tags": []
+      }
+    ]
+  },
+  "editorReview": {
+    "levelChecked": "A2",
+    "notes": [
+      "The dialogue successfully maintains an A2 level of English. Vocabulary items like 'installed', 'confusing', 'maze', 'blocked out', 'summary page', and 'phone queue' are appropriate for an A2 learner, especially when supported by context.",
+      "Grammar structures are well within the A2 range, including simple present, simple past, future with 'will', imperatives, basic relative clauses ('that says', 'that's green'), and comparatives ('quicker', 'easier than').",
+      "The use of the present perfect ('phone line's been busy') and passive voice ('blocked out', 'it's booked') are common and understandable expressions for A2 learners in context, often used as adjectives to describe states.",
+      "The dialogue is highly natural. The interjections (e.g., 'uh', 'haha', 'ooh', 'aha'), colloquial phrases (e.g., 'No worries', 'I hear you', 'Got it', 'You're all set', 'You got this'), and emotional cues ('frustrated', 'relieved') contribute to a realistic and engaging interaction.",
+      "The progression of Mia's understanding and relief is clearly communicated through simple, direct language. Sam's patient guidance is also reflected in his straightforward instructions."
+    ],
+    "approved": true
+  },
+  "vocab": [
+    {
+      "term": "book an appointment",
+      "ipa": "/bʊk ən əˈpɔɪntmənt/",
+      "vn": "đặt lịch hẹn",
+      "example": "I need to book an appointment with Dr. Lee."
+    },
+    {
+      "term": "the phone line's busy",
+      "ipa": "/ðə foʊn laɪnz ˈbɪzi/",
+      "vn": "đường dây điện thoại bận",
+      "example": "The phone line's been busy."
+    },
+    {
+      "term": "No worries",
+      "ipa": "/noʊ ˈwɜriz/",
+      "vn": "Đừng lo, không sao đâu",
+      "example": "No worries, Mia! It's usually quicker if you just use the app."
+    },
+    {
+      "term": "like a maze",
+      "ipa": "/laɪk ə meɪz/",
+      "vn": "như một mê cung (ám chỉ phức tạp, khó hiểu)",
+      "example": "It's always so confusing, like a maze."
+    },
+    {
+      "term": "I hear you",
+      "ipa": "/aɪ hɪr juː/",
+      "vn": "Tôi hiểu mà (thể hiện sự đồng cảm)",
+      "example": "Haha, I hear you."
+    },
+    {
+      "term": "tap (here/on that one)",
+      "ipa": "/tæp/",
+      "vn": "chạm, nhấn (vào màn hình)",
+      "example": "Just, uh, tap here on that one."
+    },
+    {
+      "term": "blocked out",
+      "ipa": "/blɒkt aʊt/",
+      "vn": "bị chặn/đánh dấu bận (lịch trình)",
+      "example": "Why are all the mornings blocked out?"
+    },
+    {
+      "term": "fighting the phone queue",
+      "ipa": "/ˈfaɪtɪŋ ðə foʊn kjuː/",
+      "vn": "vật lộn với hàng chờ điện thoại",
+      "example": "That was actually... easier than fighting the phone queue."
+    },
+    {
+      "term": "you're all set",
+      "ipa": "/jʊər ɔl sɛt/",
+      "vn": "bạn đã xong xuôi/sẵn sàng",
+      "example": "And then you're all set."
+    }
+  ],
+  "poster": {
+    "generated": true,
+    "provider": "gemini",
+    "file": "app-ointing-success.png",
+    "width": 1280,
+    "height": 512,
+    "prompt": "Cute minimal icon-style illustration for a language-learning podcast banner.\nConcept: A slightly flustered patient gets calm, step-by-step guidance from a patient receptionist on how to book an appointment using a clinic app, leading to a sigh of relief..\nSubject: ONE single chubby rounded ICONIC OBJECT representing the topic (e.g. a coffee cup, a plane, a laptop, a server rack, a suitcase, a clock, etc). The object is centered.\nStyle: BRIGHT powder blue + soft mint + cream pastel, calm clean light background. Soft pastel candy palette, mascot-style rounded shapes, gentle flat shading, subtle floating dots/sparkles in background, premium mobile-app aesthetic.\nBackground: soft single-tone pastel gradient, very airy, lots of negative space.\nABSOLUTE STRICT RULES (will fail review if violated):\n  • NO humans of any kind. NO people. NO faces. NO eyes. NO hands. NO body parts. NO silhouettes.\n  • NO animals with faces. NO mascot creatures.\n  • NO text, NO letters, NO numbers, NO logos, NO writing, NO signatures, NO watermarks.\n  • Just one inanimate object/icon, like a sticker.",
+    "generatedAt": "2026-05-14T06:48:01.107Z"
+  },
+  "audio": {
+    "mode": "GEMINI",
+    "voiceMap": {
+      "Mia": "Leda",
+      "Sam": "Charon"
+    },
+    "file": "app-ointing-success.mp3",
+    "sizeKb": 3004,
+    "durationSec": 64.1,
+    "model": "gemini-2.5-flash-preview-tts",
+    "promptPreview": "Voice this as a REAL conversation between real people — natural, unforced, conversational. NOT theatrical. NOT a narrator. NOT a podcast host performing.\n\nCRITICAL — sound natural:\n- Speak the way cow…",
+    "mix": {
+      "mixed": true,
+      "file": "app-ointing-success.mp3",
+      "sizeKb": 869,
+      "sceneMood": "default",
+      "moodTags": [
+        "podcast",
+        "corporate",
+        "energetic"
+      ],
+      "intro": {
+        "track": "faderproducer-intro-podcast-530691.mp3",
+        "tags": [
+          "intro",
+          "podcast"
+        ],
+        "score": 8,
+        "fallback": false,
+        "offsetSec": 7.5,
+        "durationSec": 5
+      },
+      "outro": {
+        "track": "53976329-podcast-outro-clean-closing-sting-459117.mp3",
+        "tags": [
+          "outro",
+          "bumper",
+          "podcast"
+        ],
+        "score": 8,
+        "fallback": false,
+        "offsetSec": 91,
+        "durationSec": 5
+      },
+      "layout": "5s intro sting · voice (clean) · 5s outro sting"
+    },
+    "align": {
+      "aligned": true,
+      "model": "base.en",
+      "introOffsetSec": 5,
+      "lineTimings": [
+        {
+          "lineIndex": 0,
+          "start": 5,
+          "end": 9.72,
+          "durationSec": 4.72
+        },
+        {
+          "lineIndex": 1,
+          "start": 10.1,
+          "end": 14.16,
+          "durationSec": 4.06
+        },
+        {
+          "lineIndex": 2,
+          "start": 14.72,
+          "end": 20.76,
+          "durationSec": 6.04
+        },
+        {
+          "lineIndex": 3,
+          "start": 20.76,
+          "end": 29.3,
+          "interpolated": true,
+          "durationSec": 8.54
+        },
+        {
+          "lineIndex": 4,
+          "start": 29.3,
+          "end": 37.82,
+          "durationSec": 8.52
+        },
+        {
+          "lineIndex": 5,
+          "start": 38.26,
+          "end": 44.86,
+          "durationSec": 6.6
+        },
+        {
+          "lineIndex": 6,
+          "start": 44.86,
+          "end": 51.54,
+          "interpolated": true,
+          "durationSec": 6.68
+        },
+        {
+          "lineIndex": 7,
+          "start": 51.54,
+          "end": 58.22,
+          "durationSec": 6.68
+        },
+        {
+          "lineIndex": 8,
+          "start": 58.96,
+          "end": 65.44,
+          "durationSec": 6.48
+        },
+        {
+          "lineIndex": 9,
+          "start": 66.56,
+          "end": 68.86,
+          "durationSec": 2.3
+        }
+      ],
+      "segmentCount": 10,
+      "wordCount": 188
+    }
+  }
+}

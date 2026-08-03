@@ -1,0 +1,314 @@
+{
+  "id": "demo-day-blues-wi-fi-wipeout",
+  "publishedAt": "2026-05-14T06:45:58.164Z",
+  "generatedAt": "2026-05-14T06:45:58.165Z",
+  "mode": "GEMINI",
+  "plan": {
+    "category": "Office Life",
+    "topic": "Demo Day Blues: When the Wi-Fi Drops",
+    "setting": "An IT support person and a developer are in a meeting room with a client, just as the Wi-Fi connection suddenly drops in the middle of a crucial product demonstration.",
+    "level": "B1",
+    "keyConcepts": [
+      "The Wi-Fi just dropped out.",
+      "This is a nightmare scenario.",
+      "Can you work your magic?",
+      "Bear with us for a moment.",
+      "Do we have a backup hotspot?"
+    ]
+  },
+  "dialogue": {
+    "title": "Demo Day Blues: Wi-Fi Wipeout!",
+    "sceneBrief": "A high-stakes product demo is derailed when the Wi-Fi suddenly drops. One character panics while the other calmly tackles the issue.",
+    "characters": [
+      {
+        "name": "Mia",
+        "role": "Developer",
+        "gender": "female",
+        "voiceProfile": "junior-anxious"
+      },
+      {
+        "name": "Ben",
+        "role": "IT Support",
+        "gender": "male",
+        "voiceProfile": "senior-calm"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Mia",
+        "text": "And as you can see, our new dashboard integrates— wait wait wait... uh oh. Is it just me, or did the Wi-Fi just drop out?",
+        "vn": "Và như quý vị thấy, bảng điều khiển mới của chúng tôi tích hợp— khoan, khoan đã... ôi không. Có phải mình tôi thấy vậy, hay là Wi-Fi vừa mất kết nối?",
+        "emotion": "panicked",
+        "tags": []
+      },
+      {
+        "speaker": "Ben",
+        "text": "Yep. Signal's gone. Solid red.",
+        "vn": "Ừ. Mất tín hiệu rồi. Đèn đỏ lè.",
+        "emotion": "focused",
+        "tags": []
+      },
+      {
+        "speaker": "Mia",
+        "text": "Oh, you've got to be kidding me. This is a nightmare scenario! Ben, *please* tell me you can fix it. Can you work your magic?",
+        "vn": "Ôi, anh đùa em à. Đây đúng là một kịch bản ác mộng! Ben, *làm ơn* nói là anh sửa được đi. Anh có thể ra tay thần kỳ không?",
+        "emotion": "panicked",
+        "tags": [
+          "groans"
+        ]
+      },
+      {
+        "speaker": "Ben",
+        "text": "Bear with us for a moment, folks. Just a little... technical hiccup.",
+        "vn": "Xin quý vị kiên nhẫn một chút ạ. Chỉ là một... trục trặc kỹ thuật nhỏ thôi.",
+        "emotion": "calm",
+        "tags": []
+      },
+      {
+        "speaker": "Mia",
+        "text": "A 'hiccup'? Ben, our client is literally watching us lose connection to our demo! Do we have a backup hotspot? Like, on your phone, *anything*?",
+        "vn": "Một 'trục trặc'? Ben, khách hàng đang nhìn chúng ta mất kết nối với bản demo đấy! Chúng ta có điểm phát Wi-Fi dự phòng không? Kiểu, trên điện thoại của anh, *bất cứ thứ gì*?",
+        "emotion": "frustrated",
+        "tags": []
+      },
+      {
+        "speaker": "Ben",
+        "text": "Hold on, lemme try rebooting the conference room router first. It sometimes gets a bit temperamental after lunch.",
+        "vn": "Đợi chút, để tôi thử khởi động lại bộ định tuyến trong phòng họp trước đã. Đôi khi nó hơi 'khó tính' sau bữa trưa.",
+        "emotion": "focused",
+        "tags": []
+      },
+      {
+        "speaker": "Mia",
+        "text": "Temperamental? Ben, it's having a full-blown meltdown!",
+        "vn": "Khó tính á? Ben, nó đang 'nổi loạn' hoàn toàn đấy!",
+        "emotion": "exasperated",
+        "tags": []
+      },
+      {
+        "speaker": "Ben",
+        "text": "Alright, alright. Almost there... Aha! Green light. We're back online.",
+        "vn": "Được rồi, được rồi. Gần xong rồi... A ha! Đèn xanh. Chúng ta đã trực tuyến trở lại.",
+        "emotion": "relieved",
+        "tags": []
+      },
+      {
+        "speaker": "Mia",
+        "text": "Oh, thank *goodness*. I almost had a heart attack! You're a lifesaver, Ben.",
+        "vn": "Ôi, tạ ơn *trời*. Em suýt nữa lên cơn đau tim! Anh đúng là cứu tinh, Ben.",
+        "emotion": "relieved",
+        "tags": [
+          "exhales"
+        ]
+      },
+      {
+        "speaker": "Ben",
+        "text": "Just doing my job. Though maybe next time, we pre-check the Wi-Fi gremlins.",
+        "vn": "Chỉ là làm đúng việc của mình thôi. Dù sao thì, có lẽ lần sau chúng ta nên kiểm tra trước mấy con quỷ Wi-Fi này.",
+        "emotion": "playful",
+        "tags": []
+      }
+    ]
+  },
+  "editorReview": {
+    "levelChecked": "B1",
+    "notes": [
+      "The dialogue features natural turns of phrase and common idioms ('you've got to be kidding me', 'bear with us', 'work your magic', 'technical hiccup', 'full-blown meltdown', 'thank goodness', 'lifesaver', 'Wi-Fi gremlins') which are appropriate for a B1 learner to understand and begin using.",
+      "Grammatical structures like present continuous, simple past, modals, and questions are accurately used and align with B1 proficiency.",
+      "While some vocabulary might lean towards B2 ('integrates', 'dashboard', 'temperamental'), their context makes them accessible and understandable for a B1 learner, contributing to the naturalness without overwhelming the target level.",
+      "The pacing and emotional arc, from panic to relief, are conveyed naturally through interjections and common expressions.",
+      "Informal language ('Yep', 'lemme', 'folks') adds to the realistic conversational tone."
+    ],
+    "approved": true
+  },
+  "vocab": [
+    {
+      "term": "Wi-Fi drop out",
+      "ipa": "/ˌwaɪ.faɪ ˈdrɑːp aʊt/",
+      "vn": "Wi-Fi mất kết nối",
+      "example": "Our video call ended abruptly when the Wi-Fi suddenly dropped out."
+    },
+    {
+      "term": "nightmare scenario",
+      "ipa": "/ˈnaɪtˌmɛr səˌnɛr.i.oʊ/",
+      "vn": "kịch bản ác mộng",
+      "example": "Presenting to the CEO with a non-working demo would be a nightmare scenario."
+    },
+    {
+      "term": "work your magic",
+      "ipa": "/wɜːrk jʊər ˈmædʒ.ɪk/",
+      "vn": "ra tay thần kỳ, thể hiện tài năng",
+      "example": "The designer promised to work her magic and deliver the new logo by tomorrow."
+    },
+    {
+      "term": "bear with us",
+      "ipa": "/bɛr wɪð ʌs/",
+      "vn": "xin quý vị kiên nhẫn",
+      "example": "Please bear with us while we fix the sound issue."
+    },
+    {
+      "term": "technical hiccup",
+      "ipa": "/ˈtɛk.nɪ.kəl ˈhɪk.ʌp/",
+      "vn": "trục trặc kỹ thuật nhỏ",
+      "example": "We're experiencing a slight technical hiccup, but we expect it to be resolved shortly."
+    },
+    {
+      "term": "reboot the router",
+      "ipa": "/ˌriː.buːt ðə ˈraʊ.tər/",
+      "vn": "khởi động lại bộ định tuyến",
+      "example": "The first thing you should do if your internet isn't working is reboot the router."
+    },
+    {
+      "term": "temperamental",
+      "ipa": "/ˌtɛm.pə.rəˈmɛn.təl/",
+      "vn": "khó tính, hay hỏng vặt (máy móc)",
+      "example": "This old coffee machine is quite temperamental; sometimes it works, sometimes it doesn't."
+    },
+    {
+      "term": "full-blown meltdown",
+      "ipa": "/ˌfʊl ˌbloʊn ˈmɛltˌdaʊn/",
+      "vn": "sụp đổ hoàn toàn, khủng hoảng toàn diện",
+      "example": "The old server had a full-blown meltdown during the peak usage hours."
+    },
+    {
+      "term": "back online",
+      "ipa": "/bæk ˈɑːn.laɪn/",
+      "vn": "trực tuyến trở lại, hoạt động trở lại",
+      "example": "Good news, the system is back online and fully functional!"
+    },
+    {
+      "term": "lifesaver",
+      "ipa": "/ˈlaɪfˌseɪ.vər/",
+      "vn": "cứu tinh",
+      "example": "Having that portable charger was a real lifesaver when my phone battery died."
+    }
+  ],
+  "poster": {
+    "generated": true,
+    "provider": "gemini",
+    "file": "demo-day-blues-wi-fi-wipeout.png",
+    "width": 1280,
+    "height": 512,
+    "prompt": "Cute minimal icon-style illustration for a language-learning podcast banner.\nConcept: A high-stakes product demo is derailed when the Wi-Fi suddenly drops. One character panics while the other calmly tackles the issue..\nSubject: ONE single chubby rounded ICONIC OBJECT representing the topic (e.g. a coffee cup, a plane, a laptop, a server rack, a suitcase, a clock, etc). The object is centered.\nStyle: BRIGHT peach + cream + soft coral pastel, sunny light cheerful background. Soft pastel candy palette, mascot-style rounded shapes, gentle flat shading, subtle floating dots/sparkles in background, premium mobile-app aesthetic.\nBackground: soft single-tone pastel gradient, very airy, lots of negative space.\nABSOLUTE STRICT RULES (will fail review if violated):\n  • NO humans of any kind. NO people. NO faces. NO eyes. NO hands. NO body parts. NO silhouettes.\n  • NO animals with faces. NO mascot creatures.\n  • NO text, NO letters, NO numbers, NO logos, NO writing, NO signatures, NO watermarks.\n  • Just one inanimate object/icon, like a sticker.",
+    "generatedAt": "2026-05-14T06:46:05.964Z"
+  },
+  "audio": {
+    "mode": "GEMINI",
+    "voiceMap": {
+      "Mia": "Leda",
+      "Ben": "Charon"
+    },
+    "file": "demo-day-blues-wi-fi-wipeout.mp3",
+    "sizeKb": 2927,
+    "durationSec": 62.5,
+    "model": "gemini-2.5-flash-preview-tts",
+    "promptPreview": "Voice this as a REAL conversation between real people — natural, unforced, conversational. NOT theatrical. NOT a narrator. NOT a podcast host performing.\n\nCRITICAL — sound natural:\n- Speak the way cow…",
+    "mix": {
+      "mixed": true,
+      "file": "demo-day-blues-wi-fi-wipeout.mp3",
+      "sizeKb": 850,
+      "sceneMood": "review",
+      "moodTags": [
+        "calm",
+        "podcast",
+        "corporate"
+      ],
+      "intro": {
+        "track": "faderproducer-intro-podcast-530691.mp3",
+        "tags": [
+          "intro",
+          "podcast"
+        ],
+        "score": 7,
+        "fallback": false,
+        "offsetSec": 8.7,
+        "durationSec": 5
+      },
+      "outro": {
+        "track": "53976329-podcast-outro-clean-closing-sting-459117.mp3",
+        "tags": [
+          "outro",
+          "bumper",
+          "podcast"
+        ],
+        "score": 7,
+        "fallback": false,
+        "offsetSec": 93,
+        "durationSec": 5
+      },
+      "layout": "5s intro sting · voice (clean) · 5s outro sting"
+    },
+    "align": {
+      "aligned": true,
+      "model": "base.en",
+      "introOffsetSec": 5,
+      "lineTimings": [
+        {
+          "lineIndex": 0,
+          "start": 5,
+          "end": 13.72,
+          "durationSec": 8.72
+        },
+        {
+          "lineIndex": 1,
+          "start": 14.12,
+          "end": 16.32,
+          "durationSec": 2.2
+        },
+        {
+          "lineIndex": 2,
+          "start": 16.84,
+          "end": 22.78,
+          "durationSec": 5.94
+        },
+        {
+          "lineIndex": 3,
+          "start": 23.2,
+          "end": 26.68,
+          "durationSec": 3.48
+        },
+        {
+          "lineIndex": 4,
+          "start": 26.92,
+          "end": 34.18,
+          "durationSec": 7.26
+        },
+        {
+          "lineIndex": 5,
+          "start": 34.18,
+          "end": 40.82,
+          "interpolated": true,
+          "durationSec": 6.64
+        },
+        {
+          "lineIndex": 6,
+          "start": 40.82,
+          "end": 43.5,
+          "durationSec": 2.68
+        },
+        {
+          "lineIndex": 7,
+          "start": 43.5,
+          "end": 52.95,
+          "interpolated": true,
+          "durationSec": 9.45
+        },
+        {
+          "lineIndex": 8,
+          "start": 52.95,
+          "end": 62.4,
+          "interpolated": true,
+          "durationSec": 9.45
+        },
+        {
+          "lineIndex": 9,
+          "start": 62.4,
+          "end": 67.08,
+          "durationSec": 4.68
+        }
+      ],
+      "segmentCount": 22,
+      "wordCount": 164
+    }
+  }
+}

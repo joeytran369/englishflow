@@ -1,0 +1,303 @@
+{
+  "id": "weekend-coffee-chat",
+  "publishedAt": "2026-05-15T10:00:17.454Z",
+  "generatedAt": "2026-05-15T10:00:17.454Z",
+  "mode": "GEMINI",
+  "plan": {
+    "category": "Office Life",
+    "topic": "Weekend Plans over Coffee",
+    "setting": "Two coworkers, Linh and An, are having a casual coffee chat on a Friday afternoon, discussing what they plan to do over the weekend.",
+    "level": "B1",
+    "keyConcepts": [
+      "What are you up to this weekend?",
+      "I'm planning to...",
+      "Catch up on some sleep",
+      "Run some errands",
+      "Sounds relaxing/fun!"
+    ]
+  },
+  "dialogue": {
+    "title": "Weekend Coffee Chat",
+    "sceneBrief": "Casual Friday afternoon chat between two coworkers over coffee, low stakes, light banter.",
+    "characters": [
+      {
+        "name": "Mia",
+        "role": "Coworker",
+        "gender": "female",
+        "voiceProfile": "bright-friendly"
+      },
+      {
+        "name": "Alex",
+        "role": "Coworker",
+        "gender": "male",
+        "voiceProfile": "senior-calm"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Mia",
+        "text": "Hey Alex, good to see you. What are you up to this weekend?",
+        "vn": "Chào Alex, rất vui gặp anh. Cuối tuần này anh định làm gì?",
+        "emotion": "curious",
+        "tags": []
+      },
+      {
+        "speaker": "Alex",
+        "text": "Hi Mia! Not too much, honestly. I'm planning to catch up on some sleep, for sure.",
+        "vn": "Chào Mia! Thật ra thì không nhiều lắm. Chắc chắn là tôi định ngủ bù chút.",
+        "emotion": "relaxed",
+        "tags": []
+      },
+      {
+        "speaker": "Mia",
+        "text": "Oh, I totally get that! Sounds incredibly relaxing.",
+        "vn": "Ồ, tôi hiểu mà! Nghe có vẻ cực kỳ thư giãn đấy.",
+        "emotion": "empathetic",
+        "tags": []
+      },
+      {
+        "speaker": "Alex",
+        "text": "Yeah, it is. And maybe run some errands on Saturday morning. Nothing exciting.",
+        "vn": "Đúng vậy. Và có thể chạy vài việc lặt vặt vào sáng thứ Bảy. Không có gì thú vị cả.",
+        "emotion": "casual",
+        "tags": []
+      },
+      {
+        "speaker": "Mia",
+        "text": "Right. Errands are never exciting, but necessary. I'm planning to finally try that new cafe downtown.",
+        "vn": "Phải rồi. Mấy việc vặt thì không bao giờ thú vị, nhưng mà cần thiết. Tôi định cuối cùng cũng đi thử quán cà phê mới ở trung tâm.",
+        "emotion": "thoughtful",
+        "tags": []
+      },
+      {
+        "speaker": "Alex",
+        "text": "That sounds fun! Which one are you thinking of?",
+        "vn": "Nghe hay đấy! Cô định đi quán nào?",
+        "emotion": "interested",
+        "tags": []
+      },
+      {
+        "speaker": "Mia",
+        "text": "The 'Bean Scene.' Everyone's raving about their cold brew.",
+        "vn": "Quán 'Bean Scene'. Mọi người đang khen nức nở về món cold brew của họ.",
+        "emotion": "excited",
+        "tags": []
+      },
+      {
+        "speaker": "Alex",
+        "text": "Nice. So a mix of relaxation and a little adventure for you then.",
+        "vn": "Hay đấy. Vậy là cô vừa thư giãn vừa phiêu lưu một chút.",
+        "emotion": "playful",
+        "tags": []
+      },
+      {
+        "speaker": "Mia",
+        "text": "Exactly! A perfect balance. Hopefully the weather holds up.",
+        "vn": "Chính xác! Một sự cân bằng hoàn hảo. Hy vọng thời tiết đẹp.",
+        "emotion": "optimistic",
+        "tags": []
+      },
+      {
+        "speaker": "Alex",
+        "text": "Fingers crossed. Enjoy your coffee, and your weekend!",
+        "vn": "Mong là vậy. Chúc cô thưởng thức cà phê, và cuối tuần vui vẻ!",
+        "emotion": "friendly",
+        "tags": []
+      },
+      {
+        "speaker": "Mia",
+        "text": "You too, Alex! Enjoy your rest.",
+        "vn": "Anh cũng vậy nhé, Alex! Chúc anh nghỉ ngơi vui vẻ.",
+        "emotion": "friendly",
+        "tags": []
+      }
+    ]
+  },
+  "editorReview": {
+    "levelChecked": "B1",
+    "notes": [
+      "Overall, the dialogue demonstrates excellent naturalness and is largely appropriate for a B1 level.",
+      "Vocabulary and grammatical structures are generally within the B1 range (e.g., 'What are you up to?', 'catch up on some sleep', 'run some errands', 'planning to').",
+      "A couple of phrases lean slightly towards B2, but are understandable in context and common enough to be considered strong B1, especially with context support: ",
+      "- 'Everyone's raving about their cold brew' ('raving about' can be an idiomatic expression that might be slightly challenging for some B1 learners, though 'likes it a lot' or 'says it's great' would be more strictly B1).",
+      "- 'Hopefully the weather holds up' ('hold up' as a phrasal verb meaning 'remain good' is common but might stretch some B1 learners)."
+    ],
+    "approved": true
+  },
+  "vocab": [
+    {
+      "term": "What are you up to?",
+      "ipa": "/wɒt ɑːr juː ʌp tuː/",
+      "vn": "Bạn đang làm gì vậy?/Bạn định làm gì?",
+      "example": "Hey, what are you up to this evening?"
+    },
+    {
+      "term": "catch up on some sleep",
+      "ipa": "/kætʃ ʌp ɒn sʌm sliːp/",
+      "vn": "ngủ bù",
+      "example": "I'm so tired, I need to catch up on some sleep this weekend."
+    },
+    {
+      "term": "I totally get that!",
+      "ipa": "/aɪ ˈtoʊtəli ɡɛt ðæt/",
+      "vn": "Tôi hoàn toàn hiểu điều đó!",
+      "example": "You're stressed about the deadline? I totally get that!"
+    },
+    {
+      "term": "run some errands",
+      "ipa": "/rʌn sʌm ˈɛrəndz/",
+      "vn": "làm vài việc vặt/chạy việc vặt",
+      "example": "I need to leave early to run some errands before the shops close."
+    },
+    {
+      "term": "raving about",
+      "ipa": "/ˈreɪvɪŋ əˈbaʊt/",
+      "vn": "khen nức nở/ca ngợi hết lời",
+      "example": "Everyone at the office is raving about the new coffee machine."
+    },
+    {
+      "term": "holds up (weather)",
+      "ipa": "/hoʊldz ʌp/",
+      "vn": "(thời tiết) duy trì tốt/đẹp",
+      "example": "Let's plan a picnic, hopefully the weather holds up."
+    },
+    {
+      "term": "Fingers crossed.",
+      "ipa": "/ˈfɪŋɡərz krɒst/",
+      "vn": "Cầu trời/Mong là vậy.",
+      "example": "I hope I get the promotion. Fingers crossed!"
+    }
+  ],
+  "poster": {
+    "generated": true,
+    "provider": "gemini",
+    "file": "weekend-coffee-chat.png",
+    "width": 1280,
+    "height": 512,
+    "prompt": "Cute minimal icon-style illustration for a language-learning podcast banner.\nConcept: Casual Friday afternoon chat between two coworkers over coffee, low stakes, light banter..\nSubject: ONE single chubby rounded ICONIC OBJECT representing the topic (e.g. a coffee cup, a plane, a laptop, a server rack, a suitcase, a clock, etc). The object is centered.\nStyle: BRIGHT peach + cream + soft coral pastel, sunny light cheerful background. Soft pastel candy palette, mascot-style rounded shapes, gentle flat shading, subtle floating dots/sparkles in background, premium mobile-app aesthetic.\nBackground: soft single-tone pastel gradient, very airy, lots of negative space.\nABSOLUTE STRICT RULES (will fail review if violated):\n  • NO humans of any kind. NO people. NO faces. NO eyes. NO hands. NO body parts. NO silhouettes.\n  • NO animals with faces. NO mascot creatures.\n  • NO text, NO letters, NO numbers, NO logos, NO writing, NO signatures, NO watermarks.\n  • Just one inanimate object/icon, like a sticker.",
+    "generatedAt": "2026-05-15T10:00:25.108Z"
+  },
+  "audio": {
+    "mode": "GEMINI",
+    "voiceMap": {
+      "Mia": "Zephyr",
+      "Alex": "Sadaltager"
+    },
+    "file": "weekend-coffee-chat.mp3",
+    "sizeKb": 2518,
+    "durationSec": 53.7,
+    "model": "gemini-3.1-flash-tts-preview",
+    "promptPreview": "Voice this as a REAL conversation between real people — natural, unforced, conversational. NOT theatrical. NOT a narrator. NOT a podcast host performing.\n\nCRITICAL — sound natural:\n- Speak the way cow…",
+    "mix": {
+      "mixed": true,
+      "file": "weekend-coffee-chat.mp3",
+      "sizeKb": 747,
+      "sceneMood": "default",
+      "moodTags": [
+        "podcast",
+        "corporate",
+        "energetic"
+      ],
+      "intro": {
+        "track": "faderproducer-intro-podcast-530691.mp3",
+        "tags": [
+          "intro",
+          "podcast"
+        ],
+        "score": 8,
+        "fallback": false,
+        "offsetSec": 43.1,
+        "durationSec": 5
+      },
+      "outro": {
+        "track": "audiorezout-brighter-days-sting-reduced-fashion-summer-happy-travel-vlog-music-201566.mp3",
+        "tags": [
+          "outro",
+          "bumper",
+          "energetic",
+          "corporate"
+        ],
+        "score": 8,
+        "fallback": false,
+        "offsetSec": 0.1,
+        "durationSec": 5
+      },
+      "layout": "5s intro sting · voice (clean) · 5s outro sting"
+    },
+    "align": {
+      "aligned": true,
+      "model": "base.en",
+      "introOffsetSec": 5,
+      "lineTimings": [
+        {
+          "lineIndex": 0,
+          "start": 5,
+          "end": 8.5,
+          "durationSec": 3.5
+        },
+        {
+          "lineIndex": 1,
+          "start": 9.4,
+          "end": 15.18,
+          "durationSec": 5.78
+        },
+        {
+          "lineIndex": 2,
+          "start": 15.76,
+          "end": 19.9,
+          "durationSec": 4.14
+        },
+        {
+          "lineIndex": 3,
+          "start": 20.56,
+          "end": 25.66,
+          "durationSec": 5.1
+        },
+        {
+          "lineIndex": 4,
+          "start": 26.48,
+          "end": 33.86,
+          "durationSec": 7.38
+        },
+        {
+          "lineIndex": 5,
+          "start": 33.86,
+          "end": 36.9,
+          "durationSec": 3.04
+        },
+        {
+          "lineIndex": 6,
+          "start": 37.44,
+          "end": 41.3,
+          "durationSec": 3.86
+        },
+        {
+          "lineIndex": 7,
+          "start": 41.86,
+          "end": 46.52,
+          "durationSec": 4.66
+        },
+        {
+          "lineIndex": 8,
+          "start": 47.08,
+          "end": 51.56,
+          "durationSec": 4.48
+        },
+        {
+          "lineIndex": 9,
+          "start": 52.14,
+          "end": 55.5,
+          "durationSec": 3.36
+        },
+        {
+          "lineIndex": 10,
+          "start": 56.18,
+          "end": 58.16,
+          "durationSec": 1.98
+        }
+      ],
+      "segmentCount": 14,
+      "wordCount": 121
+    }
+  }
+}

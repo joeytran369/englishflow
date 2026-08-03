@@ -1,0 +1,287 @@
+{
+  "id": "coffee-break-balance-act",
+  "publishedAt": "2026-05-14T06:56:46.170Z",
+  "generatedAt": "2026-05-14T06:56:46.171Z",
+  "mode": "GEMINI",
+  "plan": {
+    "category": "Office Life",
+    "topic": "Work-Life Balance Strategies",
+    "setting": "Two colleagues chat during a coffee break, sharing their differing approaches to work-life balance and setting boundaries.",
+    "level": "B1",
+    "keyConcepts": [
+      "work-life balance",
+      "set boundaries",
+      "avoid burnout",
+      "log off",
+      "prioritize personal time"
+    ]
+  },
+  "dialogue": {
+    "title": "Coffee Break: Balance Act",
+    "sceneBrief": "Casual coffee break chat, low-stakes, light banter between two colleagues discussing work-life balance.",
+    "characters": [
+      {
+        "name": "Sarah",
+        "role": "Senior Developer",
+        "gender": "female",
+        "voiceProfile": "senior-calm"
+      },
+      {
+        "name": "Chris",
+        "role": "Junior Developer",
+        "gender": "male",
+        "voiceProfile": "junior-anxious"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Sarah",
+        "text": "Hey Chris, you look a bit… stretched this morning. Everything okay?",
+        "vn": "Này Chris, trông cậu hơi… căng thẳng sáng nay. Mọi thứ ổn chứ?",
+        "emotion": "focused",
+        "tags": []
+      },
+      {
+        "speaker": "Chris",
+        "text": "Uh, yeah, just trying to juggle everything, you know? My work-life balance is kinda non-existent lately.",
+        "vn": "Ờ, ừm, chỉ là đang cố gắng xoay sở mọi thứ, cậu biết đấy? Cân bằng công việc-cuộc sống của tớ dạo này gần như không có.",
+        "emotion": "anxious",
+        "tags": []
+      },
+      {
+        "speaker": "Sarah",
+        "text": "Hm, I hear that. It's tough, but honestly, you *have* to set boundaries. Like, really firm ones.",
+        "vn": "Hm, tớ hiểu. Khó đấy, nhưng thật lòng mà nói, cậu *phải* đặt ra ranh giới. Kiểu, những ranh giới thực sự rõ ràng ấy.",
+        "emotion": "firm",
+        "tags": []
+      },
+      {
+        "speaker": "Chris",
+        "text": "Wait, but what about deadlines? Or missing something important after I—",
+        "vn": "Khoan, nhưng còn deadline thì sao? Hay là bỏ lỡ cái gì đó quan trọng sau khi tớ—",
+        "emotion": "anxious",
+        "tags": []
+      },
+      {
+        "speaker": "Sarah",
+        "text": "—Log off? What, you think the office will implode without you after 5 PM? [chuckles] Prioritizing personal time is key to avoid burnout.",
+        "vn": "—Thoát khỏi hệ thống ấy à? Cậu nghĩ văn phòng sẽ nổ tung nếu không có cậu sau 5 giờ chiều à? [cười khẽ] Ưu tiên thời gian cá nhân là chìa khóa để tránh kiệt sức đó.",
+        "emotion": "playful",
+        "tags": [
+          "chuckles"
+        ]
+      },
+      {
+        "speaker": "Chris",
+        "text": "I mean, when you put it like that... I guess I just don't know where to start with setting boundaries.",
+        "vn": "Ý tớ là, khi cậu nói thế... tớ đoán là tớ không biết bắt đầu từ đâu để đặt ra ranh giới.",
+        "emotion": "hesitant",
+        "tags": []
+      },
+      {
+        "speaker": "Sarah",
+        "text": "Just pick a specific time to log off every day and stick to it. That's your boundary. No peeking at emails later.",
+        "vn": "Cứ chọn một giờ cụ thể để thoát khỏi hệ thống mỗi ngày và tuân thủ nó. Đó là ranh giới của cậu. Đừng có ngó email sau đó.",
+        "emotion": "firm",
+        "tags": []
+      },
+      {
+        "speaker": "Chris",
+        "text": "Okay, so, a fixed log off time, no checking emails... Right, right. I really need to try that.",
+        "vn": "Được rồi, vậy là, giờ thoát khỏi hệ thống cố định, không kiểm tra email... Đúng rồi. Tớ thực sự cần thử cái đó.",
+        "emotion": "focused",
+        "tags": []
+      },
+      {
+        "speaker": "Sarah",
+        "text": "Exactly. Your brain will thank you, and you'll avoid burnout. It works.",
+        "vn": "Chính xác. Não bộ của cậu sẽ cảm ơn cậu, và cậu sẽ tránh được kiệt sức. Hiệu quả lắm đấy.",
+        "emotion": "smug",
+        "tags": []
+      }
+    ]
+  },
+  "editorReview": {
+    "levelChecked": true,
+    "notes": [
+      "The dialogue demonstrates good B1 fidelity. Vocabulary like 'juggle everything', 'set boundaries', 'burnout', and 'prioritizing' are appropriate for this level and common in workplace discussions.",
+      "Grammar and sentence structures are straightforward and natural for B1 learners.",
+      "The interaction flows very naturally, with realistic interjections ('Uh, yeah', 'Hm', 'I mean'), Sarah's playful interruption, and Chris's hesitations.",
+      "The only word that might be slightly above a strict B1 baseline is 'implode', but its use here is humorous and exaggerated, making its meaning inferable from context ('will explode/collapse without you').",
+      "The scenario and advice are relatable and practical, making the conversation engaging for learners."
+    ],
+    "approved": true
+  },
+  "vocab": [
+    {
+      "term": "stretched (look)",
+      "ipa": "/strɛtʃt/",
+      "vn": "trông căng thẳng, kiệt sức",
+      "example": "You look a bit stretched this morning. Everything okay?"
+    },
+    {
+      "term": "juggle everything",
+      "ipa": "/ˈdʒʌɡl ˈɛvriˌθɪŋ/",
+      "vn": "xoay sở mọi thứ, quản lý nhiều việc cùng lúc",
+      "example": "I'm just trying to juggle everything, you know? My work-life balance is kinda non-existent lately."
+    },
+    {
+      "term": "work-life balance",
+      "ipa": "/ˈwɜːrk laɪf ˈbæləns/",
+      "vn": "cân bằng công việc-cuộc sống",
+      "example": "Maintaining a healthy work-life balance is crucial for well-being."
+    },
+    {
+      "term": "set boundaries",
+      "ipa": "/sɛt ˈbaʊndəriz/",
+      "vn": "đặt ra ranh giới",
+      "example": "You have to set firm boundaries between your professional and personal life."
+    },
+    {
+      "term": "log off",
+      "ipa": "/lɔɡ ɔːf/",
+      "vn": "thoát khỏi hệ thống (máy tính, email); kết thúc ca làm việc",
+      "example": "I always try to log off by 5 PM to enjoy my evening."
+    },
+    {
+      "term": "burnout",
+      "ipa": "/ˈbɜːrnaʊt/",
+      "vn": "tình trạng kiệt sức (do làm việc quá độ)",
+      "example": "Prioritizing personal time is key to avoid burnout."
+    },
+    {
+      "term": "prioritize personal time",
+      "ipa": "/praɪˈɔːrətaɪz ˈpɜːrsənəl taɪm/",
+      "vn": "ưu tiên thời gian cá nhân",
+      "example": "To avoid burnout, you must prioritize personal time."
+    },
+    {
+      "term": "stick to (something)",
+      "ipa": "/stɪk tuː/",
+      "vn": "tuân thủ, bám sát (một kế hoạch, quy tắc)",
+      "example": "Once you set a specific log off time, you need to stick to it."
+    }
+  ],
+  "poster": {
+    "generated": true,
+    "provider": "gemini",
+    "file": "coffee-break-balance-act.png",
+    "width": 1280,
+    "height": 512,
+    "prompt": "Cute minimal icon-style illustration for a language-learning podcast banner.\nConcept: Casual coffee break chat, low-stakes, light banter between two colleagues discussing work-life balance..\nSubject: ONE single chubby rounded ICONIC OBJECT representing the topic (e.g. a coffee cup, a plane, a laptop, a server rack, a suitcase, a clock, etc). The object is centered.\nStyle: BRIGHT peach + cream + soft coral pastel, sunny light cheerful background. Soft pastel candy palette, mascot-style rounded shapes, gentle flat shading, subtle floating dots/sparkles in background, premium mobile-app aesthetic.\nBackground: soft single-tone pastel gradient, very airy, lots of negative space.\nABSOLUTE STRICT RULES (will fail review if violated):\n  • NO humans of any kind. NO people. NO faces. NO eyes. NO hands. NO body parts. NO silhouettes.\n  • NO animals with faces. NO mascot creatures.\n  • NO text, NO letters, NO numbers, NO logos, NO writing, NO signatures, NO watermarks.\n  • Just one inanimate object/icon, like a sticker.",
+    "generatedAt": "2026-05-14T06:56:53.411Z"
+  },
+  "audio": {
+    "mode": "GEMINI",
+    "voiceMap": {
+      "Sarah": "Aoede",
+      "Chris": "Puck"
+    },
+    "file": "coffee-break-balance-act.mp3",
+    "sizeKb": 2382,
+    "durationSec": 50.8,
+    "model": "gemini-2.5-flash-preview-tts",
+    "promptPreview": "Voice this as a REAL conversation between real people — natural, unforced, conversational. NOT theatrical. NOT a narrator. NOT a podcast host performing.\n\nCRITICAL — sound natural:\n- Speak the way cow…",
+    "mix": {
+      "mixed": true,
+      "file": "coffee-break-balance-act.mp3",
+      "sizeKb": 713,
+      "sceneMood": "review",
+      "moodTags": [
+        "calm",
+        "podcast",
+        "corporate"
+      ],
+      "intro": {
+        "track": "faderproducer-intro-podcast-530691.mp3",
+        "tags": [
+          "intro",
+          "podcast"
+        ],
+        "score": 7,
+        "fallback": false,
+        "offsetSec": 21.4,
+        "durationSec": 5
+      },
+      "outro": {
+        "track": "53976329-podcast-outro-clean-closing-sting-459117.mp3",
+        "tags": [
+          "outro",
+          "bumper",
+          "podcast"
+        ],
+        "score": 7,
+        "fallback": false,
+        "offsetSec": 90.3,
+        "durationSec": 5
+      },
+      "layout": "5s intro sting · voice (clean) · 5s outro sting"
+    },
+    "align": {
+      "aligned": true,
+      "model": "base.en",
+      "introOffsetSec": 5,
+      "lineTimings": [
+        {
+          "lineIndex": 0,
+          "start": 5,
+          "end": 9.16,
+          "durationSec": 4.16
+        },
+        {
+          "lineIndex": 1,
+          "start": 9.16,
+          "end": 15.02,
+          "interpolated": true,
+          "durationSec": 5.86
+        },
+        {
+          "lineIndex": 2,
+          "start": 15.02,
+          "end": 20.88,
+          "interpolated": true,
+          "durationSec": 5.86
+        },
+        {
+          "lineIndex": 3,
+          "start": 20.88,
+          "end": 26.74,
+          "interpolated": true,
+          "durationSec": 5.86
+        },
+        {
+          "lineIndex": 4,
+          "start": 26.74,
+          "end": 34.58,
+          "durationSec": 7.84
+        },
+        {
+          "lineIndex": 5,
+          "start": 34.84,
+          "end": 38.56,
+          "durationSec": 3.72
+        },
+        {
+          "lineIndex": 6,
+          "start": 39.04,
+          "end": 45.22,
+          "durationSec": 6.18
+        },
+        {
+          "lineIndex": 7,
+          "start": 45.56,
+          "end": 50.74,
+          "durationSec": 5.18
+        },
+        {
+          "lineIndex": 8,
+          "start": 51,
+          "end": 55.34,
+          "durationSec": 4.34
+        }
+      ],
+      "segmentCount": 11,
+      "wordCount": 153
+    }
+  }
+}

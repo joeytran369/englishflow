@@ -2,22 +2,23 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
+import {
+  sortByPublished,
+  pubDate,
+  categoryOf,
+  categorySlug,
+  levelColor,
+  durationSec,
+  fmtDur,
+  type Episode,
+} from "../lib/episodes";
 const BASE = import.meta.env.BASE_URL;
 
 const episodeFiles = import.meta.glob("../../content/*.json", {
   eager: true,
   import: "default",
 });
-
-const episodes = Object.values(episodeFiles).sort((a: any, b: any) => {
-  const da = (a.publishedAt || a.generatedAt || "");
-  const db = (b.publishedAt || b.generatedAt || "");
-  return db.localeCompare(da);
-});
-
-function pubDate(ep: any): string {
-  return (ep.publishedAt || ep.generatedAt || "").slice(0, 10);
-}
+const episodes = sortByPublished(Object.values(episodeFiles) as Episode[]);
 
 export async function getStaticPaths() {
   const files = import.meta.glob("../../content/*.json", { eager: true, import: "default" });
@@ -25,38 +26,7 @@ export async function getStaticPaths() {
 }
 
 const { id } = Astro.params;
-const latest = (episodes.find((e: any) => e.id === id) || episodes[0]) as any;
-
-// Derive category from setting keywords (word-boundary, OpenStack-first)
-function categoryOf(setting: string, plan?: any): { name: string; gradient: string } {
-  if (plan?.category) {
-    return { name: String(plan.category), gradient: "from-sky-600 via-blue-600 to-violet-600" };
-  }
-  const s = setting.toLowerCase();
-  const has = (...words: string[]) =>
-    words.some((w) => new RegExp(`\\b${w.replace(/[-\s]/g, "[- ]?")}\\b`, "i").test(s));
-
-  if (has("openstack", "kubernetes", "k8s", "aws", "gcp", "azure", "cloud", "vpc", "vm", "volume", "snapshot", "ssh", "floating ip", "security group", "network acl", "glance", "cinder", "nova", "neutron"))
-    return { name: "OpenStack", gradient: "from-sky-600 via-blue-600 to-violet-600" };
-  if (has("code review", "pull request", "pr review", "merge conflict", "diff"))
-    return { name: "Code Review", gradient: "from-violet-500 via-purple-500 to-fuchsia-500" };
-  if (has("sprint", "standup", "planning", "scrum", "retro", "kanban"))
-    return { name: "Sprint", gradient: "from-sky-500 via-blue-500 to-indigo-500" };
-  if (has("design", "architecture", "rfc", "adr"))
-    return { name: "Architecture", gradient: "from-emerald-500 via-teal-500 to-cyan-500" };
-  if (has("interview"))
-    return { name: "Interview", gradient: "from-amber-500 via-yellow-500 to-lime-500" };
-  if (has("incident", "outage", "on-call", "p1", "p2", "post-mortem", "war room", "alert"))
-    return { name: "Incident", gradient: "from-rose-500 via-orange-500 to-amber-500" };
-  return { name: "Daily Work", gradient: "from-zinc-500 via-slate-500 to-zinc-600" };
-}
-
-const levelColor: Record<string, string> = {
-  A2: "bg-sky-50 dark:bg-sky-950/40 text-sky-700 dark:text-sky-400 border-sky-200 dark:border-sky-900",
-  B1: "bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border-emerald-200 dark:border-emerald-900",
-  B2: "bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400 border-amber-200 dark:border-amber-900",
-  C1: "bg-rose-50 dark:bg-rose-950/40 text-rose-700 dark:text-rose-400 border-rose-200 dark:border-rose-900",
-};
+const latest = (episodes.find((e) => e.id === id) || episodes[0]) as any;
 
 // Speaker chip color cycle
 const speakerColors = [
@@ -65,24 +35,7 @@ const speakerColors = [
   "bg-amber-500/15 text-amber-700 dark:text-amber-400 ring-amber-500/30",
 ];
 
-const cat = categoryOf(latest.plan.setting);
-// Total play duration: real voice duration (from TTS) + intro + outro stings if mixed.
-// Falls back to word-count estimate when audio metadata missing.
-function durationSec(ep: any): number {
-  const a = ep.audio || {};
-  if (a.durationSec) {
-    const intro = a.mix?.intro?.durationSec ?? 0;
-    const outro = a.mix?.outro?.durationSec ?? 0;
-    return Math.round(a.durationSec + intro + outro);
-  }
-  const words = ep.dialogue.lines.reduce((n: number, l: any) => n + l.text.split(/\s+/).length, 0);
-  return Math.ceil(words / 130 * 60);
-}
-function fmtDur(s: number): string {
-  const m = Math.floor(s / 60);
-  const sec = s % 60;
-  return `${m}:${sec.toString().padStart(2, "0")}`;
-}
+const cat = categoryOf(latest.plan.setting, latest.plan);
 const totalDuration = durationSec(latest);
 const speakerColorMap: Record<string, string> = {};
 latest.dialogue.characters.forEach((c: any, i: number) => {
@@ -116,64 +69,70 @@ if (hasRealAudio) {
 ---
 
 <BaseLayout
-  title="EnglishFlow — Daily English for Cloud Engineers"
-  description="AI-generated daily dialogues for cloud / SRE / DevOps engineers."
+  title={`${latest.dialogue.title} — EnglishFlow`}
+  description={latest.plan.setting || "AI-generated daily English dialogue for Cloud tech lovers."}
+  activeId={latest.id}
+  ogImage={latest.poster?.file ? `posters/${latest.poster.file}` : undefined}
+  ogType="article"
 >
-  <header class="sticky top-0 z-40 border-b border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-950/80 backdrop-blur">
-    <nav class="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
-      <a href={`${BASE}`} class="font-mono font-bold text-zinc-900 dark:text-zinc-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors flex items-center gap-1.5">
-        <span>←</span>
-        <span>English<span class="italic-serif text-emerald-600 dark:text-emerald-400">Flow</span></span>
-      </a>
-      <div class="flex items-center gap-1">
-        <button id="toggle-vn" class="px-3 py-1.5 text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 cursor-pointer">
-          <span class="inline-block w-2 h-2 rounded-full bg-zinc-300 dark:bg-zinc-700 mr-1.5 align-middle" id="vn-dot"></span>VN hints
-        </button>
-        <button id="theme-toggle" aria-label="Toggle theme" class="ml-2 px-2 py-1 text-xs font-mono text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 cursor-pointer">[theme]</button>
-      </div>
-    </nav>
-  </header>
-
-  <main class="flex-1 pb-28">
-    <div class="max-w-[720px] mx-auto px-6">
+  <main class="pb-28 px-6 lg:px-12 py-10 lg:py-14 max-w-3xl mx-auto">
 
       <!-- EPISODE POSTER -->
       <section class="pt-10 pb-6">
-        <div class="text-[11px] font-mono uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-500 mb-3">
+        <div class="text-[11px] font-mono uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400 mb-3">
           Episode · {pubDate(latest)}
         </div>
 
         <article class="rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950">
-          <!-- Poster gradient -->
-          <div class={`relative aspect-[5/2] bg-gradient-to-br ${cat.gradient} flex flex-col justify-between p-5`}>
-            <div class="flex justify-between items-start">
-              <span class="px-2.5 py-1 rounded-full bg-white/20 backdrop-blur text-white text-[11px] font-medium tracking-wide">{cat.name}</span>
-              <span class={`px-2 py-0.5 rounded-md border text-[11px] font-mono ${levelColor[latest.plan.level] ?? levelColor.B2}`}>{latest.plan.level}</span>
-            </div>
-            <div>
-              <h2 class="text-white text-[26px] sm:text-[30px] font-semibold tracking-tight leading-tight drop-shadow-sm">
-                {latest.dialogue.title}
-              </h2>
-              <p class="text-white/80 text-[13px] mt-1 italic-serif drop-shadow-sm">
-                {latest.plan.setting}
-              </p>
+          <!-- Poster (image or gradient fallback) -->
+          <div class="relative aspect-[5/2] overflow-hidden">
+            {latest.poster?.file ? (
+              <img src={`${BASE}posters/${latest.poster.file}`} alt={latest.dialogue.title} class="absolute inset-0 w-full h-full object-cover" />
+            ) : (
+              <div class={`absolute inset-0 bg-gradient-to-br ${cat.gradient}`}></div>
+            )}
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <div class="relative h-full flex flex-col justify-between p-5">
+              <div class="flex justify-between items-start">
+                <a href={`${BASE}category/${categorySlug(cat.name)}/`} class="px-2.5 py-1 rounded-full bg-zinc-900/85 backdrop-blur-sm text-white text-[11px] font-semibold tracking-wide ring-1 ring-white/15 hover:bg-zinc-900 hover:ring-emerald-400/50 transition-all">{cat.name}</a>
+                <span class={`px-2 py-0.5 rounded-md border text-[11px] font-mono shadow-sm ${levelColor[latest.plan.level] ?? levelColor.B2}`}>{latest.plan.level}</span>
+              </div>
+              <div class="text-poster">
+                <h2 class="text-white text-[26px] sm:text-[30px] font-semibold tracking-tight leading-tight">
+                  {latest.dialogue.title}
+                </h2>
+                <p class="text-white/95 text-[13px] mt-1 italic-serif">
+                  {latest.plan.setting}
+                </p>
+              </div>
             </div>
           </div>
 
           <!-- Player bar -->
-          <div class="px-5 py-3.5 flex items-center justify-between gap-3 border-t border-zinc-200 dark:border-zinc-800">
-            <button
-              id="play-episode"
-              class="flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900 dark:bg-emerald-500 hover:bg-zinc-700 dark:hover:bg-emerald-400 text-white dark:text-zinc-950 text-[13px] font-semibold transition-colors cursor-pointer"
-            >
-              <svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l11-6L3 2z"/></svg>
-              <span id="play-label">Play episode</span>
-            </button>
+          <div class="px-5 py-3.5 flex items-center justify-between gap-3 border-t border-zinc-200 dark:border-zinc-800 flex-wrap">
+            <div class="flex items-center gap-3">
+              <button
+                id="play-episode"
+                class="flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900 dark:bg-emerald-500 hover:bg-zinc-700 dark:hover:bg-emerald-400 text-white dark:text-zinc-950 text-[13px] font-semibold transition-colors cursor-pointer"
+              >
+                <svg id="play-icon-main-play" class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l11-6L3 2z"/></svg>
+                <svg id="play-icon-main-pause" class="w-3.5 h-3.5 hidden" viewBox="0 0 16 16" fill="currentColor"><rect x="3" y="2" width="3" height="12"/><rect x="10" y="2" width="3" height="12"/></svg>
+                <span id="play-label">Play episode</span>
+              </button>
+              <!-- Speed control -->
+              <div class="inline-flex items-center gap-0.5 p-0.5 rounded-full bg-zinc-100 dark:bg-zinc-800/70 border border-zinc-200 dark:border-zinc-700/60" role="group" aria-label="Playback speed">
+                {[0.75, 1, 1.25, 1.5].map((s) => (
+                  <button
+                    class="speed-btn px-2 py-0.5 rounded-full text-[11px] font-mono text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white cursor-pointer transition-colors"
+                    data-speed={s}
+                    aria-label={`${s}x speed`}
+                  >{s}{s === 1 ? "×" : ""}</button>
+                ))}
+              </div>
+            </div>
 
-            <div class="flex items-center gap-3 text-[12px] text-zinc-500 dark:text-zinc-500 font-mono tabular-nums">
+            <div class="flex items-center gap-3 text-[12px] text-zinc-500 dark:text-zinc-400 font-mono tabular-nums">
               <span>{fmtDur(totalDuration)}</span>
-              <span class="text-zinc-300 dark:text-zinc-700">·</span>
-              <span>{latest.dialogue.characters.length} speakers</span>
               <span class="text-zinc-300 dark:text-zinc-700">·</span>
               <a
                 href="#vocabulary"
@@ -203,9 +162,9 @@ if (hasRealAudio) {
 
       <!-- DIALOGUE -->
       <section class="py-10 border-t border-zinc-200 dark:border-zinc-800">
-        <div class="flex items-baseline justify-between mb-6">
-          <h3 class="text-[12px] font-medium tracking-[0.18em] uppercase text-zinc-500 dark:text-zinc-500">Dialogue</h3>
-          <div class="text-[11px] font-mono text-zinc-400 dark:text-zinc-600">
+        <div class="flex items-baseline justify-between gap-3 mb-6 flex-wrap">
+          <h3 class="text-[12px] font-medium tracking-[0.18em] uppercase text-zinc-500 dark:text-zinc-400">Dialogue</h3>
+          <div class="text-[11px] font-mono text-zinc-400 dark:text-zinc-400">
             {latest.dialogue.characters.map((c: any, i: number) => (
               <span class="ml-2">
                 <span class={`inline-block w-1.5 h-1.5 rounded-full mr-1 align-middle ${speakerColorMap[c.name].split(' ')[0].replace('/15','')}`}></span>
@@ -232,23 +191,23 @@ if (hasRealAudio) {
               </div>
               <div class="flex-1 min-w-0">
                 <div class="flex items-center gap-2 mb-0.5">
-                  <div class="text-[11px] font-mono uppercase tracking-wider text-zinc-400 dark:text-zinc-600">
+                  <div class="text-[11px] font-mono uppercase tracking-wider text-zinc-400 dark:text-zinc-400">
                     {l.speaker}
                   </div>
                   {l.emotion && (
-                    <span class="text-[10px] italic-serif text-zinc-400 dark:text-zinc-600">
+                    <span class="text-[10px] italic-serif text-zinc-400 dark:text-zinc-400">
                       · {l.emotion}
                     </span>
                   )}
                 </div>
                 <p class="text-[15px] text-zinc-800 dark:text-zinc-200 leading-[1.65] line-text" set:html={renderText(l.text)}></p>
                 {l.vn && (
-                  <p class="vn-line text-[13px] text-zinc-500 dark:text-zinc-500 italic-serif leading-[1.55] mt-1.5 pl-3 border-l-2 border-emerald-400/40 dark:border-emerald-500/30 hidden" set:html={renderText(l.vn)}></p>
+                  <p class="vn-line text-[13px] text-zinc-600 dark:text-zinc-300 italic-serif leading-[1.55] mt-1.5 pl-3 border-l-2 border-emerald-400/40 dark:border-emerald-500/30 hidden" set:html={renderText(l.vn)}></p>
                 )}
               </div>
               {t && (
                 <button
-                  class="loop-btn shrink-0 self-start opacity-0 group-hover:opacity-100 transition-opacity p-1.5 rounded text-zinc-400 dark:text-zinc-600 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-950/40"
+                  class="loop-btn shrink-0 self-start opacity-0 group-hover:opacity-100 transition-opacity p-1.5 rounded text-zinc-400 dark:text-zinc-400 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-950/40"
                   data-index={i}
                   aria-label="Loop this line"
                   title="Loop this line"
@@ -265,10 +224,10 @@ if (hasRealAudio) {
       <!-- VOCAB -->
       <section id="vocabulary" class="py-10 border-t border-zinc-200 dark:border-zinc-800 scroll-mt-20">
         <div class="flex items-baseline justify-between mb-6">
-          <h3 class="text-[12px] font-medium tracking-[0.18em] uppercase text-zinc-500 dark:text-zinc-500">
-            Vocabulary <span class="text-zinc-400 dark:text-zinc-600 font-mono normal-case tracking-normal">({latest.vocab.length})</span>
+          <h3 class="text-[12px] font-medium tracking-[0.18em] uppercase text-zinc-500 dark:text-zinc-400">
+            Vocabulary <span class="text-zinc-400 dark:text-zinc-400 font-mono normal-case tracking-normal">({latest.vocab.length})</span>
           </h3>
-          <span class="text-[11px] font-mono text-zinc-400 dark:text-zinc-600">click to highlight ↓</span>
+          <span class="text-[11px] font-mono text-zinc-400 dark:text-zinc-400">click to highlight ↓</span>
         </div>
 
         <div class="grid sm:grid-cols-2 gap-2.5">
@@ -279,51 +238,38 @@ if (hasRealAudio) {
             >
               <div class="flex items-baseline gap-2 mb-1 flex-wrap">
                 <span class="font-semibold text-[14.5px] text-zinc-900 dark:text-zinc-50">{v.term}</span>
-                <span class="font-mono text-[10.5px] text-zinc-400 dark:text-zinc-600">{v.ipa}</span>
+                <span class="font-mono text-[10.5px] text-zinc-400 dark:text-zinc-400">{v.ipa}</span>
               </div>
               <p class="text-[12.5px] text-zinc-600 dark:text-zinc-400 mb-1.5 leading-snug">{v.vn}</p>
-              <p class="text-[12px] italic-serif text-zinc-500 dark:text-zinc-500 leading-snug">"{v.example}"</p>
+              <p class="text-[12px] italic-serif text-zinc-600 dark:text-zinc-300 leading-snug">"{v.example}"</p>
             </button>
           ))}
         </div>
       </section>
 
-      <!-- MORE EPISODES -->
-      {episodes.filter((e: any) => e.id !== latest.id).length > 0 && (
-        <section class="py-10 border-t border-zinc-200 dark:border-zinc-800">
-          <h3 class="text-[12px] font-medium tracking-[0.18em] uppercase text-zinc-500 dark:text-zinc-500 mb-5">
-            More episodes
-          </h3>
-          <div class="grid sm:grid-cols-2 gap-3">
-            {episodes.filter((e: any) => e.id !== latest.id).map((e: any) => {
-              const c = categoryOf(e.plan.setting);
-              return (
-                <a href={`${BASE}${e.id}/`} class="block rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 hover:border-emerald-500 dark:hover:border-emerald-400 transition-colors group">
-                  <div class={`aspect-[5/2] bg-gradient-to-br ${c.gradient} p-3 flex flex-col justify-between`}>
-                    <div class="flex items-start justify-between">
-                      <span class="px-2 py-0.5 rounded-full bg-white/20 backdrop-blur text-white text-[10px] font-medium">{c.name}</span>
-                      <span class={`px-1.5 py-0 rounded-md text-[10px] font-mono ${levelColor[e.plan.level] ?? levelColor.B2}`}>{e.plan.level}</span>
-                    </div>
-                    <h4 class="text-white text-[15px] font-semibold leading-tight drop-shadow-sm line-clamp-2">
-                      {e.dialogue.title}
-                    </h4>
-                  </div>
-                  <div class="px-3 py-2 flex items-center justify-between text-[11px] font-mono text-zinc-500 dark:text-zinc-500">
-                    <span class="tabular-nums">{pubDate(e)}</span>
-                    <span class="group-hover:text-emerald-600 dark:group-hover:text-emerald-400">{e.vocab.length} terms →</span>
-                  </div>
-                </a>
-              );
-            })}
-          </div>
-        </section>
-      )}
-    </div>
   </main>
 
+  <!-- FLOATING VN HELPER (bottom-right corner) -->
+  <button
+    id="toggle-vn"
+    aria-label="Toggle Vietnamese hints"
+    class="fixed bottom-24 right-4 lg:right-6 z-30 pl-2.5 pr-3.5 py-2 rounded-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-lg flex items-center gap-1.5 text-[12px] font-medium text-zinc-700 dark:text-zinc-200 hover:scale-105 hover:border-emerald-400 dark:hover:border-emerald-500 transition-all cursor-pointer"
+  >
+    <!-- Lucide "languages" icon — universally recognized for translation toggle -->
+    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m5 8 6 6"/>
+      <path d="m4 14 6-6 2-3"/>
+      <path d="M2 5h12"/>
+      <path d="M7 2h1"/>
+      <path d="m22 22-5-10-5 10"/>
+      <path d="M14 18h6"/>
+    </svg>
+    <span id="vn-tip">Show VN</span>
+  </button>
+
   <!-- FLOATING PLAYER (standard media bar) -->
-  <div id="floating-player" class="fixed bottom-0 left-0 right-0 border-t border-zinc-200 dark:border-zinc-800 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md translate-y-full transition-transform duration-300 z-50">
-    <div class="max-w-[720px] mx-auto px-6 py-3 flex items-center gap-3">
+  <div id="floating-player" class="fixed bottom-0 left-0 lg:left-72 right-0 border-t border-zinc-200 dark:border-zinc-800 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md translate-y-full transition-transform duration-300 z-40">
+    <div class="max-w-3xl mx-auto px-6 lg:px-12 py-3 flex items-center gap-3">
       <button id="fp-toggle" aria-label="Play/Pause" class="w-9 h-9 rounded-full bg-zinc-900 dark:bg-emerald-500 text-white dark:text-zinc-950 flex items-center justify-center cursor-pointer shrink-0 hover:bg-zinc-700 dark:hover:bg-emerald-400 transition-colors">
         <svg id="fp-icon-play" class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l11-6L3 2z"/></svg>
         <svg id="fp-icon-pause" class="w-3.5 h-3.5 hidden" viewBox="0 0 16 16" fill="currentColor"><rect x="3" y="2" width="3" height="12"/><rect x="10" y="2" width="3" height="12"/></svg>
@@ -331,7 +277,7 @@ if (hasRealAudio) {
       <div class="flex-1 min-w-0">
         <div id="fp-title" class="text-[12px] text-zinc-600 dark:text-zinc-400 truncate mb-1">{latest.dialogue.title}</div>
         <div class="flex items-center gap-2">
-          <span id="fp-current" class="text-[10.5px] font-mono tabular-nums text-zinc-500 dark:text-zinc-500 shrink-0 w-8 text-right">0:00</span>
+          <span id="fp-current" class="text-[10.5px] font-mono tabular-nums text-zinc-500 dark:text-zinc-400 shrink-0 w-8 text-right">0:00</span>
           <input
             id="fp-progress"
             type="range"
@@ -342,26 +288,18 @@ if (hasRealAudio) {
             class="flex-1 h-1 appearance-none bg-zinc-200 dark:bg-zinc-800 rounded-full cursor-pointer accent-emerald-500"
             aria-label="Seek"
           />
-          <span id="fp-duration" class="text-[10.5px] font-mono tabular-nums text-zinc-500 dark:text-zinc-500 shrink-0 w-8">0:00</span>
+          <span id="fp-duration" class="text-[10.5px] font-mono tabular-nums text-zinc-500 dark:text-zinc-400 shrink-0 w-8">0:00</span>
         </div>
       </div>
       <button id="fp-close" aria-label="Close" class="text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300 cursor-pointer text-xl leading-none shrink-0 w-6 h-6 flex items-center justify-center">×</button>
     </div>
   </div>
 
-  <footer class="border-t border-zinc-200 dark:border-zinc-800">
-    <div class="max-w-[720px] mx-auto px-6 py-6 text-center text-[12px] text-zinc-400 dark:text-zinc-600 space-y-1">
-      <div>© {new Date().getFullYear()} EnglishFlow. All rights reserved.</div>
-      <div>Made with <span class="text-rose-500">❤</span> by Joey Tran</div>
-    </div>
-  </footer>
-
   <script is:inline>
     // === VN hints toggle — reveals Vietnamese translation under each line ===
     const vnBtn = document.getElementById("toggle-vn");
-    const vnDot = document.getElementById("vn-dot");
+    const vnTip = document.getElementById("vn-tip");
     const vnLines = document.querySelectorAll(".vn-line");
-    // Persist preference
     let vnOn = localStorage.getItem("vn-hints") === "on";
     applyVn(vnOn);
     vnBtn?.addEventListener("click", () => {
@@ -371,9 +309,14 @@ if (hasRealAudio) {
     });
     function applyVn(on) {
       vnLines.forEach((el) => el.classList.toggle("hidden", !on));
-      vnDot.classList.toggle("bg-zinc-300", !on);
-      vnDot.classList.toggle("dark:bg-zinc-700", !on);
-      vnDot.classList.toggle("bg-emerald-500", on);
+      // Active state: emerald accent (button stays as one icon, just color changes)
+      vnBtn?.classList.toggle("bg-emerald-500", on);
+      vnBtn?.classList.toggle("dark:bg-emerald-500", on);
+      vnBtn?.classList.toggle("text-white", on);
+      vnBtn?.classList.toggle("dark:text-white", on);
+      vnBtn?.classList.toggle("border-emerald-500", on);
+      vnBtn?.classList.toggle("dark:border-emerald-500", on);
+      if (vnTip) vnTip.textContent = on ? "Hide VN" : "Show VN";
     }
 
     // === Vocab → highlight in dialogue ===
@@ -399,6 +342,26 @@ if (hasRealAudio) {
       });
     });
 
+    // === Speed control ===
+    const speedBtns = document.querySelectorAll(".speed-btn");
+    let currentSpeed = parseFloat(localStorage.getItem("ef-speed") || "1");
+    function applySpeed(s) {
+      currentSpeed = s;
+      localStorage.setItem("ef-speed", String(s));
+      const a = document.getElementById("episode-audio");
+      if (a) a.playbackRate = s;
+      speedBtns.forEach((b) => {
+        const on = parseFloat(b.dataset.speed) === s;
+        b.classList.toggle("bg-white", on);
+        b.classList.toggle("dark:bg-zinc-700", on);
+        b.classList.toggle("text-zinc-900", on);
+        b.classList.toggle("dark:text-white", on);
+        b.classList.toggle("shadow-sm", on);
+      });
+    }
+    speedBtns.forEach((b) => b.addEventListener("click", () => applySpeed(parseFloat(b.dataset.speed))));
+    applySpeed(currentSpeed);
+
     // === Audio playback ===
     const audioEl = document.getElementById("episode-audio");
     const fp = document.getElementById("floating-player");
@@ -420,8 +383,12 @@ if (hasRealAudio) {
     function setIconPlaying(playing) {
       fpIconPlay?.classList.toggle("hidden", playing);
       fpIconPause?.classList.toggle("hidden", !playing);
+      document.getElementById("play-icon-main-play")?.classList.toggle("hidden", playing);
+      document.getElementById("play-icon-main-pause")?.classList.toggle("hidden", !playing);
     }
     if (audioEl) {
+      // re-apply user's chosen speed once audio is in the DOM
+      audioEl.playbackRate = currentSpeed;
       audioEl.addEventListener("loadedmetadata", () => {
         fpDuration.textContent = fmtTime(audioEl.duration);
       });
@@ -541,6 +508,11 @@ if (hasRealAudio) {
     const lineEls = [...document.querySelectorAll(".dialogue-line")];
     let loopLineIdx = null; // when set, audio loops that single line
 
+    // Auto-scroll follows the highlighted line during playback. Pauses for ~3s after
+    // user scrolls manually so they can browse without being pulled back.
+    let lastActiveIdx = -1;
+    let userScrolledAt = 0;
+    window.addEventListener("scroll", () => { userScrolledAt = Date.now(); }, { passive: true });
     function highlightLine(idx) {
       lineEls.forEach((el, i) => {
         const on = i === idx;
@@ -549,6 +521,11 @@ if (hasRealAudio) {
         el.classList.toggle("border-emerald-200", on);
         el.classList.toggle("dark:border-emerald-900", on);
       });
+      if (idx >= 0 && idx !== lastActiveIdx && Date.now() - userScrolledAt > 3000) {
+        const el = lineEls[idx];
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+      lastActiveIdx = idx;
     }
     function setLoopButton(idx) {
       document.querySelectorAll(".loop-btn").forEach((b) => {

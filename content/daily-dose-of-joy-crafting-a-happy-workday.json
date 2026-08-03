@@ -1,0 +1,281 @@
+{
+  "id": "daily-dose-of-joy-crafting-a-happy-workday",
+  "publishedAt": "2026-05-15T06:40:06.918Z",
+  "generatedAt": "2026-05-15T06:40:06.918Z",
+  "mode": "GEMINI",
+  "plan": {
+    "category": "Office Life",
+    "topic": "Daily Dose of Joy: Crafting a Happy Workday",
+    "setting": "Two friends from the same tech company catch up over virtual coffee, sharing personal strategies for maintaining enthusiasm and productivity throughout their workdays.",
+    "level": "B1",
+    "keyConcepts": [
+      "kickstart your day",
+      "set the tone",
+      "celebrate small wins",
+      "stay motivated",
+      "work-life balance"
+    ]
+  },
+  "dialogue": {
+    "title": "Daily Dose of Joy: Crafting a Happy Workday",
+    "sceneBrief": "Casual chat between two colleagues, low-stakes, light banter, and sharing workday strategies.",
+    "characters": [
+      {
+        "name": "Mia",
+        "role": "Software Engineer",
+        "gender": "female",
+        "voiceProfile": "bright-friendly"
+      },
+      {
+        "name": "Sam",
+        "role": "Team Lead",
+        "gender": "male",
+        "voiceProfile": "senior-calm"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Mia",
+        "text": "Hey Sam! How's your workday going? You seem... chipper!",
+        "vn": "Chào Sam! Ngày làm việc của cậu thế nào? Trông cậu... vui vẻ thế!",
+        "emotion": "excited",
+        "tags": []
+      },
+      {
+        "speaker": "Sam",
+        "text": "Mia, honestly? I'm already dragging. How do *you* always look so energised? What's your secret to, like, kickstart your day?",
+        "vn": "Mia à, thật lòng mà nói? Tớ đã thấy mệt rồi đây. Sao cậu lúc nào cũng tràn đầy năng lượng thế? Bí quyết của cậu để, kiểu như, khởi động ngày mới là gì vậy?",
+        "emotion": "tired",
+        "tags": []
+      },
+      {
+        "speaker": "Mia",
+        "text": "Oh, you gotta set the tone early, Sam! My big thing is a quick win first thing—clearing emails, planning my top three tasks... It makes a huge difference.",
+        "vn": "Ồ, cậu phải đặt ra định hướng từ sớm chứ, Sam! Chuyện quan trọng của tớ là có một chiến thắng nhanh ngay từ đầu—giải quyết email, lên kế hoạch ba việc ưu tiên... Nó tạo ra sự khác biệt lớn.",
+        "emotion": "playful",
+        "tags": []
+      },
+      {
+        "speaker": "Sam",
+        "text": "A quick win, huh? So, your secret to stay motivated is... checking things off a list? I mean, I guess it works for some, but I often just plow through—",
+        "vn": "Chiến thắng nhanh à, hả? Vậy bí quyết để giữ động lực của cậu là... gạch đầu dòng một danh sách? Ý tớ là, tớ đoán nó hiệu quả với một số người, nhưng tớ thì thường chỉ cắm đầu làm—",
+        "emotion": "amused",
+        "tags": []
+      },
+      {
+        "speaker": "Mia",
+        "text": "Well, that, and I literally celebrate small wins. Seriously! Finished a tricky bug? I'll do a mini fist pump. It sounds silly, but it totally changes my mood.",
+        "vn": "Chà, cái đó, và tớ thực sự ăn mừng những chiến thắng nhỏ. Nghiêm túc đó! Sửa xong một bug khó nhằn à? Tớ sẽ đấm tay nhẹ một cái. Nghe có vẻ ngớ ngẩn, nhưng nó thay đổi tâm trạng của tớ hoàn toàn.",
+        "emotion": "playful",
+        "tags": [
+          "chuckles"
+        ]
+      },
+      {
+        "speaker": "Sam",
+        "text": "Hm. You know, the celebrate small wins thing... I actually really like that. It’s easy to just focus on the big deliverables, but taking a second to acknowledge progress... that could actually help with overall work-life balance, mentally.",
+        "vn": "Hừm. Cậu biết không, cái vụ ăn mừng những chiến thắng nhỏ... Tớ thực sự thích ý đó. Dễ dàng chỉ tập trung vào những mục tiêu lớn, nhưng dành một giây để công nhận tiến bộ... điều đó thực sự có thể giúp ích cho cân bằng công việc-cuộc sống tổng thể, về mặt tinh thần.",
+        "emotion": "thoughtful",
+        "tags": []
+      },
+      {
+        "speaker": "Mia",
+        "text": "Right?! It turns work into a series of mini-accomplishments. No more endless grind! It’s all about finding those little sparks.",
+        "vn": "Đúng không?! Nó biến công việc thành một chuỗi các thành tựu nhỏ. Không còn phải cày cuốc không ngừng nghỉ nữa! Tất cả là về việc tìm kiếm những tia lửa nhỏ đó.",
+        "emotion": "enthusiastic",
+        "tags": []
+      },
+      {
+        "speaker": "Sam",
+        "text": "Okay, I'm sold. My morning routine definitely needs less 'dread' and a lot more 'mini fist pumps.' Thanks, Mia, I needed that.",
+        "vn": "Được rồi, tớ bị thuyết phục. Lịch trình buổi sáng của tớ chắc chắn cần ít 'sợ hãi' hơn và nhiều 'cú đấm tay nhỏ' hơn. Cảm ơn Mia, tớ cần điều đó.",
+        "emotion": "relieved",
+        "tags": []
+      }
+    ]
+  },
+  "editorReview": {
+    "levelChecked": "B1",
+    "notes": [
+      "**Fidelity to B1 Level:** The dialogue generally maintains good B1 fidelity. The vocabulary is mostly accessible, and the sentence structures are clear and not overly complex. There are a few idiomatic expressions ('dragging', 'set the tone', 'plow through', 'endless grind', 'I'm sold') that lean towards the upper end of B1 or even into B2, but they are used in contextually clear ways that make them understandable for a B1 learner and provide beneficial exposure to common English phrases. Topics like work strategies and personal well-being are suitable and engaging for this level.",
+      "**Naturalness:** The dialogue is highly natural. The interactions between Mia and Sam feel authentic, with realistic reactions, pauses, and conversational fillers ('like', 'honestly?', 'you know'). The banter is light and friendly, reflecting a casual colleague chat. The progression of ideas, from Sam's fatigue to Mia's strategies and Sam's eventual acceptance, flows very naturally. The language reflects how native speakers genuinely communicate in such a scenario."
+    ],
+    "approved": true
+  },
+  "vocab": [
+    {
+      "term": "chipper",
+      "ipa": "/ˈtʃɪpər/",
+      "vn": "vui vẻ, hớn hở, phấn chấn",
+      "example": "Despite the early start, he was surprisingly chipper."
+    },
+    {
+      "term": "dragging (I'm dragging)",
+      "ipa": "/ˈdræɡɪŋ/",
+      "vn": "mệt mỏi, uể oải, lê lết (ý nói cơ thể nặng nề, thiếu năng lượng)",
+      "example": "I've been working all day and I'm really dragging now."
+    },
+    {
+      "term": "kickstart your day",
+      "ipa": "/ˈkɪkˌstɑːrt jʊər deɪ/",
+      "vn": "khởi động ngày mới (làm gì đó để bắt đầu ngày với năng lượng, hiệu quả)",
+      "example": "A good breakfast and a short walk help me kickstart my day."
+    },
+    {
+      "term": "set the tone",
+      "ipa": "/sɛt ðə toʊn/",
+      "vn": "đặt ra định hướng, tạo không khí/bầu không khí",
+      "example": "The manager's positive attitude set the tone for the entire meeting."
+    },
+    {
+      "term": "a quick win",
+      "ipa": "/ə kwɪk wɪn/",
+      "vn": "một thành công/thắng lợi nhỏ (đạt được nhanh chóng, thường để tạo động lực)",
+      "example": "Finishing that small task first thing gave me a quick win and boosted my confidence."
+    },
+    {
+      "term": "plow through",
+      "ipa": "/plaʊ θruː/",
+      "vn": "cày cuốc, cắm đầu làm, làm cật lực (thường không ngừng nghỉ hoặc không chú ý đến chi tiết)",
+      "example": "I have to plow through a lot of emails before the end of the day."
+    },
+    {
+      "term": "celebrate small wins",
+      "ipa": "/ˈsɛləˌbreɪt smɔːl wɪnz/",
+      "vn": "ăn mừng những thành công nhỏ",
+      "example": "It's important to celebrate small wins to maintain motivation on long projects."
+    },
+    {
+      "term": "big deliverables",
+      "ipa": "/bɪɡ dɪˈlɪvərəbəlz/",
+      "vn": "các mục tiêu/sản phẩm lớn cần phải hoàn thành (trong một dự án)",
+      "example": "Our team is currently focused on the big deliverables for the end-of-quarter report."
+    },
+    {
+      "term": "endless grind",
+      "ipa": "/ˈɛndləs ɡraɪnd/",
+      "vn": "công việc nhàm chán/mệt mỏi không ngừng nghỉ",
+      "example": "After years of the endless grind, he decided to start his own business."
+    },
+    {
+      "term": "I'm sold",
+      "ipa": "/aɪm soʊld/",
+      "vn": "tôi bị thuyết phục rồi, tôi đồng ý (thường sau khi nghe giải thích hoặc xem trình bày)",
+      "example": "That presentation was very convincing; I'm sold on the idea."
+    }
+  ],
+  "poster": {
+    "generated": true,
+    "provider": "gemini",
+    "file": "daily-dose-of-joy-crafting-a-happy-workday.png",
+    "width": 1280,
+    "height": 512,
+    "prompt": "Cute minimal icon-style illustration for a language-learning podcast banner.\nConcept: Casual chat between two colleagues, low-stakes, light banter, and sharing workday strategies..\nSubject: ONE single chubby rounded ICONIC OBJECT representing the topic (e.g. a coffee cup, a plane, a laptop, a server rack, a suitcase, a clock, etc). The object is centered.\nStyle: BRIGHT peach + cream + soft coral pastel, sunny light cheerful background. Soft pastel candy palette, mascot-style rounded shapes, gentle flat shading, subtle floating dots/sparkles in background, premium mobile-app aesthetic.\nBackground: soft single-tone pastel gradient, very airy, lots of negative space.\nABSOLUTE STRICT RULES (will fail review if violated):\n  • NO humans of any kind. NO people. NO faces. NO eyes. NO hands. NO body parts. NO silhouettes.\n  • NO animals with faces. NO mascot creatures.\n  • NO text, NO letters, NO numbers, NO logos, NO writing, NO signatures, NO watermarks.\n  • Just one inanimate object/icon, like a sticker.",
+    "generatedAt": "2026-05-15T06:40:15.141Z"
+  },
+  "audio": {
+    "mode": "GEMINI",
+    "voiceMap": {
+      "Mia": "Sulafat",
+      "Sam": "Charon"
+    },
+    "file": "daily-dose-of-joy-crafting-a-happy-workday.mp3",
+    "sizeKb": 3306,
+    "durationSec": 70.5,
+    "model": "gemini-2.5-flash-preview-tts",
+    "promptPreview": "Voice this as a REAL conversation between real people — natural, unforced, conversational. NOT theatrical. NOT a narrator. NOT a podcast host performing.\n\nCRITICAL — sound natural:\n- Speak the way cow…",
+    "mix": {
+      "mixed": true,
+      "file": "daily-dose-of-joy-crafting-a-happy-workday.mp3",
+      "sizeKb": 944,
+      "sceneMood": "review",
+      "moodTags": [
+        "calm",
+        "podcast",
+        "corporate"
+      ],
+      "intro": {
+        "track": "faderproducer-intro-podcast-530691.mp3",
+        "tags": [
+          "intro",
+          "podcast"
+        ],
+        "score": 7,
+        "fallback": false,
+        "offsetSec": 40.9,
+        "durationSec": 5
+      },
+      "outro": {
+        "track": "53976329-podcast-outro-clean-closing-sting-459117.mp3",
+        "tags": [
+          "outro",
+          "bumper",
+          "podcast"
+        ],
+        "score": 7,
+        "fallback": false,
+        "offsetSec": 5.1,
+        "durationSec": 5
+      },
+      "layout": "5s intro sting · voice (clean) · 5s outro sting"
+    },
+    "align": {
+      "aligned": true,
+      "model": "base.en",
+      "introOffsetSec": 5,
+      "lineTimings": [
+        {
+          "lineIndex": 0,
+          "start": 5,
+          "end": 8.18,
+          "durationSec": 3.18
+        },
+        {
+          "lineIndex": 1,
+          "start": 8.72,
+          "end": 15.68,
+          "durationSec": 6.96
+        },
+        {
+          "lineIndex": 2,
+          "start": 16.08,
+          "end": 25.32,
+          "durationSec": 9.24
+        },
+        {
+          "lineIndex": 3,
+          "start": 26,
+          "end": 34.42,
+          "durationSec": 8.42
+        },
+        {
+          "lineIndex": 4,
+          "start": 35.34,
+          "end": 45.32,
+          "durationSec": 9.98
+        },
+        {
+          "lineIndex": 5,
+          "start": 45.32,
+          "end": 59.16,
+          "interpolated": true,
+          "durationSec": 13.84
+        },
+        {
+          "lineIndex": 6,
+          "start": 59.16,
+          "end": 64.56,
+          "durationSec": 5.4
+        },
+        {
+          "lineIndex": 7,
+          "start": 67.4,
+          "end": 75.4,
+          "durationSec": 8
+        }
+      ],
+      "segmentCount": 24,
+      "wordCount": 205
+    }
+  }
+}

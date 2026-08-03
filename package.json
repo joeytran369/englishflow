@@ -9,7 +9,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "gen": "MOCK_MODE=false node --env-file=.env pipeline/generate.mjs",
+    "deploy": "astro build && gh-pages -d dist --dotfiles",
+    "new": "node pipeline/new.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "4.2.4",

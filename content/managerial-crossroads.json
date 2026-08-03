@@ -1,0 +1,307 @@
+{
+  "id": "managerial-crossroads",
+  "publishedAt": "2026-05-15T09:33:47.101Z",
+  "generatedAt": "2026-05-15T09:33:47.101Z",
+  "mode": "GEMINI",
+  "plan": {
+    "category": "Career",
+    "topic": "Considering the Managerial Path",
+    "setting": "Two engineers grab coffee in the office kitchen, discussing the pros and cons of moving into management.",
+    "level": "B1",
+    "keyConcepts": [
+      "Individual Contributor (IC)",
+      "Pros and cons",
+      "Career path",
+      "People management",
+      "Is it worth it?"
+    ]
+  },
+  "dialogue": {
+    "title": "Managerial Crossroads",
+    "sceneBrief": "Casual chat, a bit of shared frustration, but ultimately supportive.",
+    "characters": [
+      {
+        "name": "Sarah",
+        "role": "Software Engineer",
+        "gender": "female",
+        "voiceProfile": "junior-anxious"
+      },
+      {
+        "name": "Alex",
+        "role": "Senior Engineer",
+        "gender": "male",
+        "voiceProfile": "senior-calm"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Sarah",
+        "text": "Ugh, hey Alex. Can I just... vent for a second? I've been thinking about this whole managerial path thing.",
+        "vn": "Ugh, chào Alex. Cho tớ... xả stress tí được không? Tớ cứ nghĩ mãi về cái con đường quản lý này ấy.",
+        "emotion": "hesitant",
+        "tags": []
+      },
+      {
+        "speaker": "Alex",
+        "text": "Oh, really? Moving off the IC track, huh? What's got you considering that, Sarah?",
+        "vn": "Ồ, thật á? Định rời xa con đường IC à? Sao tự nhiên lại nghĩ tới chuyện đó vậy, Sarah?",
+        "emotion": "curious",
+        "tags": []
+      },
+      {
+        "speaker": "Sarah",
+        "text": "Yeah, I mean, the idea of having more impact, you know? Less purely coding, more strategy... but then there's the people management side of it, and I'm like, 'Is it worth it?'",
+        "vn": "Ừ thì, tớ muốn có nhiều tác động hơn, cậu hiểu không? Ít code thuần túy hơn, nhiều chiến lược hơn... nhưng mà rồi lại nghĩ đến khoản quản lý con người, thế là tớ cứ tự hỏi, 'Liệu có đáng không?'",
+        "emotion": "conflicted",
+        "tags": []
+      },
+      {
+        "speaker": "Alex",
+        "text": "Ah, the eternal question. Pros: you get to shape things, guide a team. Cons: suddenly, your day is 80% meetings and 20% trying to figure out why Bob and Jane are fighting over a Jira ticket.",
+        "vn": "[cười khẽ] À, câu hỏi muôn thuở đây rồi. Ưu điểm: được định hình mọi thứ, dẫn dắt một đội. Nhược điểm: bỗng dưng cả ngày của cậu là 80% họp hành và 20% cố gắng tìm hiểu xem tại sao Bob và Jane lại cãi nhau vì một cái Jira ticket.",
+        "emotion": "playful",
+        "tags": [
+          "chuckles"
+        ]
+      },
+      {
+        "speaker": "Sarah",
+        "text": "Wait, wait, wait—that bad? I figured it was more about, like, team velocity and career development, not...",
+        "vn": "Khoan, khoan, khoan—tệ đến mức đó sao? Tớ tưởng nó sẽ về kiểu, tốc độ của đội và phát triển sự nghiệp chứ, không phải...",
+        "emotion": "surprised",
+        "tags": []
+      },
+      {
+        "speaker": "Alex",
+        "text": "Oh, it is, it is. But also a lot of 'Did you remember to approve your timesheet, Sarah?' You trade coding problems for human problems.",
+        "vn": "À, nó cũng vậy đó, cũng vậy đó. Nhưng mà còn rất nhiều cái kiểu 'Sarah, cậu nhớ duyệt timesheet chưa?' nữa. Cậu đổi các vấn đề về code lấy các vấn đề về con người.",
+        "emotion": "deadpan",
+        "tags": []
+      },
+      {
+        "speaker": "Sarah",
+        "text": "Ugh. So basically, the 'career path' leads to more headaches?",
+        "vn": "[rên rỉ] Ugh. Vậy là cơ bản, cái 'con đường sự nghiệp' này dẫn tới nhiều đau đầu hơn à?",
+        "emotion": "frustrated",
+        "tags": [
+          "groans"
+        ]
+      },
+      {
+        "speaker": "Alex",
+        "text": "Not necessarily headaches, just *different* ones. For some, the influence and guiding a team is really rewarding. For others, staying hands-on as an IC is the dream.",
+        "vn": "Không hẳn là đau đầu, chỉ là những cái *khác* thôi. Với một số người, việc có ảnh hưởng và dẫn dắt một đội rất đáng giá. Với những người khác, được làm việc chuyên môn trực tiếp như một IC mới là ước mơ.",
+        "emotion": "calm",
+        "tags": []
+      },
+      {
+        "speaker": "Sarah",
+        "text": "Hm. So it's about what kind of problems you want to solve, I guess.",
+        "vn": "Hm. Vậy là tùy vào loại vấn đề mà cậu muốn giải quyết, tớ đoán vậy.",
+        "emotion": "thoughtful",
+        "tags": []
+      },
+      {
+        "speaker": "Alex",
+        "text": "Exactly. Go get another coffee. You'll need it to decide.",
+        "vn": "Chính xác. Đi làm thêm ly cà phê nữa đi. Cậu sẽ cần nó để quyết định đấy.",
+        "emotion": "playful",
+        "tags": []
+      }
+    ]
+  },
+  "editorReview": {
+    "levelChecked": "B1",
+    "notes": [
+      "**Overall Fidelity:** The dialogue demonstrates a strong level of B1 fidelity in terms of grammatical complexity, general vocabulary, and sentence structures. Most phrases and expressions are accessible to a B1 learner.",
+      "**Naturalness:** The dialogue is highly natural and authentic. The use of conversational fillers ('Ugh,' 'I mean,' 'you know?,' 'I'm like'), hesitations, and informal phrasing contributes significantly to its realistic feel, which is excellent for demonstrating natural English communication.",
+      "**Vocabulary & Grammar:** Grammar usage (e.g., present perfect continuous, simple and compound sentences) is appropriate for B1. General vocabulary (e.g., 'vent,' 'impact,' 'strategy,' 'rewarding,' 'hands-on') is mostly suitable, though 'vent' and 'eternal question' might be at the upper end of B1 for some learners but are contextually clear.",
+      "**Specific Jargon Concern:** The primary challenge for a general B1 learner lies in the inclusion of several industry-specific terms: 'IC track' (Individual Contributor track), 'Jira ticket,' and 'team velocity.' While these are common in tech/corporate environments, they are not standard general English B1 vocabulary. A learner without prior exposure to these terms might struggle to fully grasp these specific details, though the overall context allows for understanding the general thrust of the conversation (i.e., 'work problems,' 'different career paths'). If the target audience is B1 for 'English for Specific Purposes' (e.g., IT professionals), these terms would be acceptable."
+    ],
+    "approved": true
+  },
+  "vocab": [
+    {
+      "term": "vent for a second",
+      "ipa": "/vɛnt fɔːr ə ˈsɛkənd/",
+      "vn": "xả stress một chút, trút bầu tâm sự một lát",
+      "example": "Can I just vent for a second? I've been thinking about this whole managerial path thing."
+    },
+    {
+      "term": "managerial path",
+      "ipa": "/mænəˈdʒɪəriəl pæθ/",
+      "vn": "con đường quản lý",
+      "example": "I've been thinking about this whole managerial path thing."
+    },
+    {
+      "term": "IC track / Individual Contributor",
+      "ipa": "/ˈaɪ siː træk / ˌɪndɪˈvɪdʒuəl kənˈtrɪbjətər/",
+      "vn": "con đường chuyên môn/chuyên viên cá nhân (IC là viết tắt của Individual Contributor)",
+      "example": "Moving off the IC track, huh? For some, staying hands-on as an IC is the dream."
+    },
+    {
+      "term": "have an impact",
+      "ipa": "/hæv æn ˈɪmpækt/",
+      "vn": "tạo ảnh hưởng, có tác động",
+      "example": "The idea of having more impact, you know? Less purely coding, more strategy..."
+    },
+    {
+      "term": "people management",
+      "ipa": "/ˈpiːpəl ˈmænɪdʒmənt/",
+      "vn": "quản lý con người, quản lý nhân sự",
+      "example": "But then there's the people management side of it, and I'm like, 'Is it worth it?'"
+    },
+    {
+      "term": "Is it worth it?",
+      "ipa": "/ɪz ɪt wɜːrθ ɪt/",
+      "vn": "Liệu có đáng không?/Có đáng giá không?",
+      "example": "But then there's the people management side of it, and I'm like, 'Is it worth it?'"
+    },
+    {
+      "term": "career development",
+      "ipa": "/kəˈrɪər dɪˈvɛləpmənt/",
+      "vn": "phát triển sự nghiệp",
+      "example": "I figured it was more about, like, team velocity and career development."
+    },
+    {
+      "term": "stay hands-on",
+      "ipa": "/steɪ hændz-ɒn/",
+      "vn": "tiếp tục làm việc chuyên môn trực tiếp, tự tay làm việc",
+      "example": "For others, staying hands-on as an IC is the dream."
+    },
+    {
+      "term": "trade X for Y",
+      "ipa": "/treɪd ɛks fɔːr waɪ/",
+      "vn": "đánh đổi X lấy Y",
+      "example": "You trade coding problems for human problems."
+    }
+  ],
+  "poster": {
+    "generated": true,
+    "provider": "gemini",
+    "file": "managerial-crossroads.png",
+    "width": 1280,
+    "height": 512,
+    "prompt": "Cute minimal icon-style illustration for a language-learning podcast banner.\nConcept: Casual chat, a bit of shared frustration, but ultimately supportive..\nSubject: ONE single chubby rounded ICONIC OBJECT representing the topic (e.g. a coffee cup, a plane, a laptop, a server rack, a suitcase, a clock, etc). The object is centered.\nStyle: BRIGHT mint + soft seafoam + cream pastel, optimistic light background. Soft pastel candy palette, mascot-style rounded shapes, gentle flat shading, subtle floating dots/sparkles in background, premium mobile-app aesthetic.\nBackground: soft single-tone pastel gradient, very airy, lots of negative space.\nABSOLUTE STRICT RULES (will fail review if violated):\n  • NO humans of any kind. NO people. NO faces. NO eyes. NO hands. NO body parts. NO silhouettes.\n  • NO animals with faces. NO mascot creatures.\n  • NO text, NO letters, NO numbers, NO logos, NO writing, NO signatures, NO watermarks.\n  • Just one inanimate object/icon, like a sticker.",
+    "generatedAt": "2026-05-15T09:33:55.102Z"
+  },
+  "audio": {
+    "mode": "GEMINI",
+    "voiceMap": {
+      "Sarah": "Leda",
+      "Alex": "Charon"
+    },
+    "file": "managerial-crossroads.mp3",
+    "sizeKb": 4386,
+    "durationSec": 93.6,
+    "model": "gemini-3.1-flash-tts-preview",
+    "promptPreview": "Voice this as a REAL conversation between real people — natural, unforced, conversational. NOT theatrical. NOT a narrator. NOT a podcast host performing.\n\nCRITICAL — sound natural:\n- Speak the way cow…",
+    "mix": {
+      "mixed": true,
+      "file": "managerial-crossroads.mp3",
+      "sizeKb": 1214,
+      "sceneMood": "review",
+      "moodTags": [
+        "calm",
+        "podcast",
+        "corporate"
+      ],
+      "intro": {
+        "track": "faderproducer-podcast-intro-530686.mp3",
+        "tags": [
+          "intro",
+          "podcast"
+        ],
+        "score": 7,
+        "fallback": false,
+        "offsetSec": 0,
+        "durationSec": 5
+      },
+      "outro": {
+        "track": "53976329-podcast-outro-clean-closing-sting-459117.mp3",
+        "tags": [
+          "outro",
+          "bumper",
+          "podcast"
+        ],
+        "score": 7,
+        "fallback": false,
+        "offsetSec": 57.4,
+        "durationSec": 5
+      },
+      "layout": "5s intro sting · voice (clean) · 5s outro sting"
+    },
+    "align": {
+      "aligned": true,
+      "model": "base.en",
+      "introOffsetSec": 5,
+      "lineTimings": [
+        {
+          "lineIndex": 0,
+          "start": 5.68,
+          "end": 14.68,
+          "interpolated": true,
+          "durationSec": 9
+        },
+        {
+          "lineIndex": 1,
+          "start": 14.68,
+          "end": 19.26,
+          "durationSec": 4.58
+        },
+        {
+          "lineIndex": 2,
+          "start": 20,
+          "end": 35,
+          "durationSec": 15
+        },
+        {
+          "lineIndex": 3,
+          "start": 35,
+          "end": 50.98,
+          "interpolated": true,
+          "durationSec": 15.98
+        },
+        {
+          "lineIndex": 4,
+          "start": 50.98,
+          "end": 58.24,
+          "durationSec": 7.26
+        },
+        {
+          "lineIndex": 5,
+          "start": 58.94,
+          "end": 64.04,
+          "durationSec": 5.1
+        },
+        {
+          "lineIndex": 6,
+          "start": 69.08,
+          "end": 74.86,
+          "durationSec": 5.78
+        },
+        {
+          "lineIndex": 7,
+          "start": 75.98,
+          "end": 87.76,
+          "durationSec": 11.78
+        },
+        {
+          "lineIndex": 8,
+          "start": 87.76,
+          "end": 94.16,
+          "interpolated": true,
+          "durationSec": 6.4
+        },
+        {
+          "lineIndex": 9,
+          "start": 94.16,
+          "end": 98.1,
+          "durationSec": 3.94
+        }
+      ],
+      "segmentCount": 23,
+      "wordCount": 215
+    }
+  }
+}

@@ -1,0 +1,306 @@
+{
+  "id": "remote-vs-office-productivity-debate",
+  "publishedAt": "2026-05-15T09:48:53.879Z",
+  "generatedAt": "2026-05-15T09:48:53.879Z",
+  "mode": "GEMINI",
+  "plan": {
+    "category": "Office Life",
+    "topic": "Remote vs. Office Productivity Debate",
+    "setting": "Two colleagues, Linh and Alex, are having a friendly debate about the pros and cons of working remotely versus in the office during a coffee break.",
+    "level": "B1",
+    "keyConcepts": [
+      "work-life balance",
+      "boost productivity",
+      "face-to-face interaction",
+      "cut down on commute",
+      "foster collaboration"
+    ]
+  },
+  "dialogue": {
+    "title": "Remote vs. Office Productivity Debate",
+    "sceneBrief": "Casual chat, low-stakes, light banter between two colleagues during a coffee break.",
+    "characters": [
+      {
+        "name": "Mia",
+        "role": "Colleague",
+        "gender": "female",
+        "voiceProfile": "bright-friendly"
+      },
+      {
+        "name": "Alex",
+        "role": "Colleague",
+        "gender": "male",
+        "voiceProfile": "senior-calm"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Mia",
+        "text": "Ugh, honestly, working from home has done wonders for my work-life balance. I mean, I actually see my cat now!",
+        "vn": "Trời ơi, thật sự thì làm việc tại nhà cải thiện đáng kể cân bằng công việc-cuộc sống của em luôn đó. Ý em là, bây giờ em còn được gặp mèo cưng nữa!",
+        "emotion": "playful",
+        "tags": [
+          "chuckles"
+        ]
+      },
+      {
+        "speaker": "Alex",
+        "text": "Haha, yeah, I get that. But sometimes I feel like my productivity actually takes a hit when I'm remote, you know? Less structure.",
+        "vn": "Haha, ừ, anh hiểu mà. Nhưng đôi khi anh thấy năng suất của mình lại giảm sút khi làm việc từ xa, em biết không? Kiểu ít có cấu trúc hơn ấy.",
+        "emotion": "hesitant",
+        "tags": []
+      },
+      {
+        "speaker": "Mia",
+        "text": "Really? See, for me, cutting down on that two-hour commute alone totally boosts my productivity! More time for actual work, right?",
+        "vn": "Thật hả? Đối với em thì khác, việc cắt giảm hai tiếng đi làm thôi đã giúp tăng năng suất của em lên rồi! Có nhiều thời gian hơn để làm việc thực sự, đúng không?",
+        "emotion": "enthusiastic",
+        "tags": []
+      },
+      {
+        "speaker": "Alex",
+        "text": "Right, right. But don't you miss the spontaneous face-to-face interaction? It really helps to foster collaboration, I think.",
+        "vn": "Đúng rồi, đúng rồi. Nhưng em không nhớ những tương tác trực tiếp tự phát hả? Anh nghĩ nó thực sự giúp thúc đẩy sự hợp tác đó.",
+        "emotion": "focused",
+        "tags": []
+      },
+      {
+        "speaker": "Mia",
+        "text": "Hm, I mean, a little. But then I think about wearing pajamas all day... and I'm okay. Plus, fewer office distractions!",
+        "vn": "Hm, ý em là, cũng hơi hơi. Nhưng rồi em nghĩ đến việc mặc đồ ngủ cả ngày... và em thấy ổn thôi. Với lại, ít bị phân tâm ở văn phòng hơn!",
+        "emotion": "smug",
+        "tags": []
+      },
+      {
+        "speaker": "Alex",
+        "text": "Fair enough, fair enough. Still, those quick chats at the coffee machine—",
+        "vn": "Cũng đúng, cũng đúng. Nhưng mà, những cuộc trò chuyện nhanh ở máy pha cà phê—",
+        "emotion": "playful",
+        "tags": [
+          "sighs"
+        ]
+      },
+      {
+        "speaker": "Mia",
+        "text": "We can Slack! It's almost the same!",
+        "vn": "Mình có thể Slack mà! Gần như là y chang!",
+        "emotion": "excited",
+        "tags": []
+      },
+      {
+        "speaker": "Alex",
+        "text": "Not quite, though. Sometimes you just need to whiteboar—",
+        "vn": "Không hẳn, nhưng mà. Đôi khi bạn chỉ cần lên bảng trắng để—",
+        "emotion": "frustrated",
+        "tags": []
+      },
+      {
+        "speaker": "Mia",
+        "text": "Okay, okay, I see your point with the collaboration stuff. But my sleep schedule is amazing now!",
+        "vn": "Được rồi, được rồi, em hiểu ý anh về mấy vụ hợp tác rồi. Nhưng lịch ngủ của em bây giờ thì tuyệt vời luôn!",
+        "emotion": "relieved",
+        "tags": []
+      },
+      {
+        "speaker": "Alex",
+        "text": "I guess it's a trade-off, huh? Maybe a mix is the best of both worlds.",
+        "vn": "Anh đoán đó là sự đánh đổi, hả? Có lẽ kết hợp thì tốt nhất cho cả hai.",
+        "emotion": "calm",
+        "tags": []
+      }
+    ]
+  },
+  "editorReview": {
+    "levelChecked": "B1",
+    "notes": [
+      "**Fidelity to B1:** The dialogue is generally a very good fit for the B1 level. Most vocabulary, grammatical structures, and sentence complexities align well with B1 descriptors. Phrases like 'cutting down on', 'work-life balance', 'productivity', 'commute', 'distractions', 'sleep schedule' are appropriate.",
+      "However, there are a few lexical items and idioms that lean slightly towards B2, which might offer a gentle challenge to a B1 learner. These include: 'done wonders for', 'takes a hit', 'spontaneous', 'foster collaboration' (with 'foster' being the most distinctly B2 word), and 'trade-off'. While these are often understandable through context, a strict B1 curriculum might opt for simpler alternatives.",
+      "**Naturalness:** The dialogue is exceptionally natural. The flow, interjections ('Ugh, honestly', 'Haha', 'Really?', 'Hm', 'Fair enough'), trailing sentences, and light banter are very authentic to a casual conversation between colleagues. The topic is relatable, and the use of personal anecdotes (cat, pajamas) enhances the realism. The speakers respond to each other's points organically, creating a dynamic exchange."
+    ],
+    "approved": true
+  },
+  "vocab": [
+    {
+      "term": "done wonders (for something/someone)",
+      "ipa": "/dʌn ˈwʌndərz/",
+      "vn": "cải thiện đáng kể, mang lại điều kỳ diệu",
+      "example": "Working from home has done wonders for my work-life balance."
+    },
+    {
+      "term": "work-life balance",
+      "ipa": "/ˈwɜːrk laɪf ˈbæləns/",
+      "vn": "cân bằng công việc-cuộc sống",
+      "example": "Working from home has done wonders for my work-life balance."
+    },
+    {
+      "term": "take a hit",
+      "ipa": "/teɪk ə hɪt/",
+      "vn": "bị ảnh hưởng tiêu cực, bị giảm sút",
+      "example": "My productivity actually takes a hit when I'm remote."
+    },
+    {
+      "term": "cut down on (something)",
+      "ipa": "/kʌt daʊn ɒn/",
+      "vn": "cắt giảm, giảm bớt",
+      "example": "Cutting down on that two-hour commute alone totally boosts my productivity."
+    },
+    {
+      "term": "boost productivity",
+      "ipa": "/buːst ˌprɒdʌkˈtɪvəti/",
+      "vn": "tăng năng suất",
+      "example": "Cutting down on that two-hour commute alone totally boosts my productivity!"
+    },
+    {
+      "term": "face-to-face interaction",
+      "ipa": "/feɪs tə feɪs ˌɪntərˈækʃn/",
+      "vn": "tương tác trực tiếp",
+      "example": "Don't you miss the spontaneous face-to-face interaction?"
+    },
+    {
+      "term": "foster collaboration",
+      "ipa": "/ˈfɒstər kəˌlæbəˈreɪʃn/",
+      "vn": "thúc đẩy hợp tác",
+      "example": "It really helps to foster collaboration, I think."
+    },
+    {
+      "term": "a trade-off",
+      "ipa": "/ə ˈtreɪd ɒf/",
+      "vn": "sự đánh đổi",
+      "example": "I guess it's a trade-off, huh?"
+    },
+    {
+      "term": "the best of both worlds",
+      "ipa": "/ðə bɛst əv boʊθ wɜːrldz/",
+      "vn": "điều tốt nhất của cả hai (thế giới/lựa chọn)",
+      "example": "Maybe a mix is the best of both worlds."
+    }
+  ],
+  "poster": {
+    "generated": true,
+    "provider": "gemini",
+    "file": "remote-vs-office-productivity-debate.png",
+    "width": 1280,
+    "height": 512,
+    "prompt": "Cute minimal icon-style illustration for a language-learning podcast banner.\nConcept: Casual chat, low-stakes, light banter between two colleagues during a coffee break..\nSubject: ONE single chubby rounded ICONIC OBJECT representing the topic (e.g. a coffee cup, a plane, a laptop, a server rack, a suitcase, a clock, etc). The object is centered.\nStyle: BRIGHT peach + cream + soft coral pastel, sunny light cheerful background. Soft pastel candy palette, mascot-style rounded shapes, gentle flat shading, subtle floating dots/sparkles in background, premium mobile-app aesthetic.\nBackground: soft single-tone pastel gradient, very airy, lots of negative space.\nABSOLUTE STRICT RULES (will fail review if violated):\n  • NO humans of any kind. NO people. NO faces. NO eyes. NO hands. NO body parts. NO silhouettes.\n  • NO animals with faces. NO mascot creatures.\n  • NO text, NO letters, NO numbers, NO logos, NO writing, NO signatures, NO watermarks.\n  • Just one inanimate object/icon, like a sticker.",
+    "generatedAt": "2026-05-15T09:49:01.489Z"
+  },
+  "audio": {
+    "mode": "GEMINI",
+    "voiceMap": {
+      "Mia": "Zephyr",
+      "Alex": "Sadaltager"
+    },
+    "file": "remote-vs-office-productivity-debate.mp3",
+    "sizeKb": 3452,
+    "durationSec": 73.6,
+    "model": "gemini-3.1-flash-tts-preview",
+    "promptPreview": "Voice this as a REAL conversation between real people — natural, unforced, conversational. NOT theatrical. NOT a narrator. NOT a podcast host performing.\n\nCRITICAL — sound natural:\n- Speak the way cow…",
+    "mix": {
+      "mixed": true,
+      "file": "remote-vs-office-productivity-debate.mp3",
+      "sizeKb": 981,
+      "sceneMood": "review",
+      "moodTags": [
+        "calm",
+        "podcast",
+        "corporate"
+      ],
+      "intro": {
+        "track": "faderproducer-podcast-intro-530686.mp3",
+        "tags": [
+          "intro",
+          "podcast"
+        ],
+        "score": 7,
+        "fallback": false,
+        "offsetSec": 0,
+        "durationSec": 5
+      },
+      "outro": {
+        "track": "53976329-podcast-outro-clean-closing-sting-459117.mp3",
+        "tags": [
+          "outro",
+          "bumper",
+          "podcast"
+        ],
+        "score": 7,
+        "fallback": false,
+        "offsetSec": 121.7,
+        "durationSec": 5
+      },
+      "layout": "5s intro sting · voice (clean) · 5s outro sting"
+    },
+    "align": {
+      "aligned": true,
+      "model": "base.en",
+      "introOffsetSec": 5,
+      "lineTimings": [
+        {
+          "lineIndex": 0,
+          "start": 5.7,
+          "end": 14.53,
+          "interpolated": true,
+          "durationSec": 8.83
+        },
+        {
+          "lineIndex": 1,
+          "start": 14.53,
+          "end": 23.36,
+          "interpolated": true,
+          "durationSec": 8.83
+        },
+        {
+          "lineIndex": 2,
+          "start": 23.36,
+          "end": 32.36,
+          "durationSec": 9
+        },
+        {
+          "lineIndex": 3,
+          "start": 32.94,
+          "end": 41.2,
+          "durationSec": 8.26
+        },
+        {
+          "lineIndex": 4,
+          "start": 41.2,
+          "end": 52.52,
+          "interpolated": true,
+          "durationSec": 11.32
+        },
+        {
+          "lineIndex": 5,
+          "start": 52.52,
+          "end": 58.1,
+          "durationSec": 5.58
+        },
+        {
+          "lineIndex": 6,
+          "start": 58.9,
+          "end": 61.06,
+          "durationSec": 2.16
+        },
+        {
+          "lineIndex": 7,
+          "start": 61.06,
+          "end": 64.48,
+          "durationSec": 3.42
+        },
+        {
+          "lineIndex": 8,
+          "start": 65.6,
+          "end": 72.74,
+          "durationSec": 7.14
+        },
+        {
+          "lineIndex": 9,
+          "start": 73.62,
+          "end": 77.9,
+          "durationSec": 4.28
+        }
+      ],
+      "segmentCount": 58,
+      "wordCount": 177
+    }
+  }
+}

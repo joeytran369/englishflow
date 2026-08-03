@@ -1,0 +1,307 @@
+{
+  "id": "team-lunch-dilemma",
+  "publishedAt": "2026-05-13T10:02:10.936Z",
+  "generatedAt": "2026-05-13T10:02:10.937Z",
+  "mode": "GEMINI",
+  "plan": {
+    "category": "Office Life",
+    "topic": "Planning a Team Lunch",
+    "setting": "Two colleagues chat by the coffee machine on a Friday morning, discussing plans for a team lunch.",
+    "level": "A2",
+    "keyConcepts": [
+      "What are you in the mood for?",
+      "How about [place/food]?",
+      "Sounds good!",
+      "Let's aim for [time].",
+      "reserve a table"
+    ]
+  },
+  "dialogue": {
+    "title": "Team Lunch Dilemma",
+    "sceneBrief": "Casual chat, light banter, low-stakes planning for a team lunch on a Friday morning.",
+    "characters": [
+      {
+        "name": "Mia",
+        "role": "colleague",
+        "gender": "female",
+        "voiceProfile": "bright-friendly"
+      },
+      {
+        "name": "Ben",
+        "role": "colleague",
+        "gender": "male",
+        "voiceProfile": "senior-calm"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Mia",
+        "text": "Ben! Morning! Hey, so... team lunch today, right? What are you in the mood for?",
+        "vn": "Ben! Chào buổi sáng! Này, vậy là... ăn trưa nhóm hôm nay đúng không? Cậu muốn ăn gì?",
+        "emotion": "enthusiastic",
+        "tags": []
+      },
+      {
+        "speaker": "Ben",
+        "text": "Morning, Mia. Uh, yeah. Good question. I'm open, honestly. Not fast food, though, please.",
+        "vn": "Chào buổi sáng, Mia. À, ừ. Câu hỏi hay đấy. Thành thật mà nói thì tôi sao cũng được. Nhưng đừng đồ ăn nhanh nhé.",
+        "emotion": "calm",
+        "tags": []
+      },
+      {
+        "speaker": "Mia",
+        "text": "Right, right, no greasy stuff. Hmm... how about that new Italian place, 'Pasta Palace'? Everyone likes pasta, right?",
+        "vn": "Đúng rồi, đúng rồi, không đồ dầu mỡ. Hừm... còn nhà hàng Ý mới mở, 'Pasta Palace' thì sao? Ai cũng thích pasta mà, đúng không?",
+        "emotion": "proposing",
+        "tags": []
+      },
+      {
+        "speaker": "Ben",
+        "text": "Pasta Palace? Oh, the one with the terrible name. Yeah, I mean, the food's decent. Sounds good to me.",
+        "vn": "Pasta Palace? Ồ, cái chỗ tên tệ kinh khủng đó à. Ừ, ý tôi là, đồ ăn cũng được. Nghe có vẻ ổn đấy.",
+        "emotion": "deadpan",
+        "tags": []
+      },
+      {
+        "speaker": "Mia",
+        "text": "Okay! Perfect! Let's aim for, like, 12:30? Gives people time to finish their morning—",
+        "vn": "Được! Tuyệt vời! Chúng ta nhắm khoảng 12:30 nhé? Mọi người sẽ có thời gian để hoàn thành việc buổi sáng—",
+        "emotion": "excited",
+        "tags": []
+      },
+      {
+        "speaker": "Ben",
+        "text": "Wait, wait, 12:30? Uh, Mia, remember Dave's demo? That's at 12:00. We'd miss half of it.",
+        "vn": "Khoan đã, khoan đã, 12:30 ư? Ờ, Mia, cậu nhớ buổi demo của Dave không? Nó lúc 12:00. Chúng ta sẽ bỏ lỡ mất một nửa đấy.",
+        "emotion": "frustrated",
+        "tags": []
+      },
+      {
+        "speaker": "Mia",
+        "text": "[groans] Oh, right! Dave. Ugh. Okay, so... 1:00 PM then? That gives us an hour post-demo.",
+        "vn": "[rên rỉ] Ồ, phải rồi! Dave. Ugh. Được rồi, vậy là... 1:00 chiều nhé? Như vậy chúng ta có một tiếng sau demo.",
+        "emotion": "frustrated",
+        "tags": [
+          "groans"
+        ]
+      },
+      {
+        "speaker": "Ben",
+        "text": "Yeah, 1:00 PM works better. Less rushing. I can just quickly call ahead and reserve a table.",
+        "vn": "Ừ, 1:00 chiều thì ổn hơn. Đỡ phải vội vàng. Tôi có thể gọi điện đặt bàn trước luôn.",
+        "emotion": "relieved",
+        "tags": []
+      },
+      {
+        "speaker": "Mia",
+        "text": "Awesome! You're a lifesaver, Ben. I'll send out the calendar invite now.",
+        "vn": "Tuyệt vời! Cậu đúng là cứu tinh, Ben. Tôi sẽ gửi lời mời trên lịch ngay đây.",
+        "emotion": "grateful",
+        "tags": []
+      },
+      {
+        "speaker": "Ben",
+        "text": "No problem. Just make sure it's actually Italian, not some fusion thing. My stomach has standards. [chuckles]",
+        "vn": "Không có gì. Chỉ cần đảm bảo đó là đồ Ý chính hiệu, không phải kiểu kết hợp gì đó. Dạ dày tôi có tiêu chuẩn riêng đấy. [cười khẽ]",
+        "emotion": "playful",
+        "tags": [
+          "chuckles"
+        ]
+      }
+    ]
+  },
+  "editorReview": {
+    "levelChecked": "A2",
+    "notes": [
+      "The dialogue demonstrates high naturalness, with authentic conversational flow, realistic interruptions, and light banter suitable for colleagues.",
+      "Most of the vocabulary and grammar are well within the A2 range.",
+      "However, a few phrases slightly push the boundary into B1 territory and might require some inference or prior exposure for a strict A2 learner:",
+      "-   'Greasy stuff' (line 3): 'Stuff' can be vague for A2 learners; 'greasy food' would be clearer.",
+      "-   'Decent' (line 4): While common, 'good enough' or 'okay' might be more explicitly A2.",
+      "-   'Post-demo' (line 7): 'After the demo' is a simpler A2 alternative.",
+      "-   'Lifesaver' (line 9): This is a common idiom, but idioms can be challenging at A2. 'You're a great help' or 'Thank you so much' are more direct.",
+      "-   'Fusion thing' (line 10): 'Fusion' as a culinary term might be B1. 'Mixed cuisine' or 'mix of foods' could be clearer.",
+      "-   'My stomach has standards' (line 10): This is a playful, idiomatic expression and is definitely above A2 level. A simpler A2 equivalent would be 'I am picky about food' or 'I don't like all kinds of food'.",
+      "Despite these minor points, the overall gist of the conversation is perfectly comprehensible for an A2 learner, and the naturalness is a significant strength."
+    ],
+    "approved": true
+  },
+  "vocab": [
+    {
+      "term": "in the mood for (something)",
+      "ipa": "/ɪn ðə muːd fɔːr/",
+      "vn": "muốn ăn/làm gì; có tâm trạng muốn...",
+      "example": "What are you in the mood for for lunch today?"
+    },
+    {
+      "term": "I'm open (honestly)",
+      "ipa": "/aɪm ˈoʊpən (ˈɑːnɪstli)/",
+      "vn": "Tôi sao cũng được; tôi không có ý kiến gì đặc biệt",
+      "example": "I'm open, honestly. Whatever works for everyone."
+    },
+    {
+      "term": "greasy stuff",
+      "ipa": "/ˈɡriːsi stʌf/",
+      "vn": "đồ ăn nhiều dầu mỡ",
+      "example": "Let's avoid greasy stuff for lunch today."
+    },
+    {
+      "term": "Sounds good to me.",
+      "ipa": "/saʊndz ɡʊd tuː miː/",
+      "vn": "Nghe có vẻ được/ổn đấy.",
+      "example": "Pasta Palace? Sounds good to me!"
+    },
+    {
+      "term": "aim for (a time/date)",
+      "ipa": "/eɪm fɔːr/",
+      "vn": "nhắm đến, đặt mục tiêu là (thời gian/ngày)",
+      "example": "Let's aim for 12:30, if that works."
+    },
+    {
+      "term": "works better",
+      "ipa": "/wɜːrks ˈbɛtər/",
+      "vn": "ổn hơn, phù hợp hơn",
+      "example": "1:00 PM works better, less rushing."
+    },
+    {
+      "term": "a lifesaver",
+      "ipa": "/ə ˈlaɪfˌseɪvər/",
+      "vn": "cứu tinh, người giúp đỡ rất nhiều",
+      "example": "You're a lifesaver for calling ahead and reserving the table!"
+    },
+    {
+      "term": "send out a calendar invite",
+      "ipa": "/sɛnd aʊt ə ˈkælɪndər ɪnˌvaɪt/",
+      "vn": "gửi lời mời trên lịch (điện tử)",
+      "example": "I'll send out the calendar invite for 1 PM now."
+    }
+  ],
+  "audio": {
+    "mode": "GEMINI",
+    "voiceMap": {
+      "Mia": "Sulafat",
+      "Ben": "Charon"
+    },
+    "file": "team-lunch-dilemma.mp3",
+    "sizeKb": 2633,
+    "durationSec": 56.2,
+    "model": "gemini-2.5-flash-preview-tts",
+    "promptPreview": "Voice this as a REAL conversation between real people — natural, unforced, conversational. NOT theatrical. NOT a narrator. NOT a podcast host performing.\n\nCRITICAL — sound natural:\n- Speak the way cow…",
+    "mix": {
+      "mixed": true,
+      "file": "team-lunch-dilemma.mp3",
+      "sizeKb": 776,
+      "sceneMood": "sprint",
+      "moodTags": [
+        "energetic",
+        "corporate",
+        "podcast"
+      ],
+      "intro": {
+        "track": "faderproducer-podcast-intro-530686.mp3",
+        "tags": [
+          "intro",
+          "podcast"
+        ],
+        "score": 6,
+        "fallback": false,
+        "offsetSec": 0,
+        "durationSec": 5
+      },
+      "outro": {
+        "track": "audiorezout-brighter-days-sting-reduced-fashion-summer-happy-travel-vlog-music-201566.mp3",
+        "tags": [
+          "outro",
+          "bumper",
+          "energetic",
+          "corporate"
+        ],
+        "score": 10,
+        "fallback": false,
+        "offsetSec": 4.2,
+        "durationSec": 5
+      },
+      "layout": "5s intro sting · voice (clean) · 5s outro sting"
+    },
+    "align": {
+      "aligned": true,
+      "model": "base.en",
+      "introOffsetSec": 5,
+      "lineTimings": [
+        {
+          "lineIndex": 0,
+          "start": 5,
+          "end": 9.8,
+          "interpolated": true,
+          "durationSec": 4.8
+        },
+        {
+          "lineIndex": 1,
+          "start": 9.8,
+          "end": 14.94,
+          "durationSec": 5.14
+        },
+        {
+          "lineIndex": 2,
+          "start": 15.22,
+          "end": 22.08,
+          "durationSec": 6.86
+        },
+        {
+          "lineIndex": 3,
+          "start": 22.3,
+          "end": 27.98,
+          "durationSec": 5.68
+        },
+        {
+          "lineIndex": 4,
+          "start": 28.2,
+          "end": 33.54,
+          "durationSec": 5.34
+        },
+        {
+          "lineIndex": 5,
+          "start": 33.54,
+          "end": 39.56,
+          "durationSec": 6.02
+        },
+        {
+          "lineIndex": 6,
+          "start": 39.76,
+          "end": 44.22,
+          "durationSec": 4.46
+        },
+        {
+          "lineIndex": 7,
+          "start": 44.22,
+          "end": 51.36,
+          "interpolated": true,
+          "durationSec": 7.14
+        },
+        {
+          "lineIndex": 8,
+          "start": 51.36,
+          "end": 54.6,
+          "durationSec": 3.24
+        },
+        {
+          "lineIndex": 9,
+          "start": 55.1,
+          "end": 60.6,
+          "durationSec": 5.5
+        }
+      ],
+      "segmentCount": 11,
+      "wordCount": 167
+    }
+  },
+  "poster": {
+    "generated": true,
+    "provider": "gemini",
+    "file": "team-lunch-dilemma.png",
+    "width": 1280,
+    "height": 512,
+    "prompt": "Cute minimal icon-style illustration for a language-learning podcast banner.\nConcept: Casual chat, light banter, low-stakes planning for a team lunch on a Friday morning..\nSubject: ONE single chubby rounded ICONIC OBJECT representing the topic (e.g. a coffee cup, a plane, a laptop, a server rack, a suitcase, a clock, etc). The object is centered.\nStyle: BRIGHT peach + cream + soft coral pastel, sunny light cheerful background. Soft pastel candy palette, mascot-style rounded shapes, gentle flat shading, subtle floating dots/sparkles in background, premium mobile-app aesthetic.\nBackground: soft single-tone pastel gradient, very airy, lots of negative space.\nABSOLUTE STRICT RULES (will fail review if violated):\n  • NO humans of any kind. NO people. NO faces. NO eyes. NO hands. NO body parts. NO silhouettes.\n  • NO animals with faces. NO mascot creatures.\n  • NO text, NO letters, NO numbers, NO logos, NO writing, NO signatures, NO watermarks.\n  • Just one inanimate object/icon, like a sticker.",
+    "generatedAt": "2026-05-14T04:22:50.064Z"
+  }
+}

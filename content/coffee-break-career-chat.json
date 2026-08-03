@@ -1,0 +1,330 @@
+{
+  "id": "coffee-break-career-chat",
+  "publishedAt": "2026-05-14T04:15:56.583Z",
+  "generatedAt": "2026-05-14T04:15:56.583Z",
+  "mode": "GEMINI",
+  "plan": {
+    "category": "Career",
+    "topic": "Discussing Job Market Trends and Career Moves",
+    "setting": "Two colleagues are having a candid chat during a coffee break, discussing job market trends and their career paths.",
+    "level": "A2",
+    "keyConcepts": [
+      "job hopping",
+      "market trends",
+      "better salary",
+      "new opportunities",
+      "feeling stuck"
+    ]
+  },
+  "dialogue": {
+    "title": "Coffee Break Career Chat",
+    "sceneBrief": "Two colleagues, Chris and Lisa, have a candid and slightly anxious chat about job market shifts and their career options during a coffee break.",
+    "characters": [
+      {
+        "name": "Chris",
+        "role": "Software Engineer",
+        "gender": "male",
+        "voiceProfile": "junior-anxious"
+      },
+      {
+        "name": "Lisa",
+        "role": "Project Manager",
+        "gender": "female",
+        "voiceProfile": "senior-calm"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Chris",
+        "text": "Ugh, another Monday. I'm starting to feel really... stuck, you know?",
+        "vn": "Ugh, lại thứ Hai. Tôi bắt đầu cảm thấy thật sự... bế tắc ấy, cậu hiểu không?",
+        "emotion": "frustrated",
+        "tags": [
+          "groans"
+        ]
+      },
+      {
+        "speaker": "Lisa",
+        "text": "Yeah, I get it. The grind. But honestly, have you seen the market trends lately? It's buzzing.",
+        "vn": "Ừ, tôi hiểu mà. Cuộc sống mà. Nhưng thật sự, cậu có thấy xu hướng thị trường gần đây không? Sôi động lắm.",
+        "emotion": "understanding",
+        "tags": []
+      },
+      {
+        "speaker": "Chris",
+        "text": "Buzzing how? I just see everyone job hopping for like, five grand more. Is it really worth it?",
+        "vn": "Sôi động kiểu gì chứ? Tôi chỉ thấy mọi người nhảy việc để kiếm thêm năm nghìn đô. Có đáng không?",
+        "emotion": "skeptical",
+        "tags": []
+      },
+      {
+        "speaker": "Lisa",
+        "text": "Well, sometimes it's more than that. It's about new opportunities, expanding your skill set... and yeah, often a better salary.",
+        "vn": "Chà, đôi khi còn hơn thế nữa. Là về những cơ hội mới, mở rộng kỹ năng của cậu... và ừ, thường là mức lương tốt hơn.",
+        "emotion": "explaining",
+        "tags": []
+      },
+      {
+        "speaker": "Chris",
+        "text": "But what if you jump and it's worse? Like, you're back at square one, just with a new desk.",
+        "vn": "Nhưng lỡ nhảy việc mà tệ hơn thì sao? Kiểu như, lại quay về vạch xuất phát, chỉ là có cái bàn mới thôi.",
+        "emotion": "anxious",
+        "tags": []
+      },
+      {
+        "speaker": "Lisa",
+        "text": "That's the risk, sure. But staying put because you're scared of a bad move... that's a risk too, right? Of missing out.",
+        "vn": "Đó là rủi ro, chắc chắn rồi. Nhưng cứ ở yên vì sợ một bước đi sai... đó cũng là một rủi ro, đúng không? Kiểu bỏ lỡ ấy.",
+        "emotion": "playful",
+        "tags": [
+          "chuckles"
+        ]
+      },
+      {
+        "speaker": "Chris",
+        "text": "Hm. I guess. So, you think I should be—",
+        "vn": "Hm. Chắc vậy. Vậy, cậu nghĩ tôi nên—",
+        "emotion": "hesitant",
+        "tags": []
+      },
+      {
+        "speaker": "Lisa",
+        "text": "I'm just saying, don't ignore what's out there. Especially if you're feeling stuck.",
+        "vn": "Tôi chỉ nói là, đừng bỏ qua những gì đang có ngoài kia. Đặc biệt nếu cậu đang cảm thấy bế tắc.",
+        "emotion": "encouraging",
+        "tags": []
+      },
+      {
+        "speaker": "Chris",
+        "text": "Right. I mean, my current salary isn't terrible, but it's not exactly setting the world on fire either.",
+        "vn": "Đúng rồi. Ý tôi là, lương hiện tại của tôi không tệ, nhưng cũng không phải là quá bùng nổ.",
+        "emotion": "resigned",
+        "tags": []
+      },
+      {
+        "speaker": "Lisa",
+        "text": "Exactly. Maybe just... have a look? See what kind of new opportunities are floating around.",
+        "vn": "Chính xác. Có lẽ cứ... thử xem sao? Xem những cơ hội mới nào đang trôi nổi ngoài kia.",
+        "emotion": "suggestive",
+        "tags": []
+      },
+      {
+        "speaker": "Chris",
+        "text": "Okay, so... low-key browse, then?",
+        "vn": "Được thôi, vậy là... tìm kiếm kín đáo thôi nhỉ?",
+        "emotion": "curious",
+        "tags": []
+      },
+      {
+        "speaker": "Lisa",
+        "text": "Yeah. You never know.",
+        "vn": "Ừ. Ai mà biết được.",
+        "emotion": "optimistic",
+        "tags": []
+      }
+    ]
+  },
+  "editorReview": {
+    "levelChecked": false,
+    "notes": [
+      "The dialogue contains numerous idiomatic expressions and colloquialisms that exceed the A2 level. For instance, phrases like 'the grind,' 'buzzing,' 'job hopping,' 'five grand,' 'expanding your skill set,' 'back at square one,' 'staying put,' 'bad move,' 'missing out,' 'setting the world on fire,' 'floating around,' and 'low-key' are generally considered B1 or B2 level vocabulary and usage.",
+      "While the topic of career and feeling stuck is relatable, the complexity of the language would make comprehensive understanding challenging for an A2 learner.",
+      "The dialogue is natural in its conversational flow, but this naturalness often relies on the very idiomatic language that makes it unsuitable for A2."
+    ],
+    "approved": false
+  },
+  "vocab": [
+    {
+      "term": "Feeling stuck",
+      "ipa": "/ˈfiːlɪŋ stʌk/",
+      "vn": "cảm thấy bế tắc, mắc kẹt",
+      "example": "I'm starting to feel really stuck in my current role."
+    },
+    {
+      "term": "The grind",
+      "ipa": "/ðə ɡraɪnd/",
+      "vn": "công việc/cuộc sống nhàm chán, áp lực",
+      "example": "Yeah, I get it. The grind can be tough sometimes."
+    },
+    {
+      "term": "Job hopping",
+      "ipa": "/ˈdʒɒb ˌhɒpɪŋ/",
+      "vn": "nhảy việc, thay đổi công việc thường xuyên",
+      "example": "I just see everyone job hopping for like, five grand more."
+    },
+    {
+      "term": "Expanding your skill set",
+      "ipa": "/ɪkˈspændɪŋ jər ˈskɪl sɛt/",
+      "vn": "mở rộng bộ kỹ năng, trau dồi thêm kỹ năng",
+      "example": "It's about new opportunities, expanding your skill set."
+    },
+    {
+      "term": "Back at square one",
+      "ipa": "/bæk æt skwɛr wʌn/",
+      "vn": "quay lại vạch xuất phát, trở về điểm ban đầu",
+      "example": "What if you jump and you're back at square one?"
+    },
+    {
+      "term": "Missing out",
+      "ipa": "/ˈmɪsɪŋ aʊt/",
+      "vn": "bỏ lỡ cơ hội, không được trải nghiệm",
+      "example": "Staying put is a risk too, right? Of missing out."
+    },
+    {
+      "term": "Setting the world on fire",
+      "ipa": "/ˈsɛtɪŋ ðə wɜːrld ɒn ˈfaɪər/",
+      "vn": "làm nên chuyện lớn, cực kỳ thành công/nổi bật",
+      "example": "My current salary isn't terrible, but it's not exactly setting the world on fire either."
+    },
+    {
+      "term": "Opportunities floating around",
+      "ipa": "/ˌɒpərˈtuːnətiz ˈfloʊtɪŋ əˈraʊnd/",
+      "vn": "các cơ hội đang có sẵn/trôi nổi ngoài kia",
+      "example": "See what kind of new opportunities are floating around."
+    },
+    {
+      "term": "Low-key browse",
+      "ipa": "/ˌloʊ kiː braʊz/",
+      "vn": "tìm kiếm kín đáo, xem xét nhẹ nhàng",
+      "example": "Okay, so... low-key browse, then?"
+    }
+  ],
+  "poster": {
+    "generated": true,
+    "provider": "gemini",
+    "file": "coffee-break-career-chat.png",
+    "width": 1280,
+    "height": 512,
+    "prompt": "Cute minimal icon-style illustration for a language-learning podcast banner.\nConcept: Two colleagues, Chris and Lisa, have a candid and slightly anxious chat about job market shifts and their career options during a coffee break..\nSubject: ONE single chubby rounded ICONIC OBJECT representing the topic (e.g. a coffee cup, a plane, a laptop, a server rack, a suitcase, a clock, etc). The object is centered.\nStyle: BRIGHT mint + soft seafoam + cream pastel, optimistic light background. Soft pastel candy palette, mascot-style rounded shapes, gentle flat shading, subtle floating dots/sparkles in background, premium mobile-app aesthetic.\nBackground: soft single-tone pastel gradient, very airy, lots of negative space.\nABSOLUTE STRICT RULES (will fail review if violated):\n  • NO humans of any kind. NO people. NO faces. NO eyes. NO hands. NO body parts. NO silhouettes.\n  • NO animals with faces. NO mascot creatures.\n  • NO text, NO letters, NO numbers, NO logos, NO writing, NO signatures, NO watermarks.\n  • Just one inanimate object/icon, like a sticker.",
+    "generatedAt": "2026-05-14T04:22:26.515Z"
+  },
+  "audio": {
+    "mode": "GEMINI",
+    "voiceMap": {
+      "Chris": "Puck",
+      "Lisa": "Aoede"
+    },
+    "file": "coffee-break-career-chat.mp3",
+    "sizeKb": 2922,
+    "durationSec": 62.3,
+    "model": "gemini-2.5-flash-preview-tts",
+    "promptPreview": "Voice this as a REAL conversation between real people — natural, unforced, conversational. NOT theatrical. NOT a narrator. NOT a podcast host performing.\n\nCRITICAL — sound natural:\n- Speak the way cow…",
+    "mix": {
+      "mixed": true,
+      "file": "coffee-break-career-chat.mp3",
+      "sizeKb": 848,
+      "sceneMood": "default",
+      "moodTags": [
+        "podcast",
+        "corporate",
+        "energetic"
+      ],
+      "intro": {
+        "track": "faderproducer-podcast-intro-530686.mp3",
+        "tags": [
+          "intro",
+          "podcast"
+        ],
+        "score": 8,
+        "fallback": false,
+        "offsetSec": 0,
+        "durationSec": 5
+      },
+      "outro": {
+        "track": "53976329-podcast-outro-clean-closing-sting-459117.mp3",
+        "tags": [
+          "outro",
+          "bumper",
+          "podcast"
+        ],
+        "score": 8,
+        "fallback": false,
+        "offsetSec": 91.1,
+        "durationSec": 5
+      },
+      "layout": "5s intro sting · voice (clean) · 5s outro sting"
+    },
+    "align": {
+      "aligned": true,
+      "model": "base.en",
+      "introOffsetSec": 5,
+      "lineTimings": [
+        {
+          "lineIndex": 0,
+          "start": 5,
+          "end": 9.2,
+          "durationSec": 4.2
+        },
+        {
+          "lineIndex": 1,
+          "start": 9.64,
+          "end": 15.4,
+          "durationSec": 5.76
+        },
+        {
+          "lineIndex": 2,
+          "start": 16.28,
+          "end": 21.56,
+          "durationSec": 5.28
+        },
+        {
+          "lineIndex": 3,
+          "start": 22.04,
+          "end": 29.32,
+          "durationSec": 7.28
+        },
+        {
+          "lineIndex": 4,
+          "start": 30,
+          "end": 34.58,
+          "durationSec": 4.58
+        },
+        {
+          "lineIndex": 5,
+          "start": 36.2,
+          "end": 43.22,
+          "durationSec": 7.02
+        },
+        {
+          "lineIndex": 6,
+          "start": 43.22,
+          "end": 47.64,
+          "interpolated": true,
+          "durationSec": 4.42
+        },
+        {
+          "lineIndex": 7,
+          "start": 47.64,
+          "end": 51.32,
+          "durationSec": 3.68
+        },
+        {
+          "lineIndex": 8,
+          "start": 51.86,
+          "end": 57.1,
+          "durationSec": 5.24
+        },
+        {
+          "lineIndex": 9,
+          "start": 57.58,
+          "end": 62.8,
+          "durationSec": 5.22
+        },
+        {
+          "lineIndex": 10,
+          "start": 63.3,
+          "end": 65.34,
+          "durationSec": 2.04
+        },
+        {
+          "lineIndex": 11,
+          "start": 65.78,
+          "end": 67.1,
+          "durationSec": 1.32
+        }
+      ],
+      "segmentCount": 31,
+      "wordCount": 187
+    }
+  }
+}

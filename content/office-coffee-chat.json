@@ -1,0 +1,296 @@
+{
+  "id": "office-coffee-chat",
+  "publishedAt": "2026-05-15T10:45:13.428Z",
+  "generatedAt": "2026-05-15T10:45:13.429Z",
+  "mode": "GEMINI",
+  "plan": {
+    "category": "Office Life",
+    "topic": "Coffee chat with a new colleague",
+    "setting": "Two colleagues, one new and one established, are making coffee in the office kitchen and strike up a friendly conversation.",
+    "level": "A2",
+    "energy": "high",
+    "keyConcepts": [
+      "settling in",
+      "What do you work on?",
+      "grab a coffee",
+      "How's it going?",
+      "feel free to ask"
+    ]
+  },
+  "dialogue": {
+    "title": "Office Coffee Chat",
+    "sceneBrief": "Two colleagues, one new and one established, are making coffee in the office kitchen and strike up a friendly, high-energy conversation about settling in.",
+    "characters": [
+      {
+        "name": "Mia",
+        "role": "Established Colleague",
+        "gender": "female",
+        "voiceProfile": "bright-friendly"
+      },
+      {
+        "name": "Alex",
+        "role": "New Colleague",
+        "gender": "male",
+        "voiceProfile": "junior-excited"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Mia",
+        "text": "Hey Alex! How's it going, settling into everything so far? You seem to be getting the hang of the coffee machine already, that's step one!",
+        "vn": "Chào Alex! Mọi chuyện thế nào rồi, cậu đã ổn định được mọi thứ chưa? Trông cậu có vẻ đã thành thạo máy pha cà phê rồi đấy, bước đầu tiên quan trọng lắm nha!",
+        "emotion": "playful",
+        "tags": []
+      },
+      {
+        "speaker": "Alex",
+        "text": "Oh, hey Mia! Yeah, it's going pretty well, actually. Still finding my feet, but everyone's been really helpful. This machine is... a challenge, but I'm getting there!",
+        "vn": "Ồ, chào Mia! À, mọi thứ khá ổn ạ. Em vẫn đang tìm hiểu mọi thứ, nhưng mọi người đều rất nhiệt tình giúp đỡ. Cái máy này... đúng là một thử thách, nhưng em đang dần quen rồi!",
+        "emotion": "excited",
+        "tags": []
+      },
+      {
+        "speaker": "Mia",
+        "text": "Right? It definitely has its quirks! So, what do you work on primarily? Are you finding your niche, or still exploring projects?",
+        "vn": "Đúng không? Nó cứ 'dở chứng' ấy mà! Vậy cậu chủ yếu làm gì? Đã tìm được chỗ đứng của mình chưa, hay vẫn đang khám phá các dự án?",
+        "emotion": "curious",
+        "tags": [
+          "chuckles"
+        ]
+      },
+      {
+        "speaker": "Alex",
+        "text": "Uh, yeah, I'm with the dev team, focusing on the new data pipeline project. It's a lot to take in, I mean, but super interesting work!",
+        "vn": "À, vâng, em ở đội dev, tập trung vào dự án đường ống dữ liệu mới. Nói thật là có rất nhiều thứ phải học, nhưng công việc cực kỳ thú vị ạ!",
+        "emotion": "focused",
+        "tags": []
+      },
+      {
+        "speaker": "Mia",
+        "text": "Nice! That sounds like a big project to jump into right away. Well, listen, if anything comes up or you're ever stuck, feel free to ask me, or anyone really.",
+        "vn": "Tuyệt vời! Nghe có vẻ là một dự án lớn để bắt đầu ngay đấy. Nghe này, nếu có bất cứ vấn đề gì hay cậu bị mắc kẹt ở đâu, cứ thoải mái hỏi tớ, hoặc bất kỳ ai khác nữa nhé.",
+        "emotion": "friendly",
+        "tags": []
+      },
+      {
+        "speaker": "Alex",
+        "text": "Thanks, Mia, I really appreciate that. I probably will have a million questions next week, honestly. You've been super welcoming!",
+        "vn": "Cảm ơn Mia, em thực sự rất cảm kích điều đó. Tuần tới chắc em sẽ có cả triệu câu hỏi mất, thật sự đó. Chị thật sự rất nhiệt tình!",
+        "emotion": "relieved",
+        "tags": []
+      },
+      {
+        "speaker": "Mia",
+        "text": "Absolutely! No worries at all. And hey, we should totally grab a coffee like this again soon, away from the kitchen chaos, ha! Always happy to chat.",
+        "vn": "Chắc chắn rồi! Đừng lo lắng gì cả. Mà này, chúng ta nên đi uống cà phê kiểu này một lần nữa sớm thôi, tránh xa cái sự hỗn loạn ở bếp, ha! Luôn vui được trò chuyện.",
+        "emotion": "playful",
+        "tags": []
+      },
+      {
+        "speaker": "Alex",
+        "text": "Sounds good to me! I'd definitely take you up on that, for sure. Thanks again for everything!",
+        "vn": "Nghe hay đấy ạ! Em chắc chắn sẽ nhận lời mời đó. Cảm ơn chị một lần nữa vì mọi thứ ạ!",
+        "emotion": "excited",
+        "tags": []
+      }
+    ]
+  },
+  "editorReview": {
+    "levelChecked": "A2",
+    "notes": [
+      "The dialogue is generally natural and conversational for native speakers in an office setting, but it significantly overshoots the A2 proficiency level.",
+      "Many phrases, idiomatic expressions, and vocabulary items are B1 or even B2 level, making it challenging for an A2 learner to fully comprehend and especially to produce naturally.",
+      "Specific examples of language above A2 include:",
+      "-   \"getting the hang of\" (B1)",
+      "-   \"settling into everything\" (borderline B1)",
+      "-   \"finding my feet\" (B1/B2)",
+      "-   \"has its quirks\" (B1/B2)",
+      "-   \"primarily\", \"niche\", \"exploring projects\" (B1/B2)",
+      "-   \"a lot to take in\" (B1)",
+      "-   \"jump into right away\" (B1)",
+      "-   \"if anything comes up\" (B1)",
+      "-   \"appreciate\", \"honestly\", \"welcoming\" (B1/B2)",
+      "-   \"Absolutely!\", \"totally grab a coffee\", \"kitchen chaos\" (B1)",
+      "-   \"take you up on that\", \"definitely\" (B1/B2)",
+      "For A2 fidelity, the language would need to be much simpler, avoiding most idiomatic expressions and using more basic vocabulary and sentence structures."
+    ],
+    "approved": false
+  },
+  "vocab": [
+    {
+      "term": "getting the hang of (something)",
+      "ipa": "/ˌɡetɪŋ ðə ˈhæŋ ɒv/",
+      "vn": "dần quen với, thành thạo",
+      "example": "It took me a few days, but I'm finally getting the hang of this new software."
+    },
+    {
+      "term": "finding your feet",
+      "ipa": "/ˌfaɪndɪŋ jɔːr ˈfiːt/",
+      "vn": "làm quen dần với môi trường mới, ổn định",
+      "example": "It takes a while to find your feet in a new job, but don't hesitate to ask for help."
+    },
+    {
+      "term": "have its quirks",
+      "ipa": "/hæv ɪts ˈkwɜːrks/",
+      "vn": "có những điểm riêng/dở chứng",
+      "example": "This old printer has its quirks, but it still gets the job done if you know how to handle it."
+    },
+    {
+      "term": "find your niche",
+      "ipa": "/ˌfaɪnd jɔːr ˈnɪʃ/",
+      "vn": "tìm được chỗ đứng của mình, tìm được lĩnh vực phù hợp",
+      "example": "After trying a few different roles, I finally found my niche in project management."
+    },
+    {
+      "term": "a lot to take in",
+      "ipa": "/ə lɒt tə ˈteɪk ɪn/",
+      "vn": "có nhiều điều để tiếp thu/học hỏi",
+      "example": "Starting a new job can be a lot to take in, especially with all the new systems and processes."
+    },
+    {
+      "term": "jump into (a project/task)",
+      "ipa": "/ˌdʒʌmp ˈɪntuː/",
+      "vn": "bắt đầu (một dự án/công việc) ngay lập tức",
+      "example": "We need to jump into this new project right away to meet the deadline."
+    },
+    {
+      "term": "if anything comes up",
+      "ipa": "/ɪf ˈɛnɪθɪŋ kʌmz ʌp/",
+      "vn": "nếu có bất cứ vấn đề gì phát sinh",
+      "example": "Don't worry about the presentation, just let me know if anything comes up."
+    },
+    {
+      "term": "I really appreciate that",
+      "ipa": "/aɪ ˈrɪəli əˈpriːʃieɪt ðæt/",
+      "vn": "Tôi thực sự rất cảm kích điều đó",
+      "example": "Thank you for staying late to help me, I really appreciate that."
+    },
+    {
+      "term": "super welcoming",
+      "ipa": "/ˌsuːpər ˈwɛlkəmɪŋ/",
+      "vn": "rất nhiệt tình/thân thiện/chào đón",
+      "example": "The team has been super welcoming since my first day here."
+    },
+    {
+      "term": "take someone up on an offer",
+      "ipa": "/ˌteɪk ˌsʌmwʌn ʌp ɒn ən ˈɒfər/",
+      "vn": "chấp nhận lời đề nghị của ai đó",
+      "example": "Thanks for the invitation, I'd love to take you up on that offer to visit the new office."
+    }
+  ],
+  "poster": {
+    "generated": true,
+    "provider": "gemini",
+    "file": "office-coffee-chat.png",
+    "width": 1280,
+    "height": 512,
+    "prompt": "Cute minimal icon-style illustration for a language-learning podcast banner.\nConcept: Two colleagues, one new and one established, are making coffee in the office kitchen and strike up a friendly, high-energy conversation about settling in..\nSubject: ONE single chubby rounded ICONIC OBJECT representing the topic (e.g. a coffee cup, a plane, a laptop, a server rack, a suitcase, a clock, etc). The object is centered.\nStyle: BRIGHT peach + cream + soft coral pastel, sunny light cheerful background. Soft pastel candy palette, mascot-style rounded shapes, gentle flat shading, subtle floating dots/sparkles in background, premium mobile-app aesthetic.\nBackground: soft single-tone pastel gradient, very airy, lots of negative space.\nABSOLUTE STRICT RULES (will fail review if violated):\n  • NO humans of any kind. NO people. NO faces. NO eyes. NO hands. NO body parts. NO silhouettes.\n  • NO animals with faces. NO mascot creatures.\n  • NO text, NO letters, NO numbers, NO logos, NO writing, NO signatures, NO watermarks.\n  • Just one inanimate object/icon, like a sticker.",
+    "generatedAt": "2026-05-15T10:46:25.577Z"
+  },
+  "audio": {
+    "mode": "GEMINI",
+    "voiceMap": {
+      "Mia": "Sulafat",
+      "Alex": "Fenrir"
+    },
+    "file": "office-coffee-chat.mp3",
+    "sizeKb": 2757,
+    "durationSec": 58.8,
+    "model": "gemini-2.5-flash-preview-tts",
+    "promptPreview": "Voice this as a REAL conversation between real people — natural, unforced, conversational. NOT theatrical. NOT a narrator. NOT a podcast host performing.\n\nCRITICAL — sound natural:\n- Speak the way cow…",
+    "mix": {
+      "mixed": true,
+      "file": "office-coffee-chat.mp3",
+      "sizeKb": 1615,
+      "sceneMood": "default",
+      "moodTags": [
+        "podcast",
+        "corporate",
+        "energetic"
+      ],
+      "intro": {
+        "track": "faderproducer-intro-podcast-530691.mp3",
+        "tags": [
+          "intro",
+          "podcast"
+        ],
+        "score": 8,
+        "fallback": false,
+        "offsetSec": 4.4,
+        "durationSec": 5
+      },
+      "outro": {
+        "track": "audiorezout-anpiel-sting-positive-corporate-travel-vlog-music-211317.mp3",
+        "tags": [
+          "outro",
+          "bumper",
+          "energetic",
+          "corporate"
+        ],
+        "score": 8,
+        "fallback": false,
+        "offsetSec": 1.7,
+        "durationSec": 5
+      },
+      "layout": "5s intro sting · voice (clean) · 5s outro sting"
+    },
+    "align": {
+      "aligned": true,
+      "model": "base.en",
+      "introOffsetSec": 5,
+      "lineTimings": [
+        {
+          "lineIndex": 0,
+          "start": 5,
+          "end": 12.28,
+          "durationSec": 7.28
+        },
+        {
+          "lineIndex": 1,
+          "start": 12.64,
+          "end": 21.4,
+          "durationSec": 8.76
+        },
+        {
+          "lineIndex": 2,
+          "start": 22.2,
+          "end": 29.32,
+          "durationSec": 7.12
+        },
+        {
+          "lineIndex": 3,
+          "start": 29.32,
+          "end": 36.56,
+          "interpolated": true,
+          "durationSec": 7.24
+        },
+        {
+          "lineIndex": 4,
+          "start": 36.56,
+          "end": 44.72,
+          "durationSec": 8.16
+        },
+        {
+          "lineIndex": 5,
+          "start": 45.02,
+          "end": 50.88,
+          "durationSec": 5.86
+        },
+        {
+          "lineIndex": 6,
+          "start": 51.28,
+          "end": 59.32,
+          "durationSec": 8.04
+        },
+        {
+          "lineIndex": 7,
+          "start": 59.68,
+          "end": 63.46,
+          "durationSec": 3.78
+        }
+      ],
+      "segmentCount": 30,
+      "wordCount": 201
+    }
+  }
+}

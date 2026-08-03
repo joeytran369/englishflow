@@ -248,66 +248,76 @@
         {
           "lineIndex": 0,
           "start": 5,
-          "end": 12.96,
-          "durationSec": 7.96
+          "end": 12.16,
+          "durationSec": 7.16
         },
         {
           "lineIndex": 1,
-          "start": 12.96,
-          "end": 21.6,
-          "durationSec": 8.64
-        },
-        {
-          "lineIndex": 2,
-          "start": 21.6,
-          "end": 29.08,
+          "start": 13.7,
+          "end": 21.18,
           "durationSec": 7.48
         },
         {
+          "lineIndex": 2,
+          "start": 21.56,
+          "end": 28.38,
+          "durationSec": 6.82
+        },
+        {
           "lineIndex": 3,
-          "start": 29.08,
-          "end": 36.36,
-          "durationSec": 7.28
+          "start": 29.16,
+          "end": 35.86,
+          "durationSec": 6.7
         },
         {
           "lineIndex": 4,
-          "start": 36.36,
-          "end": 42.12,
-          "durationSec": 5.76
+          "start": 36.26,
+          "end": 41.64,
+          "durationSec": 5.38
         },
         {
           "lineIndex": 5,
-          "start": 42.12,
-          "end": 52.36,
-          "durationSec": 10.24
+          "start": 42.04,
+          "end": 51.34,
+          "durationSec": 9.3
         },
         {
           "lineIndex": 6,
-          "start": 52.36,
-          "end": 61.36,
-          "durationSec": 9
+          "start": 52.32,
+          "end": 60.08,
+          "durationSec": 7.76
         },
         {
           "lineIndex": 7,
-          "start": 61.36,
-          "end": 70.4,
-          "durationSec": 9.04
+          "start": 61.3,
+          "end": 69.36,
+          "durationSec": 8.06
         },
         {
           "lineIndex": 8,
-          "start": 70.4,
-          "end": 79.08,
-          "durationSec": 8.68
+          "start": 70.7,
+          "end": 77.98,
+          "durationSec": 7.28
         },
         {
           "lineIndex": 9,
-          "start": 79.08,
-          "end": 85.96,
-          "durationSec": 6.88
+          "start": 79.2,
+          "end": 84.56,
+          "durationSec": 5.36
         }
       ],
-      "segmentCount": 36
+      "segmentCount": 36,
+      "wordCount": 232
     }
   },
-  "publishedAt": "2026-05-11"
+  "publishedAt": "2026-05-11",
+  "poster": {
+    "generated": true,
+    "provider": "gemini",
+    "file": "openstack-security-group-debug.png",
+    "width": 1280,
+    "height": 512,
+    "prompt": "Cute minimal icon-style illustration for a language-learning podcast banner.\nConcept: A tense but quickly resolved debugging session, with a junior engineer getting calm guidance and a bit of playful sarcasm from a veteran..\nSubject: ONE single chubby rounded ICONIC OBJECT representing the topic (e.g. a coffee cup, a plane, a laptop, a server rack, a suitcase, a clock, etc). The object is centered.\nStyle: BRIGHT pastel sky blue + soft lavender + mint accent, airy light background (NOT dark). Soft pastel candy palette, mascot-style rounded shapes, gentle flat shading, subtle floating dots/sparkles in background, premium mobile-app aesthetic.\nBackground: soft single-tone pastel gradient, very airy, lots of negative space.\nABSOLUTE STRICT RULES (will fail review if violated):\n  • NO humans of any kind. NO people. NO faces. NO eyes. NO hands. NO body parts. NO silhouettes.\n  • NO animals with faces. NO mascot creatures.\n  • NO text, NO letters, NO numbers, NO logos, NO writing, NO signatures, NO watermarks.\n  • Just one inanimate object/icon, like a sticker.",
+    "generatedAt": "2026-05-14T04:22:42.189Z"
+  }
 }

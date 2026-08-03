@@ -1,0 +1,92 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import {
+  sortByPublished,
+  pubDate,
+  categoryOf,
+  categorySlug,
+  levelColor,
+  durationSec,
+  fmtDur,
+  CATEGORY_LIST,
+  type Episode,
+} from "../../lib/episodes";
+const BASE = import.meta.env.BASE_URL;
+
+export async function getStaticPaths() {
+  return CATEGORY_LIST.map((name) => ({
+    params: { slug: categorySlug(name) },
+    props: { name },
+  }));
+}
+
+const { name } = Astro.props;
+const episodeFiles = import.meta.glob("../../../content/*.json", { eager: true, import: "default" });
+const all = sortByPublished(Object.values(episodeFiles) as Episode[]);
+const episodes = all.filter((e) => categoryOf(e.plan.setting, e.plan).name === name);
+const style = episodes[0] ? categoryOf(episodes[0].plan.setting, episodes[0].plan) : null;
+---
+
+<BaseLayout
+  title={`${name} — EnglishFlow`}
+  description={`English episodes in the ${name} category — daily dialogues for Cloud tech lovers.`}
+  ogImage={episodes[0]?.poster?.file ? `posters/${episodes[0].poster.file}` : undefined}
+>
+  <main class="px-6 lg:px-12 py-10 lg:py-14 max-w-3xl mx-auto">
+
+    <a href={`${BASE}`} class="inline-block text-[12px] font-mono text-zinc-500 dark:text-zinc-400 hover:text-emerald-600 dark:hover:text-emerald-400 mb-4">← back to home</a>
+
+    <section class="pb-8">
+      <div class="flex items-center gap-3 mb-2">
+        {style && <span class={`inline-block w-2.5 h-2.5 rounded-full ${style.dot}`}></span>}
+        <span class="text-[11px] font-mono uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400">Category</span>
+      </div>
+      <h1 class="text-[36px] sm:text-[44px] font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
+        {name}
+      </h1>
+      <p class="text-[14px] text-zinc-500 dark:text-zinc-400 mt-2">
+        {episodes.length} {episodes.length === 1 ? "episode" : "episodes"}
+      </p>
+    </section>
+
+    {episodes.length === 0 ? (
+      <p class="text-[14px] text-zinc-500 dark:text-zinc-400 italic-serif py-8">
+        No episodes yet in this category. Check back soon.
+      </p>
+    ) : (
+      <section class="grid sm:grid-cols-2 gap-3 pb-10">
+        {episodes.map((e) => {
+          const c = categoryOf(e.plan.setting, e.plan);
+          return (
+            <a
+              href={`${BASE}${e.id}/`}
+              class="block rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 hover:border-emerald-500 dark:hover:border-emerald-400 hover:shadow-sm transition-all group"
+            >
+              <div class="relative aspect-[5/2] overflow-hidden">
+                {e.poster?.file ? (
+                  <img src={`${BASE}posters/${e.poster.file}`} alt={e.dialogue.title} class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                ) : (
+                  <div class={`absolute inset-0 bg-gradient-to-br ${c.gradient}`}></div>
+                )}
+                <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/15 to-transparent"></div>
+                <div class="relative h-full flex flex-col justify-between p-3">
+                  <div class="flex items-start justify-between">
+                    <span class="px-2 py-0.5 rounded-full bg-zinc-900/85 backdrop-blur-sm text-white text-[10px] font-semibold ring-1 ring-white/15">{c.name}</span>
+                    <span class={`px-1.5 py-0 rounded-md text-[10px] font-mono shadow-sm ${levelColor[e.plan.level] ?? levelColor.B2}`}>{e.plan.level}</span>
+                  </div>
+                  <h4 class="text-poster text-white text-[15px] font-semibold leading-tight line-clamp-2">
+                    {e.dialogue.title}
+                  </h4>
+                </div>
+              </div>
+              <div class="px-3 py-2 flex items-center justify-between text-[11px] font-mono text-zinc-500 dark:text-zinc-400">
+                <span class="tabular-nums">{pubDate(e)}</span>
+                <span class="group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">{fmtDur(durationSec(e))} · {e.vocab.length} terms →</span>
+              </div>
+            </a>
+          );
+        })}
+      </section>
+    )}
+  </main>
+</BaseLayout>

@@ -4,34 +4,65 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 
+// Default: 2.5-flash-preview-tts. Despite 3.1-flash being newer, listening tests show 3.1 over-acts
+// ("nhấn nhá giả tạo, gặn giọng") while 2.5 stays natural without forcing inflection.
+// User preference confirmed via A/B test on 2026-05-15 (Sulafat+Fenrir).
 const TTS_MODEL = process.env.GEMINI_TTS_MODEL || "gemini-2.5-flash-preview-tts";
 
-// Voice characteristics → Gemini prebuilt voice names.
-// Each profile maps to 2 candidates so episodes don't sound identical.
-const VOICE_BY_PROFILE = {
-  "junior-anxious":    ["Leda", "Callirrhoe"],     // young female, anxious tonality
-  "junior-excited":    ["Fenrir", "Puck"],         // excitable
-  "senior-calm":       ["Charon", "Sadaltager"],   // mature male, calm
-  "senior-firm":       ["Kore", "Orus"],           // firm authority
-  "tired-veteran":     ["Alnilam", "Achernar"],    // gruff, weathered
-  "bright-friendly":   ["Aoede", "Autonoe"],       // warm, soft
-  "stern-authority":   ["Orus", "Kore"],           // boss-like
-  "youthful-curious":  ["Leda", "Sulafat"],        // young, inquisitive
+// Gemini prebuilt voices grouped by gender, ranked by profile preference.
+// Voice picker filters by character.gender FIRST, then picks within profile if possible.
+//
+// LEARNER-CLARITY filter: dropped voices documented as "breathy/soft/gentle/breezy/mature"
+// because they cause volume drops + airy delivery that hurt comprehension for English learners:
+//   Female dropped: Aoede (Breezy), Vindemiatrix (Gentle), Gacrux (Mature)
+//   Male dropped:   Enceladus (Breathy), Achernar (Soft)
+// Kept tones: Clear, Firm, Even, Smooth, Informative, Bright, Upbeat, Warm, Friendly.
+// Validation from listening tests (2026-05-15):
+//   ✓ Sulafat+Fenrir (new-colleague-coffee-chat) and Aoede+Puck (coffee-break-balance-act) confirmed natural
+//   ✓ Breezy/Soft voices like Aoede are actually GOOD when paired with flowing line writing
+// Lesson: voice pool isn't the main lever for naturalness — line LENGTH and FLOW is.
+const VOICES = {
+  female: {
+    "junior-anxious":    ["Leda", "Erinome", "Callirrhoe"],
+    "junior-excited":    ["Sadachbia", "Despina", "Laomedeia"],
+    "senior-calm":       ["Aoede", "Sulafat", "Autonoe"],
+    "senior-firm":       ["Kore", "Pulcherrima", "Autonoe"],
+    "tired-veteran":     ["Vindemiatrix", "Gacrux", "Autonoe"],
+    "bright-friendly":   ["Sulafat", "Laomedeia", "Sadachbia"],
+    "stern-authority":   ["Kore", "Pulcherrima", "Gacrux"],
+    "youthful-curious":  ["Leda", "Sadachbia", "Sulafat"],
+    _pool: ["Sulafat", "Aoede", "Sadachbia", "Erinome", "Kore", "Laomedeia", "Callirrhoe", "Autonoe", "Despina", "Pulcherrima", "Schedar", "Leda", "Vindemiatrix", "Gacrux", "Zephyr"],
+  },
+  male: {
+    "junior-anxious":    ["Puck", "Achird", "Zubenelgenubi"],
+    "junior-excited":    ["Fenrir", "Puck", "Achird"],
+    "senior-calm":       ["Charon", "Sadaltager", "Umbriel"],
+    "senior-firm":       ["Iapetus", "Orus", "Alnilam"],
+    "tired-veteran":     ["Alnilam", "Achernar", "Algenib"],
+    "bright-friendly":   ["Achird", "Enceladus", "Algieba"],
+    "stern-authority":   ["Iapetus", "Orus", "Rasalgethi"],
+    "youthful-curious":  ["Puck", "Achird", "Zubenelgenubi"],
+    _pool: ["Fenrir", "Puck", "Charon", "Iapetus", "Achird", "Algieba", "Alnilam", "Orus", "Sadaltager", "Algenib", "Rasalgethi", "Zubenelgenubi", "Enceladus", "Achernar", "Umbriel"],
+  },
 };
 
-const FALLBACK_VOICES = ["Kore", "Puck"];
-
-function pickVoiceForProfile(profile, taken) {
-  const candidates = VOICE_BY_PROFILE[profile] || FALLBACK_VOICES;
-  const available = candidates.filter((v) => !taken.has(v));
-  return (available[0] || candidates[0]);
+function pickVoice(gender, profile, taken) {
+  const g = gender === "female" ? "female" : "male"; // default male if missing
+  const bank = VOICES[g];
+  // Randomize within top-3 profile candidates for cross-episode variety. Fall back to
+  // remaining profile picks then the full pool if those are taken.
+  const top = (bank[profile] || []).filter((v) => !taken.has(v));
+  if (top.length) return top[Math.floor(Math.random() * top.length)];
+  const rest = bank._pool.filter((v) => !taken.has(v));
+  if (rest.length) return rest[Math.floor(Math.random() * rest.length)];
+  return bank._pool[0];
 }
 
 function assignVoices(characters) {
   const map = {};
   const taken = new Set();
   for (const c of characters) {
-    const v = pickVoiceForProfile(c.voiceProfile || "senior-calm", taken);
+    const v = pickVoice(c.gender, c.voiceProfile || "senior-calm", taken);
     map[c.name] = v;
     taken.add(v);
   }
@@ -44,7 +75,7 @@ function buildEnrichedPrompt(episode, voiceMap) {
 
   // Character profile sentences
   const charLines = dialogue.characters
-    .map((c) => `- ${c.name} (voice: ${voiceMap[c.name]}): ${c.role}. Vibe: ${c.voiceProfile || "neutral"}.`)
+    .map((c) => `- ${c.name} (${c.gender || "?"}, voice: ${voiceMap[c.name]}): ${c.role}. Vibe: ${c.voiceProfile || "neutral"}.`)
     .join("\n");
 
   const directive = `Voice this as a REAL conversation between real people — natural, unforced, conversational. NOT theatrical. NOT a narrator. NOT a podcast host performing.

@@ -25,3 +25,4 @@ pnpm-debug.log*
 
 # Pipeline-generated audio (intermediate; MP3 mix is what UI uses)
 public/audio/*.wav
+tts-tests/

@@ -1,0 +1,314 @@
+{
+  "id": "new-colleague-coffee-chat",
+  "publishedAt": "2026-05-15T09:14:00.034Z",
+  "generatedAt": "2026-05-15T09:14:00.034Z",
+  "mode": "GEMINI",
+  "plan": {
+    "category": "Office Life",
+    "topic": "Coffee chat with a new colleague",
+    "setting": "Two colleagues, one new to the team, are having a casual chat while getting coffee in the office pantry.",
+    "level": "A2",
+    "keyConcepts": [
+      "Welcome to the team!",
+      "How are you settling in?",
+      "What's your role?",
+      "Feel free to ask questions.",
+      "Let's grab a coffee sometime."
+    ]
+  },
+  "dialogue": {
+    "title": "New Colleague Coffee Chat",
+    "sceneBrief": "Casual coffee chat, welcoming a new team member, friendly and encouraging.",
+    "characters": [
+      {
+        "name": "Sarah",
+        "role": "Project Lead",
+        "gender": "female",
+        "voiceProfile": "bright-friendly"
+      },
+      {
+        "name": "Liam",
+        "role": "Marketing Coordinator",
+        "gender": "male",
+        "voiceProfile": "junior-excited"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Sarah",
+        "text": "Hey Liam! Welcome to the team! How are you settling in, uh, so far?",
+        "vn": "Chào Liam! Chào mừng cậu gia nhập team nhé! Cậu thấy mọi việc ổn không, ừm, đến giờ?",
+        "emotion": "playful",
+        "tags": []
+      },
+      {
+        "speaker": "Liam",
+        "text": "Oh, hey Sarah! Thanks! Yeah, really good actually. Just getting my head around everything. What's your role, by the way?",
+        "vn": "À, chào Sarah! Cảm ơn! Ừm, thực ra thì khá ổn ạ. Em đang cố gắng tìm hiểu mọi thứ. Mà chị làm vị trí gì vậy ạ?",
+        "emotion": "excited",
+        "tags": []
+      },
+      {
+        "speaker": "Sarah",
+        "text": "I'm a Project Lead. And you, what's your—?",
+        "vn": "Chị là Trưởng dự án. Còn em thì sao, vai trò của em là—?",
+        "emotion": "calm",
+        "tags": []
+      },
+      {
+        "speaker": "Liam",
+        "text": "I'm the new Marketing Coordinator! Lots to learn, but everyone's been super helpful.",
+        "vn": "Em là Điều phối viên Marketing mới! Có nhiều thứ phải học lắm, nhưng mọi người đều rất nhiệt tình.",
+        "emotion": "enthusiastic",
+        "tags": []
+      },
+      {
+        "speaker": "Sarah",
+        "text": "Awesome. Yeah, don't hesitate to poke me if anything comes up. Seriously, feel free to ask questions, even the 'silly' ones.",
+        "vn": "Tuyệt vời. Ừm, đừng ngần ngại hỏi chị nếu có bất kỳ vấn đề gì nhé. Thật đó, cứ thoải mái hỏi, kể cả những câu 'ngớ ngẩn' nhất.",
+        "emotion": "encouraging",
+        "tags": []
+      },
+      {
+        "speaker": "Liam",
+        "text": "[chuckles] Will do, thanks! I'm sure I'll have a ton.",
+        "vn": "[cười khẽ] Vâng ạ, em sẽ làm vậy, cảm ơn chị! Em chắc là mình sẽ có cả đống câu hỏi luôn.",
+        "emotion": "appreciative",
+        "tags": [
+          "chuckles"
+        ]
+      },
+      {
+        "speaker": "Sarah",
+        "text": "Good! No really, sometimes it's easier to just ask than struggle. Hey, are you busy later this week?",
+        "vn": "Tốt! Thật đó, đôi khi cứ hỏi còn dễ hơn là tự vật lộn. À, em có bận gì cuối tuần này không?",
+        "emotion": "earnest",
+        "tags": []
+      },
+      {
+        "speaker": "Liam",
+        "text": "Uh, not really, why?",
+        "vn": "Ừm, không hẳn ạ, sao vậy chị?",
+        "emotion": "curious",
+        "tags": []
+      },
+      {
+        "speaker": "Sarah",
+        "text": "Maybe let's grab a proper coffee sometime next week? Show you around the good spots outside the office.",
+        "vn": "Hay là tuần tới mình đi uống cà phê tử tế một bữa nhỉ? Chị sẽ dẫn em đi mấy quán ngon ngoài văn phòng.",
+        "emotion": "friendly",
+        "tags": []
+      },
+      {
+        "speaker": "Liam",
+        "text": "Ooh, yes! That'd be great. Thanks, Sarah!",
+        "vn": "Ối, vâng ạ! Tuyệt vời quá. Cảm ơn chị, Sarah!",
+        "emotion": "excited",
+        "tags": []
+      },
+      {
+        "speaker": "Sarah",
+        "text": "Anytime, Liam! Glad to have you.",
+        "vn": "Không có gì đâu Liam! Rất vui được có em.",
+        "emotion": "warm",
+        "tags": []
+      }
+    ]
+  },
+  "editorReview": {
+    "levelChecked": "A2",
+    "notes": [
+      "The dialogue is generally natural for native speakers, but several phrases elevate it beyond a strict A2 level.",
+      "**Liam (Line 2):** \"Just getting my head around everything.\" This is an idiomatic expression that is typically B1/B2. A more A2-appropriate phrase would be \"I'm just learning everything\" or \"I'm trying to understand everything.\"",
+      "**Sarah (Line 5):** \"Don't hesitate to poke me if anything comes up.\" \"Poke me\" (meaning to contact informally) is an informal idiom more suited for B1/B2. \"Hesitate\" is borderline A2/B1. \"Comes up\" (as in 'arises') is a phrasal verb that might be B1. A simpler A2 alternative could be \"Please ask me if you have any problems.\"",
+      "**Liam (Line 6):** \"I'm sure I'll have a ton.\" Using \"a ton\" informally to mean \"a lot\" is borderline B1. An A2 learner might say \"a lot of questions.\"",
+      "**Sarah (Line 9):** \"grab a proper coffee.\" \"Grab\" (as in 'get/have') and \"proper\" (as in 'good/serious') in this informal context are borderline A2, leaning B1. A simpler phrase for A2 would be \"let's have coffee.\"",
+      "While many parts are A2 appropriate, the presence of these more advanced idiomatic expressions and informal phrasal verbs makes the dialogue less than ideal for strict A2 fidelity. It leans more towards an early B1 level in terms of vocabulary and colloquialisms."
+    ],
+    "approved": false
+  },
+  "vocab": [
+    {
+      "term": "settling in",
+      "ipa": "/ˈsɛtlɪŋ ɪn/",
+      "vn": "ổn định, hòa nhập (với môi trường mới)",
+      "example": "How are you settling in, uh, so far?"
+    },
+    {
+      "term": "getting my head around (something)",
+      "ipa": "/ˈɡɛtɪŋ maɪ hɛd əˈraʊnd/",
+      "vn": "cố gắng tìm hiểu/hiểu rõ về (cái gì đó)",
+      "example": "Just getting my head around everything."
+    },
+    {
+      "term": "super helpful",
+      "ipa": "/ˈsuːpər ˈhɛlpfəl/",
+      "vn": "rất nhiệt tình/hữu ích",
+      "example": "everyone's been super helpful."
+    },
+    {
+      "term": "don't hesitate to poke me",
+      "ipa": "/doʊnt ˈhɛzɪteɪt tuː poʊk miː/",
+      "vn": "đừng ngần ngại hỏi tôi (một cách thân mật)",
+      "example": "don't hesitate to poke me if anything comes up."
+    },
+    {
+      "term": "feel free to (do something)",
+      "ipa": "/fiːl friː tuː/",
+      "vn": "cứ tự nhiên/thoải mái (làm gì đó)",
+      "example": "Seriously, feel free to ask questions, even the 'silly' ones."
+    },
+    {
+      "term": "grab a proper coffee",
+      "ipa": "/ɡræb ə ˈprɒpər ˈkɒfi/",
+      "vn": "đi uống một bữa cà phê tử tế/đàng hoàng",
+      "example": "Maybe let's grab a proper coffee sometime next week?"
+    },
+    {
+      "term": "show you around",
+      "ipa": "/ʃoʊ juː əˈraʊnd/",
+      "vn": "dẫn bạn đi xem/tham quan",
+      "example": "Show you around the good spots outside the office."
+    },
+    {
+      "term": "Glad to have you",
+      "ipa": "/ɡlæd tuː hæv juː/",
+      "vn": "Rất vui được có bạn/bạn gia nhập",
+      "example": "Anytime, Liam! Glad to have you."
+    }
+  ],
+  "poster": {
+    "generated": true,
+    "provider": "gemini",
+    "file": "new-colleague-coffee-chat.png",
+    "width": 1280,
+    "height": 512,
+    "prompt": "Cute minimal icon-style illustration for a language-learning podcast banner.\nConcept: Casual coffee chat, welcoming a new team member, friendly and encouraging..\nSubject: ONE single chubby rounded ICONIC OBJECT representing the topic (e.g. a coffee cup, a plane, a laptop, a server rack, a suitcase, a clock, etc). The object is centered.\nStyle: BRIGHT peach + cream + soft coral pastel, sunny light cheerful background. Soft pastel candy palette, mascot-style rounded shapes, gentle flat shading, subtle floating dots/sparkles in background, premium mobile-app aesthetic.\nBackground: soft single-tone pastel gradient, very airy, lots of negative space.\nABSOLUTE STRICT RULES (will fail review if violated):\n  • NO humans of any kind. NO people. NO faces. NO eyes. NO hands. NO body parts. NO silhouettes.\n  • NO animals with faces. NO mascot creatures.\n  • NO text, NO letters, NO numbers, NO logos, NO writing, NO signatures, NO watermarks.\n  • Just one inanimate object/icon, like a sticker.",
+    "generatedAt": "2026-05-15T09:14:11.697Z"
+  },
+  "audio": {
+    "mode": "GEMINI",
+    "voiceMap": {
+      "Sarah": "Sulafat",
+      "Liam": "Fenrir"
+    },
+    "file": "new-colleague-coffee-chat.mp3",
+    "sizeKb": 2511,
+    "durationSec": 53.6,
+    "model": "gemini-3.1-flash-tts-preview",
+    "promptPreview": "Voice this as a REAL conversation between real people — natural, unforced, conversational. NOT theatrical. NOT a narrator. NOT a podcast host performing.\n\nCRITICAL — sound natural:\n- Speak the way cow…",
+    "mix": {
+      "mixed": true,
+      "file": "new-colleague-coffee-chat.mp3",
+      "sizeKb": 746,
+      "sceneMood": "default",
+      "moodTags": [
+        "podcast",
+        "corporate",
+        "energetic"
+      ],
+      "intro": {
+        "track": "faderproducer-podcast-intro-530686.mp3",
+        "tags": [
+          "intro",
+          "podcast"
+        ],
+        "score": 8,
+        "fallback": false,
+        "offsetSec": 0,
+        "durationSec": 5
+      },
+      "outro": {
+        "track": "audiorezout-brighter-days-sting-reduced-fashion-summer-happy-travel-vlog-music-201566.mp3",
+        "tags": [
+          "outro",
+          "bumper",
+          "energetic",
+          "corporate"
+        ],
+        "score": 8,
+        "fallback": false,
+        "offsetSec": 1.8,
+        "durationSec": 5
+      },
+      "layout": "5s intro sting · voice (clean) · 5s outro sting"
+    },
+    "align": {
+      "aligned": true,
+      "model": "base.en",
+      "introOffsetSec": 5,
+      "lineTimings": [
+        {
+          "lineIndex": 0,
+          "start": 5,
+          "end": 9.34,
+          "durationSec": 4.34
+        },
+        {
+          "lineIndex": 1,
+          "start": 9.92,
+          "end": 16.72,
+          "durationSec": 6.8
+        },
+        {
+          "lineIndex": 2,
+          "start": 17.26,
+          "end": 20.08,
+          "durationSec": 2.82
+        },
+        {
+          "lineIndex": 3,
+          "start": 20.08,
+          "end": 24.9,
+          "durationSec": 4.82
+        },
+        {
+          "lineIndex": 4,
+          "start": 25.54,
+          "end": 32.72,
+          "durationSec": 7.18
+        },
+        {
+          "lineIndex": 5,
+          "start": 32.72,
+          "end": 37.3,
+          "interpolated": true,
+          "durationSec": 4.58
+        },
+        {
+          "lineIndex": 6,
+          "start": 37.3,
+          "end": 44.54,
+          "durationSec": 7.24
+        },
+        {
+          "lineIndex": 7,
+          "start": 45.2,
+          "end": 46.36,
+          "durationSec": 1.16
+        },
+        {
+          "lineIndex": 8,
+          "start": 46.98,
+          "end": 52.14,
+          "durationSec": 5.16
+        },
+        {
+          "lineIndex": 9,
+          "start": 52.14,
+          "end": 56.32,
+          "interpolated": true,
+          "durationSec": 4.18
+        },
+        {
+          "lineIndex": 10,
+          "start": 56.32,
+          "end": 58.16,
+          "durationSec": 1.84
+        }
+      ],
+      "segmentCount": 15,
+      "wordCount": 149
+    }
+  }
+}

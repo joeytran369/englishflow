@@ -1,0 +1,274 @@
+{
+  "id": "unfamiliar-bites-abroad",
+  "generatedAt": "2026-05-13T09:33:33.292Z",
+  "mode": "GEMINI",
+  "plan": {
+    "category": "Travel",
+    "topic": "Ordering unfamiliar food at a restaurant",
+    "setting": "Two Vietnamese friends, Minh and An, are on a business trip in an English-speaking country and decide to try a local restaurant for dinner, but the menu has many unfamiliar dishes.",
+    "level": "B1",
+    "keyConcepts": [
+      "What do you recommend?",
+      "Could you describe this dish?",
+      "Is it spicy / sweet / vegetarian?",
+      "I'll go with that.",
+      "Sounds delicious!"
+    ]
+  },
+  "dialogue": {
+    "title": "Unfamiliar Bites Abroad",
+    "sceneBrief": "Two friends, Minh and An, are overwhelmed but amused by an unfamiliar restaurant menu in an English-speaking country, trying to find something to order.",
+    "characters": [
+      {
+        "name": "Minh",
+        "role": "Senior Colleague",
+        "voiceProfile": "senior-calm"
+      },
+      {
+        "name": "An",
+        "role": "Junior Colleague",
+        "voiceProfile": "junior-anxious"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "An",
+        "text": "Okay so... Minh, I don't recognize *any* of these words. My brain is just— [sighs] —just static. What even *is* 'Haggis Neeps and Tatties'?",
+        "vn": "Okay so... Minh này, em không nhận ra *một chữ* nào trong đây cả. Đầu óc em cứ... [thở dài]... trống rỗng. 'Haggis Neeps and Tatties' là cái quái gì vậy?",
+        "emotion": "hesitant",
+        "tags": [
+          "sighs"
+        ]
+      },
+      {
+        "speaker": "Minh",
+        "text": "Hm. Good question. [chuckles] Waiter! Excuse me, could you describe this 'Haggis' dish for us?",
+        "vn": "Hm. Câu hỏi hay đó. [cười khẽ] Anh ơi! Xin lỗi, anh có thể mô tả món 'Haggis' này cho bọn em được không?",
+        "emotion": "playful",
+        "tags": [
+          "chuckles"
+        ]
+      },
+      {
+        "speaker": "An",
+        "text": "Oh, *that*? Wait, no thanks. My stomach is already confused. What do *you* recommend, Minh? Something... less animal parts?",
+        "vn": "Ôi, *cái đó* á? Thôi, không đâu ạ. Dạ dày em đã rối bời rồi. Anh giới thiệu món gì đi Minh? Gì đó... ít bộ phận động vật hơn được không?",
+        "emotion": "relieved",
+        "tags": []
+      },
+      {
+        "speaker": "Minh",
+        "text": "Safe? An, we're on a business trip, not a culinary retreat! Okay, so, this 'Cullen Skink' sounds interesting. It's a smoked haddock soup. Is it spicy or sweet?",
+        "vn": "An toàn á? An, bọn mình đi công tác chứ có phải đi nghỉ dưỡng ẩm thực đâu! Thôi được rồi, món 'Cullen Skink' này nghe có vẻ hay ho đó. Nó là súp cá tuyết hun khói. Nó có cay hay ngọt không?",
+        "emotion": "playful",
+        "tags": []
+      },
+      {
+        "speaker": "An",
+        "text": "Soup? Hmm, okay. That's... less terrifying. And, uh, is it vegetarian at all, do you think? Or could it be?",
+        "vn": "Súp á? Hừm, được thôi. Nghe đỡ sợ hơn. Với cả, ừm, anh nghĩ nó có phải là món chay không? Hay có thể làm chay được không?",
+        "emotion": "hesitant",
+        "tags": []
+      },
+      {
+        "speaker": "Minh",
+        "text": "Haddock soup, An. Smoked haddock. Probably not vegetarian! But it sounds delicious! I'll go with that.",
+        "vn": "Súp cá tuyết hun khói, An ạ. Chắc chắn không phải chay rồi! Nhưng nghe có vẻ ngon đó! Anh sẽ gọi món đó.",
+        "emotion": "smug",
+        "tags": []
+      },
+      {
+        "speaker": "An",
+        "text": "Ugh, fine. If it's definitely not spicy, then I'll try the Cullen Skink too, I guess. Sounds... less intimidating.",
+        "vn": "Thôi được rồi. Nếu chắc chắn không cay thì em cũng thử món Cullen Skink vậy. Nghe có vẻ... bớt đáng sợ hơn.",
+        "emotion": "relieved",
+        "tags": []
+      },
+      {
+        "speaker": "Minh",
+        "text": "Excellent choice. See? Not so bad. Just embrace the unknown, my friend!",
+        "vn": "Lựa chọn tuyệt vời! Thấy chưa? Đâu đến nỗi nào. Cứ mạnh dạn với những điều chưa biết đi em!",
+        "emotion": "playful",
+        "tags": []
+      }
+    ]
+  },
+  "editorReview": {
+    "levelChecked": true,
+    "notes": [
+      "The vocabulary used aligns well with B1 level, allowing learners to understand the main points and some nuances.",
+      "Idiomatic expressions like 'my brain is just static' and 'my stomach is already confused' enhance naturalness and are generally comprehensible for B1 learners within the given context.",
+      "The sentence structures are appropriate for B1, featuring a mix of simple, compound, and straightforward complex sentences (e.g., conditional 'If it's... then I'll...').",
+      "The dialogue exhibits strong naturalness through the characters' reactions, hesitations, and playful banter, making it realistic and engaging.",
+      "The phrase 'culinary retreat' (Minh, Line 4) might be a slight stretch for some B1 learners, but its meaning is sufficiently clarified by the surrounding context ('we're on a business trip').",
+      "Overall, the dialogue effectively portrays a common real-life scenario in a way that is accessible and beneficial for B1 learners."
+    ],
+    "approved": true
+  },
+  "vocab": [
+    {
+      "term": "my brain is just static",
+      "ipa": "/maɪ breɪn ɪz dʒʌst ˈstætɪk/",
+      "vn": "đầu óc trống rỗng/không nghĩ được gì",
+      "example": "After staring at the complex itinerary for hours, my brain was just static."
+    },
+    {
+      "term": "What even is...?",
+      "ipa": "/wʌt ˈiːvən ɪz/",
+      "vn": "... là cái quái gì vậy?",
+      "example": "I saw a strange ingredient in the recipe. What even is 'umami powder'?"
+    },
+    {
+      "term": "describe this dish for us",
+      "ipa": "/dɪˈskraɪb ðɪs dɪʃ fɔːr ʌs/",
+      "vn": "mô tả món này cho bọn em",
+      "example": "Excuse me, could you describe this special of the day for us?"
+    },
+    {
+      "term": "my stomach is already confused",
+      "ipa": "/maɪ ˈstʌmək ɪz ɔːlˈrɛdi kənˈfjuːzd/",
+      "vn": "bụng em đã rối bời rồi (nghĩa bóng)",
+      "example": "Looking at the menu with so many unfamiliar dishes, my stomach is already confused."
+    },
+    {
+      "term": "culinary retreat",
+      "ipa": "/ˈkʌlɪnəri rɪˈtriːt/",
+      "vn": "chuyến nghỉ dưỡng ẩm thực",
+      "example": "Their honeymoon was a culinary retreat through Italy, tasting regional specialties."
+    },
+    {
+      "term": "recommend something less X",
+      "ipa": "/ˈrɛkəˌmɛnd ˈsʌmθɪŋ lɛs eks/",
+      "vn": "giới thiệu món gì đó ít/đỡ X hơn",
+      "example": "I'm not a fan of rich food; could you recommend something less heavy?"
+    },
+    {
+      "term": "sounds intimidating",
+      "ipa": "/saʊndz ɪnˈtɪmɪdeɪtɪŋ/",
+      "vn": "nghe có vẻ đáng sợ/khó nhằn",
+      "example": "That extreme hiking trail sounds intimidating, but I'm up for the challenge."
+    },
+    {
+      "term": "embrace the unknown",
+      "ipa": "/ɪmˈbreɪs ði ʌnˈnoʊn/",
+      "vn": "mạnh dạn đón nhận điều chưa biết",
+      "example": "To truly experience new cultures, you sometimes have to embrace the unknown."
+    }
+  ],
+  "audio": {
+    "mode": "GEMINI",
+    "voiceMap": {
+      "Minh": "Charon",
+      "An": "Leda"
+    },
+    "file": "unfamiliar-bites-abroad.mp3",
+    "sizeKb": 2927,
+    "durationSec": 62.5,
+    "model": "gemini-2.5-flash-preview-tts",
+    "promptPreview": "Voice this as a REAL conversation between real people — natural, unforced, conversational. NOT theatrical. NOT a narrator. NOT a podcast host performing.\n\nCRITICAL — sound natural:\n- Speak the way cow…",
+    "mix": {
+      "mixed": true,
+      "file": "unfamiliar-bites-abroad.mp3",
+      "sizeKb": 850,
+      "sceneMood": "default",
+      "moodTags": [
+        "podcast",
+        "corporate",
+        "energetic"
+      ],
+      "intro": {
+        "track": "faderproducer-intro-podcast-530691.mp3",
+        "tags": [
+          "intro",
+          "podcast"
+        ],
+        "score": 8,
+        "fallback": false,
+        "offsetSec": 33.8,
+        "durationSec": 5
+      },
+      "outro": {
+        "track": "audiorezout-anpiel-sting-positive-corporate-travel-vlog-music-211317.mp3",
+        "tags": [
+          "outro",
+          "bumper",
+          "energetic",
+          "corporate"
+        ],
+        "score": 8,
+        "fallback": false,
+        "offsetSec": 0.2,
+        "durationSec": 5
+      },
+      "layout": "5s intro sting · voice (clean) · 5s outro sting"
+    },
+    "align": {
+      "aligned": true,
+      "model": "base.en",
+      "introOffsetSec": 5,
+      "lineTimings": [
+        {
+          "lineIndex": 0,
+          "start": 5,
+          "end": 16.14,
+          "durationSec": 11.14
+        },
+        {
+          "lineIndex": 1,
+          "start": 16.14,
+          "end": 21.74,
+          "interpolated": true,
+          "durationSec": 5.6
+        },
+        {
+          "lineIndex": 2,
+          "start": 21.74,
+          "end": 29.42,
+          "durationSec": 7.68
+        },
+        {
+          "lineIndex": 3,
+          "start": 30.28,
+          "end": 41.3,
+          "durationSec": 11.02
+        },
+        {
+          "lineIndex": 4,
+          "start": 41.6,
+          "end": 48.82,
+          "durationSec": 7.22
+        },
+        {
+          "lineIndex": 5,
+          "start": 48.82,
+          "end": 55.56,
+          "interpolated": true,
+          "durationSec": 6.74
+        },
+        {
+          "lineIndex": 6,
+          "start": 55.56,
+          "end": 62.4,
+          "durationSec": 6.84
+        },
+        {
+          "lineIndex": 7,
+          "start": 63.04,
+          "end": 67.2,
+          "durationSec": 4.16
+        }
+      ],
+      "segmentCount": 28,
+      "wordCount": 155
+    }
+  },
+  "poster": {
+    "generated": true,
+    "provider": "gemini",
+    "file": "unfamiliar-bites-abroad.png",
+    "width": 1280,
+    "height": 512,
+    "prompt": "Cute minimal icon-style illustration for a language-learning podcast banner.\nConcept: Two friends, Minh and An, are overwhelmed but amused by an unfamiliar restaurant menu in an English-speaking country, trying to find something to order..\nSubject: ONE single chubby rounded ICONIC OBJECT representing the topic (e.g. a coffee cup, a plane, a laptop, a server rack, a suitcase, a clock, etc). The object is centered.\nStyle: BRIGHT soft coral + sky blue + cream pastel, fresh airy light background. Soft pastel candy palette, mascot-style rounded shapes, gentle flat shading, subtle floating dots/sparkles in background, premium mobile-app aesthetic.\nBackground: soft single-tone pastel gradient, very airy, lots of negative space.\nABSOLUTE STRICT RULES (will fail review if violated):\n  • NO humans of any kind. NO people. NO faces. NO eyes. NO hands. NO body parts. NO silhouettes.\n  • NO animals with faces. NO mascot creatures.\n  • NO text, NO letters, NO numbers, NO logos, NO writing, NO signatures, NO watermarks.\n  • Just one inanimate object/icon, like a sticker.",
+    "generatedAt": "2026-05-14T04:22:58.315Z"
+  }
+}

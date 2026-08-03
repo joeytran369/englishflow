@@ -1,0 +1,274 @@
+{
+  "id": "airport-grab-ride",
+  "publishedAt": "2026-05-13T09:48:39.597Z",
+  "generatedAt": "2026-05-13T09:48:39.597Z",
+  "mode": "GEMINI",
+  "plan": {
+    "category": "Travel",
+    "topic": "Airport Grab Ride",
+    "setting": "A passenger is taking a Grab ride to the airport, discussing directions, luggage space, and the ride cost with the driver.",
+    "level": "A2",
+    "keyConcepts": [
+      "Is this the right way?",
+      "Where can I put my luggage?",
+      "How much is the fare?",
+      "Could you drop me off at the international terminal?",
+      "Will we arrive on time?"
+    ]
+  },
+  "dialogue": {
+    "title": "Airport Grab Ride",
+    "sceneBrief": "A slightly anxious passenger taking a Grab ride to the airport, reassured by a calm, experienced driver.",
+    "characters": [
+      {
+        "name": "Alex",
+        "role": "Passenger",
+        "voiceProfile": "junior-anxious"
+      },
+      {
+        "name": "Minh",
+        "role": "Grab Driver",
+        "voiceProfile": "senior-calm"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Alex",
+        "text": "Uh, hi. Grab for Alex? And this suitcase—",
+        "vn": "Ờ, chào anh. Grab cho Alex đúng không ạ? Và cái vali này—",
+        "emotion": "hesitant",
+        "tags": []
+      },
+      {
+        "speaker": "Minh",
+        "text": "Yep, that's me. Just pop it in the trunk, plenty of room. Headed to the airport, right?",
+        "vn": "Vâng, đúng rồi ạ. Cứ để vào cốp sau, rộng rãi lắm. Anh đi sân bay đúng không?",
+        "emotion": "focused",
+        "tags": []
+      },
+      {
+        "speaker": "Alex",
+        "text": "Yeah, international terminal please. Uh, wait, is this the right way? Google Maps shows a different... will we arrive on time? My flight's in two hours!",
+        "vn": "Vâng, ga quốc tế ạ. Ờ, khoan, đây có phải đường đúng không anh? Google Maps của em chỉ một đường khác... liệu mình có đến kịp giờ không? Chuyến bay của em còn hai tiếng nữa!",
+        "emotion": "panicked",
+        "tags": []
+      },
+      {
+        "speaker": "Minh",
+        "text": "(chuckles) Don't worry, the app knows best. This route's usually quicker at this time. We'll get you there.",
+        "vn": "(cười khẽ) Đừng lo, app biết đường mà. Giờ này đi đường này thường nhanh hơn. Mình sẽ đến kịp thôi.",
+        "emotion": "reassuring",
+        "tags": [
+          "chuckles"
+        ]
+      },
+      {
+        "speaker": "Alex",
+        "text": "Okay, so... how much is the fare? I just want to be sure, you know?",
+        "vn": "Vâng, vậy... cước phí là bao nhiêu ạ? Em muốn hỏi cho chắc ấy mà.",
+        "emotion": "curious",
+        "tags": []
+      },
+      {
+        "speaker": "Minh",
+        "text": "It's fixed by the app, usually around 250k. Traffic sometimes changes it a bit but—",
+        "vn": "App tính cố định rồi, khoảng 250k. Tùy lúc kẹt xe thì có thể thay đổi chút nhưng—",
+        "emotion": "informative",
+        "tags": []
+      },
+      {
+        "speaker": "Alex",
+        "text": "Right, right. Phew. Okay, good. As long as we're on time.",
+        "vn": "À, vâng. Phù. Vậy thì tốt ạ. Miễn là mình đến đúng giờ.",
+        "emotion": "relieved",
+        "tags": []
+      },
+      {
+        "speaker": "Minh",
+        "text": "Relax, Alex. You'll make it. Plenty of time.",
+        "vn": "Cứ bình tĩnh đi anh Alex. Anh sẽ kịp mà. Còn nhiều thời gian lắm.",
+        "emotion": "calming",
+        "tags": []
+      }
+    ]
+  },
+  "editorReview": {
+    "levelChecked": "A2",
+    "notes": [
+      "Vocabulary: The vocabulary used is appropriate for an A2 level, consisting of common words related to travel, time, and basic interactions (e.g., 'suitcase', 'trunk', 'airport', 'terminal', 'fare', 'traffic', 'on time').",
+      "Grammar: The grammatical structures are generally within the A2 scope. This includes present simple, future simple, imperatives ('Don't worry', 'Relax'), basic questions ('is this the right way?', 'how much is the fare?'), and simple expressions of time and condition ('in two hours', 'as long as we're on time'). The use of the present simple passive ('It's fixed by the app') is a good stretch for A2, as it's a common, practical phrase, but it's not overly complex.",
+      "Sentence Length & Complexity: Sentences are mostly short to medium length, direct, and easy to follow, which is characteristic of the A2 level. There are natural hesitations and unfinished thoughts ('And this suitcase—', 'Google Maps shows a different...', 'but—') which add to the naturalness without increasing complexity.",
+      "Naturalness: The dialogue is very natural and authentic for the given scenario. The anxious passenger's rapid-fire questions and concerns, contrasted with the calm, reassuring driver, feel realistic. The fillers ('Uh, hi', 'Ờ, khoan', 'Right, right') and emotional tags ('panicked', 'reassuring', 'relieved') enhance the natural flow of conversation.",
+      "Cultural Context: The mention of 'Grab' and '250k' (implied Vietnamese Dong, common in Vietnam) grounding the dialogue in a specific cultural context is well done."
+    ],
+    "approved": true
+  },
+  "vocab": [
+    {
+      "term": "pop it in the trunk",
+      "ipa": "/pɒp ɪt ɪn ðə trʌŋk/",
+      "vn": "cứ để vào cốp sau",
+      "example": "Just pop your suitcase in the trunk, we have enough space."
+    },
+    {
+      "term": "plenty of room",
+      "ipa": "/ˈplɛnti əv ruːm/",
+      "vn": "rộng rãi lắm / nhiều chỗ",
+      "example": "Don't worry about your bags, there's plenty of room in the car."
+    },
+    {
+      "term": "international terminal",
+      "ipa": "/ˌɪntərˈnæʃənl ˈtɜːrmɪnl/",
+      "vn": "ga quốc tế",
+      "example": "My flight to London departs from the international terminal."
+    },
+    {
+      "term": "arrive on time",
+      "ipa": "/əˈraɪv ɒn taɪm/",
+      "vn": "đến đúng giờ / đến kịp giờ",
+      "example": "We need to leave now to arrive on time for our flight."
+    },
+    {
+      "term": "my flight's in an hour",
+      "ipa": "/maɪ flaɪts ɪn ən ˈaʊər/",
+      "vn": "chuyến bay của tôi còn một tiếng nữa",
+      "example": "Hurry, my flight's in an hour and I still need to check in!"
+    },
+    {
+      "term": "the app knows best",
+      "ipa": "/ðə æp noʊz bɛst/",
+      "vn": "app biết đường mà / app biết rõ nhất",
+      "example": "Trust the navigation, the app knows best for avoiding traffic."
+    },
+    {
+      "term": "fixed by the app",
+      "ipa": "/fɪkst baɪ ðə æp/",
+      "vn": "app tính cố định / được app định giá",
+      "example": "The fare for this Grab ride is fixed by the app, so no surprises."
+    },
+    {
+      "term": "plenty of time",
+      "ipa": "/ˈplɛnti əv taɪm/",
+      "vn": "còn nhiều thời gian",
+      "example": "Relax, we have plenty of time before the boarding gate closes."
+    }
+  ],
+  "audio": {
+    "mode": "GEMINI",
+    "voiceMap": {
+      "Alex": "Leda",
+      "Minh": "Charon"
+    },
+    "file": "airport-grab-ride.mp3",
+    "sizeKb": 1864,
+    "durationSec": 39.8,
+    "model": "gemini-2.5-flash-preview-tts",
+    "promptPreview": "Voice this as a REAL conversation between real people — natural, unforced, conversational. NOT theatrical. NOT a narrator. NOT a podcast host performing.\n\nCRITICAL — sound natural:\n- Speak the way cow…",
+    "mix": {
+      "mixed": true,
+      "file": "airport-grab-ride.mp3",
+      "sizeKb": 584,
+      "sceneMood": "default",
+      "moodTags": [
+        "podcast",
+        "corporate",
+        "energetic"
+      ],
+      "intro": {
+        "track": "faderproducer-intro-podcast-530691.mp3",
+        "tags": [
+          "intro",
+          "podcast"
+        ],
+        "score": 8,
+        "fallback": false,
+        "offsetSec": 8.6,
+        "durationSec": 5
+      },
+      "outro": {
+        "track": "audiorezout-anpiel-sting-positive-corporate-travel-vlog-music-211317.mp3",
+        "tags": [
+          "outro",
+          "bumper",
+          "energetic",
+          "corporate"
+        ],
+        "score": 8,
+        "fallback": false,
+        "offsetSec": 2.3,
+        "durationSec": 5
+      },
+      "layout": "5s intro sting · voice (clean) · 5s outro sting"
+    },
+    "align": {
+      "aligned": true,
+      "model": "base.en",
+      "introOffsetSec": 5,
+      "lineTimings": [
+        {
+          "lineIndex": 0,
+          "start": 5.5,
+          "end": 8.82,
+          "interpolated": true,
+          "durationSec": 3.32
+        },
+        {
+          "lineIndex": 1,
+          "start": 8.82,
+          "end": 11.66,
+          "durationSec": 2.84
+        },
+        {
+          "lineIndex": 2,
+          "start": 13.44,
+          "end": 21.98,
+          "durationSec": 8.54
+        },
+        {
+          "lineIndex": 3,
+          "start": 21.98,
+          "end": 27,
+          "interpolated": true,
+          "durationSec": 5.02
+        },
+        {
+          "lineIndex": 4,
+          "start": 27,
+          "end": 32.02,
+          "interpolated": true,
+          "durationSec": 5.02
+        },
+        {
+          "lineIndex": 5,
+          "start": 32.02,
+          "end": 37.72,
+          "durationSec": 5.7
+        },
+        {
+          "lineIndex": 6,
+          "start": 37.72,
+          "end": 42.04,
+          "interpolated": true,
+          "durationSec": 4.32
+        },
+        {
+          "lineIndex": 7,
+          "start": 42.04,
+          "end": 44.46,
+          "durationSec": 2.42
+        }
+      ],
+      "segmentCount": 20,
+      "wordCount": 124
+    }
+  },
+  "poster": {
+    "generated": true,
+    "provider": "gemini",
+    "file": "airport-grab-ride.png",
+    "width": 1280,
+    "height": 512,
+    "prompt": "Cute minimal icon-style illustration for a language-learning podcast banner.\nConcept: A slightly anxious passenger taking a Grab ride to the airport, reassured by a calm, experienced driver..\nSubject: ONE single chubby rounded ICONIC OBJECT representing the topic (e.g. a coffee cup, a plane, a laptop, a server rack, a suitcase, a clock, etc). The object is centered.\nStyle: BRIGHT soft coral + sky blue + cream pastel, fresh airy light background. Soft pastel candy palette, mascot-style rounded shapes, gentle flat shading, subtle floating dots/sparkles in background, premium mobile-app aesthetic.\nBackground: soft single-tone pastel gradient, very airy, lots of negative space.\nABSOLUTE STRICT RULES (will fail review if violated):\n  • NO humans of any kind. NO people. NO faces. NO eyes. NO hands. NO body parts. NO silhouettes.\n  • NO animals with faces. NO mascot creatures.\n  • NO text, NO letters, NO numbers, NO logos, NO writing, NO signatures, NO watermarks.\n  • Just one inanimate object/icon, like a sticker.",
+    "generatedAt": "2026-05-14T04:22:18.351Z"
+  }
+}

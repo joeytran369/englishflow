@@ -175,8 +175,9 @@ export async function mixerAgent(voiceWavPath, episodeId, outDir, bgmDir, episod
     "-i", outroPath,
     "-filter_complex", filter,
     "-map", "[out]",
-    "-b:a", "96k",
+    "-b:a", "192k",       // bumped from 96k — 96k introduced "compressed/strained" speech artifacts
     "-ac", "1",
+    "-ar", "44100",       // standard MP3 sample rate (avoids odd 24kHz→44.1k resampling drift)
     outFile,
   ]);
 

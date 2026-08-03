@@ -1,13 +1,13 @@
 # EnglishFlow
 
-> Daily English for the Cloud team — short dialogues from real work moments.
+> Daily English for everyone who loves Cloud tech — short dialogues from real work moments.
 
-**Live:** [joeytran369.github.io/englishflow](https://joeytran369.github.io/englishflow/)
+**Live:** [joeytrancloud.github.io/englishflow](https://joeytrancloud.github.io/englishflow/)
 
 ---
 
-An AI-agent pipeline that generates 1–2 minute English lessons for cloud / SRE /
-DevOps engineers:
+An AI-agent pipeline that generates 1–2 minute English lessons for anyone who
+loves Cloud tech:
 
 - Realistic on-the-job dialogues (incident debugging, code review, sprint, design
   review, ...) with banter, interruptions, audible reactions.

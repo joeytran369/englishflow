@@ -1,0 +1,321 @@
+{
+  "id": "ai-and-our-jobs-coffee-chat-edition",
+  "publishedAt": "2026-05-15T05:00:08.248Z",
+  "generatedAt": "2026-05-15T05:00:08.248Z",
+  "mode": "GEMINI",
+  "plan": {
+    "category": "Career",
+    "topic": "AI and Job Security in Tech",
+    "setting": "Two male friends are having a casual chat over coffee, pondering the future of tech jobs amidst the rise of AI.",
+    "level": "A2",
+    "keyConcepts": [
+      "upcoming trend",
+      "layoffs",
+      "job security",
+      "be out of a job",
+      "stay relevant"
+    ]
+  },
+  "dialogue": {
+    "title": "AI and Our Jobs: Coffee Chat Edition",
+    "sceneBrief": "Two male friends are having a casual coffee chat, with one more anxious about AI's impact on tech jobs and the other trying to keep a calm, practical perspective.",
+    "characters": [
+      {
+        "name": "Mike",
+        "role": "Senior Engineer",
+        "gender": "male",
+        "voiceProfile": "senior-calm"
+      },
+      {
+        "name": "Chris",
+        "role": "Developer",
+        "gender": "male",
+        "voiceProfile": "junior-anxious"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "Mike",
+        "text": "Man, this coffee's good. So, heard about the latest AI breakthroughs? Wild stuff.",
+        "vn": "Trời, cà phê ngon thật. Mà ông nghe nói về mấy vụ đột phá AI gần đây chưa? Ghê gớm thật.",
+        "emotion": "casual",
+        "tags": []
+      },
+      {
+        "speaker": "Chris",
+        "text": "Yeah, wild... and kinda scary, right? I mean, all these 'upcoming trend' articles are basically just thinly veiled warnings about layoffs.",
+        "vn": "Ừ, ghê... mà cũng hơi đáng sợ đúng không? Ý tôi là, mấy bài báo về 'xu hướng sắp tới' đó cơ bản chỉ là cảnh báo trá hình về sa thải thôi.",
+        "emotion": "anxious",
+        "tags": []
+      },
+      {
+        "speaker": "Mike",
+        "text": "Hm. I get it, but 'scary' might be a bit strong. It's not like we're all gonna be out of a job next week.",
+        "vn": "Hm. Tôi hiểu, nhưng 'đáng sợ' thì hơi quá. Đâu phải tuần sau là chúng ta thất nghiệp hết đâu.",
+        "emotion": "reassuring",
+        "tags": []
+      },
+      {
+        "speaker": "Chris",
+        "text": "Wait wait wait, but what if we are? What about job security then? My friend Mark just got let go from his dev team—",
+        "vn": "Khoan khoan khoan, lỡ mà thật thì sao? Vậy còn sự đảm bảo việc làm thì sao? Thằng bạn tôi, Mark, vừa bị sa thải khỏi đội dev của nó—",
+        "emotion": "panicked",
+        "tags": []
+      },
+      {
+        "speaker": "Mike",
+        "text": "Okay so, he got let go... was that actually because of AI, or did they just offshore his department?",
+        "vn": "À, nó bị cho thôi việc... đó có thật sự là do AI không, hay là họ chỉ chuyển phòng ban của nó sang nước ngoài thôi?",
+        "emotion": "skeptical",
+        "tags": []
+      },
+      {
+        "speaker": "Chris",
+        "text": "I mean, they said 'restructuring'... but come on, it's gotta be related! We need to figure out how to stay relevant, Mike, before we're completely obsolete.",
+        "vn": "Thì họ nói 'tái cấu trúc'... nhưng mà thôi đi, chắc chắn là có liên quan! Chúng ta cần tìm cách để duy trì sự phù hợp, Mike, trước khi chúng ta trở nên hoàn toàn lỗi thời.",
+        "emotion": "frustrated",
+        "tags": []
+      },
+      {
+        "speaker": "Mike",
+        "text": "Obsess much? Look, Chris, the key is to adapt. Learn the new tools, understand how AI integrates, not fear it. You gotta ride the wave, not get swept under.",
+        "vn": "Ông lo quá mức rồi đó. Nghe này, Chris, mấu chốt là phải thích nghi. Học các công cụ mới, hiểu cách AI tích hợp, chứ đừng sợ nó. Ông phải lướt sóng, chứ đừng để bị sóng cuốn trôi.",
+        "emotion": "playful",
+        "tags": [
+          "chuckles"
+        ]
+      },
+      {
+        "speaker": "Chris",
+        "text": "Easy for you to say, Mr. 'Senior Engineer'. I'm still trying to grasp serverless, now I need to learn 'prompt engineering' for a robot overlord?",
+        "vn": "Ông nói dễ ợt, ông 'Kỹ sư cao cấp' ơi. Tôi vẫn đang cố gắng nắm serverless, giờ tôi cần học 'kỹ thuật gợi lệnh' cho một tên robot chúa tể à?",
+        "emotion": "playful",
+        "tags": []
+      },
+      {
+        "speaker": "Mike",
+        "text": "Exactly! See, you're already thinking about the new skills. That's how you stay relevant. We're not out of a job, we're just getting new jobs.",
+        "vn": "Chính xác! Thấy không, ông đã nghĩ về các kỹ năng mới rồi. Đó là cách để ông duy trì sự phù hợp. Chúng ta không thất nghiệp đâu, chúng ta chỉ đang có những công việc mới thôi.",
+        "emotion": "encouraging",
+        "tags": []
+      },
+      {
+        "speaker": "Chris",
+        "text": "Yeah, okay, I guess. Just... gotta make sure those 'new jobs' still involve humans and a paycheck.",
+        "vn": "Ừ, được rồi, tôi đoán vậy. Chỉ là... phải đảm bảo mấy cái 'việc làm mới' đó vẫn cần con người và một khoản lương.",
+        "emotion": "hesitant",
+        "tags": [
+          "sighs"
+        ]
+      },
+      {
+        "speaker": "Mike",
+        "text": "Right, right. Now, finish your coffee before AI figures out how to drink it for you.",
+        "vn": "Đúng đúng. Nào, uống hết cà phê đi trước khi AI tìm ra cách uống thay ông.",
+        "emotion": "humorous",
+        "tags": []
+      }
+    ]
+  },
+  "editorReview": {
+    "levelChecked": false,
+    "notes": "The dialogue demonstrates high naturalness for a casual conversation between two tech professionals. The conversational flow, emotional progression, and informal language (e.g., 'Man', 'kinda', 'come on', 'gotta') are very authentic. However, its fidelity to a strict A2 level is low. Numerous vocabulary items and idiomatic expressions are well above A2, leaning into B1 and B2 territory. Examples include: 'breakthroughs', 'thinly veiled warnings', 'layoffs', 'offshore', 'restructuring', 'stay relevant', 'obsolete', 'adapt', 'integrates', 'grasp', 'ride the wave, not get swept under', and 'obsess much?'. An A2 learner would likely struggle to comprehend these terms and the nuances of the idiomatic expressions without significant contextual support or prior knowledge. While some individual sentences are A2-appropriate, the overall lexical and conceptual load makes the dialogue unsuitable for a consistent A2 learning experience.",
+    "approved": false
+  },
+  "vocab": [
+    {
+      "term": "thinly veiled warnings",
+      "ipa": "/ˈθɪnli veɪld ˈwɔːrnɪŋz/",
+      "vn": "cảnh báo trá hình",
+      "example": "Those articles about automation were thinly veiled warnings about potential job cuts."
+    },
+    {
+      "term": "layoffs",
+      "ipa": "/ˈleɪɒfs/",
+      "vn": "sa thải hàng loạt",
+      "example": "The company announced significant layoffs across several departments."
+    },
+    {
+      "term": "out of a job",
+      "ipa": "/aʊt əv ə dʒɒb/",
+      "vn": "thất nghiệp",
+      "example": "Many people are worried about being out of a job because of AI."
+    },
+    {
+      "term": "job security",
+      "ipa": "/dʒɒb sɪˈkjʊərəti/",
+      "vn": "sự đảm bảo việc làm",
+      "example": "In a rapidly changing market, job security is a major concern."
+    },
+    {
+      "term": "get let go",
+      "ipa": "/ɡɛt lɛt ɡəʊ/",
+      "vn": "bị cho thôi việc, bị sa thải (cách nói nhẹ nhàng hơn)",
+      "example": "Unfortunately, my colleague got let go during the recent company downsizing."
+    },
+    {
+      "term": "restructuring",
+      "ipa": "/ˌriːˈstrʌktʃərɪŋ/",
+      "vn": "tái cấu trúc",
+      "example": "The company explained the layoffs as part of a larger restructuring effort."
+    },
+    {
+      "term": "stay relevant",
+      "ipa": "/steɪ ˈrɛləvənt/",
+      "vn": "duy trì sự phù hợp, không bị lỗi thời",
+      "example": "To stay relevant in the tech industry, continuous learning is essential."
+    },
+    {
+      "term": "completely obsolete",
+      "ipa": "/kəmˈpliːtli ˈɒbsəliːt/",
+      "vn": "hoàn toàn lỗi thời",
+      "example": "Skills that aren't updated can quickly become completely obsolete."
+    },
+    {
+      "term": "ride the wave",
+      "ipa": "/raɪd ðə weɪv/",
+      "vn": "nắm bắt, tận dụng xu hướng (nghĩa bóng: lướt sóng)",
+      "example": "Instead of resisting new technology, we should learn to ride the wave."
+    },
+    {
+      "term": "get swept under",
+      "ipa": "/ɡɛt swɛpt ˈʌndər/",
+      "vn": "bị cuốn trôi, bị bỏ lại phía sau",
+      "example": "If you don't adapt, you risk getting swept under by the rapid changes."
+    }
+  ],
+  "poster": {
+    "generated": true,
+    "provider": "gemini",
+    "file": "ai-and-our-jobs-coffee-chat-edition.png",
+    "width": 1280,
+    "height": 512,
+    "prompt": "Cute minimal icon-style illustration for a language-learning podcast banner.\nConcept: Two male friends are having a casual coffee chat, with one more anxious about AI's impact on tech jobs and the other trying to keep a calm, practical perspective..\nSubject: ONE single chubby rounded ICONIC OBJECT representing the topic (e.g. a coffee cup, a plane, a laptop, a server rack, a suitcase, a clock, etc). The object is centered.\nStyle: BRIGHT mint + soft seafoam + cream pastel, optimistic light background. Soft pastel candy palette, mascot-style rounded shapes, gentle flat shading, subtle floating dots/sparkles in background, premium mobile-app aesthetic.\nBackground: soft single-tone pastel gradient, very airy, lots of negative space.\nABSOLUTE STRICT RULES (will fail review if violated):\n  • NO humans of any kind. NO people. NO faces. NO eyes. NO hands. NO body parts. NO silhouettes.\n  • NO animals with faces. NO mascot creatures.\n  • NO text, NO letters, NO numbers, NO logos, NO writing, NO signatures, NO watermarks.\n  • Just one inanimate object/icon, like a sticker.",
+    "generatedAt": "2026-05-15T05:00:16.639Z"
+  },
+  "audio": {
+    "mode": "GEMINI",
+    "voiceMap": {
+      "Mike": "Charon",
+      "Chris": "Puck"
+    },
+    "file": "ai-and-our-jobs-coffee-chat-edition.mp3",
+    "sizeKb": 3715,
+    "durationSec": 79.3,
+    "model": "gemini-2.5-flash-preview-tts",
+    "promptPreview": "Voice this as a REAL conversation between real people — natural, unforced, conversational. NOT theatrical. NOT a narrator. NOT a podcast host performing.\n\nCRITICAL — sound natural:\n- Speak the way cow…",
+    "mix": {
+      "mixed": true,
+      "file": "ai-and-our-jobs-coffee-chat-edition.mp3",
+      "sizeKb": 1047,
+      "sceneMood": "review",
+      "moodTags": [
+        "calm",
+        "podcast",
+        "corporate"
+      ],
+      "intro": {
+        "track": "faderproducer-intro-podcast-530691.mp3",
+        "tags": [
+          "intro",
+          "podcast"
+        ],
+        "score": 7,
+        "fallback": false,
+        "offsetSec": 1,
+        "durationSec": 5
+      },
+      "outro": {
+        "track": "53976329-podcast-outro-clean-closing-sting-459117.mp3",
+        "tags": [
+          "outro",
+          "bumper",
+          "podcast"
+        ],
+        "score": 7,
+        "fallback": false,
+        "offsetSec": 122.4,
+        "durationSec": 5
+      },
+      "layout": "5s intro sting · voice (clean) · 5s outro sting"
+    },
+    "align": {
+      "aligned": true,
+      "model": "base.en",
+      "introOffsetSec": 5,
+      "lineTimings": [
+        {
+          "lineIndex": 0,
+          "start": 5,
+          "end": 10.34,
+          "durationSec": 5.34
+        },
+        {
+          "lineIndex": 1,
+          "start": 10.34,
+          "end": 18.03,
+          "interpolated": true,
+          "durationSec": 7.69
+        },
+        {
+          "lineIndex": 2,
+          "start": 18.03,
+          "end": 25.72,
+          "interpolated": true,
+          "durationSec": 7.69
+        },
+        {
+          "lineIndex": 3,
+          "start": 25.72,
+          "end": 31.44,
+          "durationSec": 5.72
+        },
+        {
+          "lineIndex": 4,
+          "start": 31.78,
+          "end": 36.86,
+          "durationSec": 5.08
+        },
+        {
+          "lineIndex": 5,
+          "start": 37.34,
+          "end": 44.08,
+          "durationSec": 6.74
+        },
+        {
+          "lineIndex": 6,
+          "start": 44.08,
+          "end": 56.68,
+          "interpolated": true,
+          "durationSec": 12.6
+        },
+        {
+          "lineIndex": 7,
+          "start": 56.68,
+          "end": 64.02,
+          "durationSec": 7.34
+        },
+        {
+          "lineIndex": 8,
+          "start": 64.42,
+          "end": 72.5,
+          "durationSec": 8.08
+        },
+        {
+          "lineIndex": 9,
+          "start": 73.02,
+          "end": 79,
+          "durationSec": 5.98
+        },
+        {
+          "lineIndex": 10,
+          "start": 79.58,
+          "end": 84.16,
+          "durationSec": 4.58
+        }
+      ],
+      "segmentCount": 38,
+      "wordCount": 252
+    }
+  }
+}
